@@ -1,4 +1,4 @@
-.navbar-wim {
+.navbar {
   justify-content: space-between;
   transition: 0.5s background-color ease;
   position: fixed;
@@ -6,32 +6,34 @@
   width: 100%;
   a {
     text-decoration: none;
+    color: $my-orange;
   }
 }
 
-.navbar-wim-transparent-1 {
+.navbar-transparent-1 {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.navbar-wim-transparent-2 {
+.navbar-transparent-2 {
   background-color: rgba(255, 255, 255, 1);
 }
 
-.navbar-wim .navbar-collapse {
+.navbar .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-wim .navbar-brand img {
+.navbar .navbar-brand img {
   width: 40px;
 }
 
-.navbar-wim h2 {
+.navbar h2 {
   font-family: 'Muli';
   color: $my-dark-blue;
   opacity: 0.8;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: $my-dark-blue;
+  color: $my-orange;
   opacity: 0.8;
 }
+
