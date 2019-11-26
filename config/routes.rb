@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
   resources :positions,   only: [:create, :update]
   resources :team,        only: [:create, :update]
-  resources :walks,       only: [:create, :update, :destroy, :index, :show, :new]
-  resources :user_walks,  only: [:create, :update, :destroy]
+  resources :walks,       only: [:create, :update, :destroy, :index, :show, :new] do
+    resources :user_walks,  only: [:create, :update, :destroy]
+  end
   resources :skill_sets,  only: [:create, :update, :destroy]
   resources :skills,      only: [:create, :update]
 end
