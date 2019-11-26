@@ -1,4 +1,4 @@
-class PositionPolicy < ApplicationPolicy
+class SkillPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -6,6 +6,6 @@ class PositionPolicy < ApplicationPolicy
   end
 
   def show?
-    return true # anyone can view a position
+    true
   end
 end
