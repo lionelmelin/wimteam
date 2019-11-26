@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :positions
   has_many :teams, through: :positions
   has_many :user_walks
+  has_one_attached :photo
   has_many :walks, through: :user_walks
 
   has_many :skill_sets, as: :skillable
