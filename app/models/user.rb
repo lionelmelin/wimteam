@@ -11,11 +11,11 @@ class User < ApplicationRecord
   has_many :walks, through: :user_walks
   has_many :skill_sets, as: :skillable
   has_many :skills, through: :skill_sets
-  validates :gender, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :birth_date, presence: true
-  validates :graduation_date, presence: true
+  # validates :gender, presence: true
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
+  # validates :birth_date, presence: true
+  # validates :graduation_date, presence: true
 
   def manager?
     result = false
