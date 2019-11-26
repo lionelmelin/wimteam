@@ -1,0 +1,15 @@
+.btn-apply:hover {
+  opacity: 1;
+}
+
+.btn-apply {
+  color: white;
+  padding: 8px 24px;
+  background: $my-orange;
+  transition: background 0.3s ease;
+}
+
+.btn-apply:hover {
+  background: #FA5D41;
+  color: white;
+}
