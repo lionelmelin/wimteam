@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_115627) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
-  
+
   create_table "positions", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "team_id"
