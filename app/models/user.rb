@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :positions
   has_many :user_walks
+  has_one_attached :photo
 end
