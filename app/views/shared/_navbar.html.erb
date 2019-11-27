@@ -1,7 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-friendy">
-  <%= link_to root_path do %>
-    <h2>Walk in My Team</h2>
-  <% end %>
+    <h2><%= link_to "Walk in my team", root_path %></h2>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -22,7 +20,7 @@
         </li>
         <li>
           <div class="avatar">
-            <div style="background-image: url(<%= cl_image_path current_user.photo.key %>);" class="avatar-mine"></div>
+            <div style="background-image: url("");" class="avatar-mine"></div>
           </div>
         </li>
       <% else %>

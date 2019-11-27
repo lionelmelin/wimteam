@@ -2,6 +2,7 @@ class WalksController < ApplicationController
 before_action :set_walk, only: [:show, :update, :destroy]
 
   def index
+    @walks = policy_scope(Walk)
     # if params[:query].present?
     #   @walks = policy_scope(Walk).search_by_multiple(params[:query])
     # else
@@ -10,6 +11,8 @@ before_action :set_walk, only: [:show, :update, :destroy]
   end
 
   def show
+    # @user_walk = UserWalk.new
+    # authorize @user_walk
   end
 
   def new
@@ -43,7 +46,7 @@ before_action :set_walk, only: [:show, :update, :destroy]
   end
 
   def set_walk
-    @walk = Walk.find(params[:id])
-    authorize @walk
+    # @walk = Walk.find(params[:id])
+    # authorize @walk
   end
 end

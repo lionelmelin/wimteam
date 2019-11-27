@@ -1,0 +1,15 @@
+.btn-start:hover {
+  opacity: 1;
+}
+
+.btn-start {
+  color: white;
+  padding: 8px 24px;
+  background: $my-dark-blue;
+  transition: background 0.3s ease;
+}
+
+.btn-start:hover {
+  background: $my-light-blue;
+  color: white;
+}
