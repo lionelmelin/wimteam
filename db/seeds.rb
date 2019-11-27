@@ -33,7 +33,7 @@ lionel.photo.attach(io: lionel_pic, filename: 'some-image.jpg', content_type: 'i
 
 laetitia = User.create!(email: "laetitia@giggle.com", password: "password", first_name: "Laetitia", last_name: "Delta", gender: "female", birth_date: "01/02/1992", graduation_date: "11/11/2016")
 laetitia_pic = URI.open("https://images.unsplash.com/photo-1504703395950-b89145a5425b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
-#laetitia.photo.attach(io: laetitia_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
+laetitia.photo.attach(io: laetitia_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 john = User.create!(email: "john@giggle.com", password: "password", first_name: "John", last_name: "Barrinston", gender: "male", birth_date: "01/02/1985", graduation_date: "11/11/2010")
 john_pic = URI.open("https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60")
