@@ -22,3 +22,12 @@
   // margin: 0 auto;
   // justify-content: center;
 }
+
+#pts {
+  height: calc(100vh);
+}
+
+#pts h1 {
+  color: $my-dark-blue;
+  font-weight: 200;
+}
