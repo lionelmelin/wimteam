@@ -1,67 +1,37 @@
 <div class="container m-3">
-  <h1 class="book-title">Walk with <%#= @walk.team.name %></h1>
-</div>
+  <h1 class="book-title">Walk in... <%#= @walk.team.name %></h1>
 
-<div class="container">
-  <div class="row">
+  <div class="d-flex">
+  <%= form_tag( walks_path, {method: :get, class: 'form-inline'}) do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control mr-2 w-70vw",
+      placeholder: "Find a Walk"
+    %>
+    <%= submit_tag "Search", class: "btn btn-dark" %>
+  <% end %>
+  </div>
 
-    <!-- LHS column with content -->
-    <div class="col-9">
-      <!-- Photo next to details -->
-      <div class="row">
-        <div class="col-6">
-          <div class="container">
-            <%# if @walk.team.photo.attached?%>
-               <%#= cl_image_tag @walk.team.photo.key, width: 300, height: 300, crop: :fill, gravity: :face %>
-            <%# else %>
-              <%#= cl_image_tag "", width: 300, height: 300, crop: :fill, gravity: :face %>
-            <%# end %>
+
+  <div class="border border-dark p-4 w-100 border-bottom-0 border-left-0 border-right-0">
+    <br>
+      <% @walks.each do |walk| %>
+        <div class="card-dashboard">
+          <%= cl_image_tag walk.team.photo.key, crop: :fill, gravity: :face if walk.team.photo.attached? %>
+          <div class="card-dashboard-infos">
+            <h2>Walk in the <%= walk.team.name %> Team!</h2>
+            <h3 class="duration"><i class="fas fa-calendar-week"></i><%= walk.duration %> </h3>
+            <p><%= walk.description %> </p>
+          </div>
+          <div class="score">
+            <%= rand(100) %>
+          </div>
+          <div class="location-apply">
+            <h3 class="location"><i class="fas fa-thumbtack"></i><%= walk.team.location %> </h3>
+            <%= link_to "Apply", walks_path(walk), class: "btn-apply" %>
           </div>
         </div>
-        <div class="col-3">
-          <div class="container">
-            <%#= @walk.description %>
-            <p> Description: <%#= @walk.description %> </p>
-            <p> Prospective duration: <%#= @walk.duration %> </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Matching -->
-      <div class="row">
-
-      </div>
-
-      <!-- Grid of team-members -->
-      <div class="row m-1">
-        <div class="col-12">
-
-        </div>
-      </div>
-    </div>
-
-    <!-- RHS column with booking slider -->
-    <div class="col-3">
-      <div class="booking-card text-center">
-        <div class="card p-3">
-          <h5>Apply to this <strong>Walk</strong></h5>
-          <%#= link_to  %>
-          <!--
-          <%#= simple_form_for [@walk, @user_walk] do |f| %>
-            <div class="form-row p-3">
-              <div class="col">
-                <%#= f.input :start_date, type: "text", class: "form-control", as: :string, input_html: { id: "range_start" } %>
-              </div>
-              <div class="col">
-                <%#= f.input :end_date, type: "text", class: "form-control", as: :string, input_html: { id: "range_end" } %>
-              </div>
-            </div>
-            <%#= f.submit 'Book!', class: 'btn btn-primary w-50 mb-2' %>
-          <% #end %>
-          -->
-        </div>
-      </div>
-    </div>
-
+      <% end %>
+    <br>
   </div>
 </div>
