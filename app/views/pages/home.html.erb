@@ -32,7 +32,16 @@
     </div>
   </div>
   <div>
-    <a href="#walks" class="banner-link"><div class="banner-button btn-apply">Show me more</div></a>
+    <a href="#video-home" class="banner-link"><div class="banner-button btn-apply">Show me more</div></a>
+  </div>
+</div>
+
+<!-- Video -->
+<div class="video-relative" id="video-home">
+  <%= video_tag ["video_blond_xs.webm", "video_blond_xs.mp4"], autoplay: true, loop: true, muted: true, class: "video" %>
+<!--   <div class="video-absolute banner-button btn-apply">Start now !</div> -->
+  <div class="video-absolute">
+    <a href="#walks" class="banner-link"><div class="banner-button btn-apply">Start now !</div></a>
   </div>
 </div>
 
