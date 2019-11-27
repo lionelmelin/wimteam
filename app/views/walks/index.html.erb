@@ -1,0 +1,37 @@
+<div class="container m-3">
+  <h1 class="book-title">Walk in... <%#= @walk.team.name %></h1>
+
+  <div class="d-flex">
+  <%= form_tag( walks_path, {method: :get, class: 'form-inline'}) do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control mr-2 w-70vw",
+      placeholder: "Find a Walk"
+    %>
+    <%= submit_tag "Search", class: "btn btn-dark" %>
+  <% end %>
+  </div>
+
+
+  <div class="border border-dark p-4 w-100 border-bottom-0 border-left-0 border-right-0">
+    <br>
+      <% @walks.each do |walk| %>
+        <div class="card-dashboard">
+          <%= cl_image_tag walk.team.photo.key, crop: :fill, gravity: :face if walk.team.photo.attached? %>
+          <div class="card-dashboard-infos">
+            <h2>Walk in the <%= walk.team.name %> Team!</h2>
+            <h3 class="duration"><i class="fas fa-calendar-week"></i><%= walk.duration %> </h3>
+            <p><%= walk.description %> </p>
+          </div>
+          <div class="score">
+            <%= rand(100) %>
+          </div>
+          <div class="location-apply">
+            <h3 class="location"><i class="fas fa-thumbtack"></i><%= walk.team.location %> </h3>
+            <%= link_to "Apply", walks_path(walk), class: "btn-apply" %>
+          </div>
+        </div>
+      <% end %>
+    <br>
+  </div>
+</div>

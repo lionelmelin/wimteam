@@ -5,6 +5,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin: 20px;
 }
 
 .card-dashboard img {
@@ -16,11 +18,16 @@
 .card-dashboard h2 {
   font-size: 16px;
   font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-dashboard h3 {
+  font-size: 14px;
   margin: 0;
 }
 
 .card-dashboard p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -29,4 +36,34 @@
 
 .card-dashboard .card-dashboard-infos {
   padding: 16px;
+  flex-grow: 1;
+  .duration {
+    color: $my-dark-blue;
+    .fas {
+      margin-right: 5px;
+    }
+  }
+
 }
+
+.card-dashboard .score {
+  border-color: $my-dark-blue;
+  border-style: solid;
+  color: $my-orange;
+  padding: 5px;
+  font-size: 18px;
+  border-radius: 50%;
+}
+
+.card-dashboard .location-apply {
+  margin: 10px;
+  padding: 16px;
+  .location {
+    color: $my-dark-blue;
+    margin-bottom: 25px;
+    .fas {
+      margin-right: 5px;
+    }
+  }
+}
+

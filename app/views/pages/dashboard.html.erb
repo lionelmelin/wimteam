@@ -1,1 +1,29 @@
-dashboard.html.erb
+<%= render 'shared/navbar' %>
+<div class="container pt-5">
+  <div class="tab-content" id="pills-tabContent">
+    <!-- Tab d'index des walks -->
+    <div class="tab-pane fade show active" id="find" role="tabpanel" aria-labelledby="find-tab">
+      Walks
+    </div>
+
+    <!-- Tab des applications -->
+    <div class="tab-pane fade" id="applications" role="tabpanel" aria-labelledby="applications-tab">
+      Applications
+    </div>
+
+    <!-- Tab de profile -->
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="d-flex pt-5 justify-content-center flex-wrap">
+        <div class="card" style="width:250px">
+          <h1>Photo</h1>
+          <h2>Pierre Nicoletti</h2>
+        </div>
+        <div class="card w-60">
+          <h1>Photo</h1>
+          <h2>Pierre Nicoletti hello hello</h2>
+        </div>
+      </div>
+    </div>
+    Profile
+  </div>
+</div>

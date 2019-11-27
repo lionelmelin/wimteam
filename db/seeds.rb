@@ -45,15 +45,15 @@ jenny.photo.attach(io: jenny_pic, filename: 'some-image.jpg', content_type: 'ima
 
 
 puts "Seeding teams..."
-marketing = Team.create!(name: "Marketing", department: "Sales & Marketing", description: "Within the Sales & Marketing department, the Marketing team is in charge of defining the Company's marketing strategy, and of designing the marketing supports used by the sales teams.")
+marketing = Team.create!(name: "Marketing", location: "Paris", department: "Sales & Marketing", description: "Within the Sales & Marketing department, the Marketing team is in charge of defining the Company's marketing strategy, and of designing the marketing supports used by the sales teams.")
 marketing_pic = URI.open("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
 marketing.photo.attach(io: marketing_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
-data = Team.create!(name: "Data", department: "IT", description: "With the IT department, the Data team is in charge of gathering, cleaning, modelling and analysing all the data produced by the Company's activities.")
+data = Team.create!(name: "Data", location: "New York", department: "IT", description: "With the IT department, the Data team is in charge of gathering, cleaning, modelling and analysing all the data produced by the Company's activities.")
 data_pic = URI.open("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
 data.photo.attach(io: data_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
-support = Team.create!(name: "Support", department: "Sales & Marketing", description: "the support team is in charge of handling the support requests of the existing clients, using telephone, chat and emails as communication channels.")
+support = Team.create!(name: "Support", location: "Nantes", department: "Sales & Marketing", description: "the support team is in charge of handling the support requests of the existing clients, using telephone, chat and emails as communication channels.")
 support_pic = URI.open("https://www.cyfe.com/blog/wp-content/uploads/2017/11/5-Customer-Support-Metrics-Every-Customer-Service-Department-Should-Be-Measuring.png")
 support.photo.attach(io: support_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
