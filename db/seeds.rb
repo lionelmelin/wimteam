@@ -15,7 +15,7 @@ Team.destroy_all
 Walk.destroy_all
 UserWalk.destroy_all
 Skill.destroy_all
-Skill_set.destroy_all
+SkillSet.destroy_all
 
 
 puts "Seeding users..."
