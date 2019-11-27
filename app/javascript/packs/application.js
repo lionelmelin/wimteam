@@ -7,3 +7,6 @@ loadDynamicBannerText();
 //Navbar for homepage
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
+
+import { initBannerButton } from '../components/banner_button';
+initBannerButton();
