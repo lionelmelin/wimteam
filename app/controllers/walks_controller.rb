@@ -3,11 +3,11 @@ before_action :set_walk, only: [:show, :update, :destroy]
 
   def index
     @walks = policy_scope(Walk)
-    # if params[:query].present?
-    #   @walks = policy_scope(Walk).search_by_multiple(params[:query])
-    # else
-    #   @walks= policy_scope(Walk).order(created_at: :desc)
-    # end
+    if params[:query].present?
+      @walks = policy_scope(Walk).global_search(params[:query])
+    else
+      @walks = policy_scope(Walk).order(created_at: :desc)
+    end
   end
 
   def show

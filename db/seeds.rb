@@ -33,7 +33,7 @@ lionel.photo.attach(io: lionel_pic, filename: 'some-image.jpg', content_type: 'i
 
 laetitia = User.create!(email: "laetitia@giggle.com", password: "password", first_name: "Laetitia", last_name: "Delta", gender: "female", birth_date: "01/02/1992", graduation_date: "11/11/2016")
 laetitia_pic = URI.open("https://images.unsplash.com/photo-1504703395950-b89145a5425b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
-#laetitia.photo.attach(io: laetitia_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
+laetitia.photo.attach(io: laetitia_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 john = User.create!(email: "john@giggle.com", password: "password", first_name: "John", last_name: "Barrinston", gender: "male", birth_date: "01/02/1985", graduation_date: "11/11/2010")
 john_pic = URI.open("https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60")
@@ -45,26 +45,26 @@ jenny.photo.attach(io: jenny_pic, filename: 'some-image.jpg', content_type: 'ima
 
 
 puts "Seeding teams..."
-marketing = Team.create!(name: "Marketing", department: "Sales & Marketing", description: "Within the Sales & Marketing department, the Marketing team is in charge of defining the Company's marketing strategy, and of designing the marketing supports used by the sales teams.")
+marketing = Team.create!(name: "Marketing", location: "Paris", department: "Sales & Marketing", description: "Within the Sales & Marketing department, the Marketing team is in charge of defining the Company's marketing strategy, and of designing the marketing supports used by the sales teams.")
 marketing_pic = URI.open("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
 marketing.photo.attach(io: marketing_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
-data = Team.create!(name: "Data", department: "IT", description: "With the IT department, the Data team is in charge of gathering, cleaning, modelling and analysing all the data produced by the Company's activities.")
+data = Team.create!(name: "Data", location: "New York", department: "IT", description: "With the IT department, the Data team is in charge of gathering, cleaning, modelling and analysing all the data produced by the Company's activities.")
 data_pic = URI.open("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
 data.photo.attach(io: data_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
-support = Team.create!(name: "Support", department: "Sales & Marketing", description: "the support team is in charge of handling the support requests of the existing clients, using telephone, chat and emails as communication channels.")
+support = Team.create!(name: "Support", location: "Nantes", department: "Sales & Marketing", description: "the support team is in charge of handling the support requests of the existing clients, using telephone, chat and emails as communication channels.")
 support_pic = URI.open("https://www.cyfe.com/blog/wp-content/uploads/2017/11/5-Customer-Support-Metrics-Every-Customer-Service-Department-Should-Be-Measuring.png")
 support.photo.attach(io: support_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 
 puts "Seeding positions..."
-marketer = Position.create!(user: laura, password: "password", team: marketing, role: "member", start_date: "02/03/2018", job_code: "11-2021.00", job: "Marketing Managers")
-data_analyst = Position.create!(user: laetitia, password: "password", team: data, role: "member", start_date: "05/06/2017", job_code: "15-1199.08", job: "Business Intelligence Analysts")
-data_manager = Position.create!(user: lionel, password: "password", team: data, role: "manager", start_date: "05/06/2015", job_code: "15-1199.06", job: "Database Architects")
-support_manager = Position.create!(user: pierre, password: "password", team: support, role: "manager", start_date: "05/06/2016", job_code: "43-1011.00", job: "First-Line Supervisors of Office and Administrative Support Workers")
-supporter_1 = Position.create!(user: john, password: "password", team: support, role: "member", start_date: "05/06/2017", job_code: "43-4051.00", job: "Customer Service Representatives")
-supporter_2 = Position.create!(user: jenny, password: "password", team: support, role: "member", start_date: "05/06/2019", job_code: "43-4051.00", job: "Customer Service Representatives")
+marketer = Position.create!(user: laura, team: marketing, role: "member", start_date: "02/03/2018", job_code: "11-2021.00", job: "Marketing Managers")
+data_analyst = Position.create!(user: laetitia, team: data, role: "member", start_date: "05/06/2017", job_code: "15-1199.08", job: "Business Intelligence Analysts")
+data_manager = Position.create!(user: lionel, team: data, role: "manager", start_date: "05/06/2015", job_code: "15-1199.06", job: "Database Architects")
+support_manager = Position.create!(user: pierre, team: support, role: "manager", start_date: "05/06/2016", job_code: "43-1011.00", job: "First-Line Supervisors of Office and Administrative Support Workers")
+supporter_1 = Position.create!(user: john, team: support, role: "member", start_date: "05/06/2017", job_code: "43-4051.00", job: "Customer Service Representatives")
+supporter_2 = Position.create!(user: jenny, team: support, role: "member", start_date: "05/06/2019", job_code: "43-4051.00", job: "Customer Service Representatives")
 
 
 puts "Seeding skills and position skill_sets..."
