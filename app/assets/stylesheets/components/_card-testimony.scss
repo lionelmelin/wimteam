@@ -3,48 +3,26 @@
   justify-content: space-between;
   position: relative;
   box-sizing: border-box;
+  font-family: Muli;
 }
 
 .card-info {
   display: inline-block;
+  font-family: Muli;
+  font-size: 16px;
+  color: $my-dark-blue;
 }
 
-.img {
-  vertical-align: middle;
-  border-radius: 40 px;
+.card-description {
+  opacity: .5;
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
+h4 {
+  color: $my-light-blue;
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
+h1 {
+  color: $my-dark-blue;
+  font-weight: 200;
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
