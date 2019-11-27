@@ -6,5 +6,6 @@ class Position < ApplicationRecord
 
   validates :user, presence: true
   validates :team, presence: true
+  validates :job_code, presence: true
   validates :role, presence: true, inclusion: { in: ["member", "manager", "rh"] }
 end

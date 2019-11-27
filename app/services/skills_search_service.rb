@@ -1,6 +1,5 @@
 class SkillsSearchService
-  def run(code)
-
+  def run(job_code)
     username = ENV['ONET_username']
     password = ENV['ONET_password']
 
@@ -9,17 +8,16 @@ class SkillsSearchService
     vinfo = onet_ws.call('about')
     check_for_error(vinfo)
     puts "Connected to O*NET Web Services version #{vinfo['api_version']}"
-    puts
-
     # code = '17-2051.00'
-    kwresults = onet_ws.call_skills("mnm/careers/#{code}/skills")
 
+    kwresults = onet_ws.call_skills("mnm/careers/#{job_code}/abilities")
     end_result = kwresults["group"].map do |result|
-      result["element"].map { |e| e['name']}
+      result["element"].map {|e| e["name"] }
     end.flatten
-
-    p end_result
+    return end_result.reject {|r| r == "English language"}
   end
+
+  private
 
   def check_for_error(service_result)
     if service_result.has_key?('error')
