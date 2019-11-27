@@ -59,12 +59,12 @@ support.photo.attach(io: support_pic, filename: 'some-image.jpg', content_type: 
 
 
 puts "Seeding positions..."
-marketer = Position.create!(user: laura, team: marketing, role: "member", start_date: "02/03/2018", job_code: "11-2021.00", job: "Marketing Managers")
-data_analyst = Position.create!(user: laetitia, team: data, role: "member", start_date: "05/06/2017", job_code: "15-1199.08", job: "Business Intelligence Analysts")
-data_manager = Position.create!(user: lionel, team: data, role: "manager", start_date: "05/06/2015", job_code: "15-1199.06", job: "Database Architects")
-support_manager = Position.create!(user: pierre, team: support, role: "manager", start_date: "05/06/2016", job_code: "43-1011.00", job: "First-Line Supervisors of Office and Administrative Support Workers")
-supporter_1 = Position.create!(user: john, team: support, role: "member", start_date: "05/06/2017", job_code: "43-4051.00", job: "Customer Service Representatives")
-supporter_2 = Position.create!(user: jenny, team: support, role: "member", start_date: "05/06/2019", job_code: "43-4051.00", job: "Customer Service Representatives")
+marketer = Position.create!(user: laura, password: "password", team: marketing, role: "member", start_date: "02/03/2018", job_code: "11-2021.00", job: "Marketing Managers")
+data_analyst = Position.create!(user: laetitia, password: "password", team: data, role: "member", start_date: "05/06/2017", job_code: "15-1199.08", job: "Business Intelligence Analysts")
+data_manager = Position.create!(user: lionel, password: "password", team: data, role: "manager", start_date: "05/06/2015", job_code: "15-1199.06", job: "Database Architects")
+support_manager = Position.create!(user: pierre, password: "password", team: support, role: "manager", start_date: "05/06/2016", job_code: "43-1011.00", job: "First-Line Supervisors of Office and Administrative Support Workers")
+supporter_1 = Position.create!(user: john, password: "password", team: support, role: "member", start_date: "05/06/2017", job_code: "43-4051.00", job: "Customer Service Representatives")
+supporter_2 = Position.create!(user: jenny, password: "password", team: support, role: "member", start_date: "05/06/2019", job_code: "43-4051.00", job: "Customer Service Representatives")
 
 
 puts "Seeding skills and position skill_sets..."
