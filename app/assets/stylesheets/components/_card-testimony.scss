@@ -1,0 +1,28 @@
+.card {
+  padding: 16px;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+  font-family: Muli;
+}
+
+.card-info {
+  display: inline-block;
+  font-family: Muli;
+  font-size: 16px;
+  color: $my-dark-blue;
+}
+
+.card-description {
+  opacity: .5;
+}
+
+h4 {
+  color: $my-light-blue;
+}
+
+h1 {
+  color: $my-dark-blue;
+  font-weight: 200;
+}
+

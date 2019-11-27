@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_160955) do
+ActiveRecord::Schema.define(version: 2019_11_27_150406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_160955) do
     t.string "job"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "job_code"
     t.index ["team_id"], name: "index_positions_on_team_id"
     t.index ["user_id"], name: "index_positions_on_user_id"
   end
@@ -73,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_160955) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "location"
   end
 
   create_table "user_walks", force: :cascade do |t|

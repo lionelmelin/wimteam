@@ -21,23 +21,38 @@
     <div class="pts-card">
       <h4>Find</h4>
       <p>Fill in your profile and let the app find you the best match !</p>
+      <i class="fas fa-search"></i>
     </div>
     <div class="pts-card">
       <h4>Apply</h4>
-      <p>Apply to the walks that fit the best your expectatives</p>
+      <p>Apply to the walks that fit best your expectatives</p>
+      <i class="fas fa-check"></i>
     </div>
     <div class="pts-card">
       <h4>Walk !</h4>
-      <p>Walk in your colleague's team and learn more about your company !</p>
+      <p>Walk in a new team to learn more about your company !</p>
+      <i class="fas fa-walking"></i>
     </div>
   </div>
   <div>
-    <a href="#walks" class="banner-link"><div class="banner-button btn-apply">Show me more</div></a>
+    <a href="#video-home" class="banner-link"><div class="banner-button btn-apply">Show me more</div></a>
+  </div>
+</div>
+
+<!-- Video -->
+<div class="video-relative" id="video-home">
+  <%= video_tag ["video_blond_xs.webm", "video_blond_xs.mp4"], autoplay: true, loop: true, muted: true, class: "video" %>
+<!--   <div class="video-absolute banner-button btn-apply">Start now !</div> -->
+  <div class="video-absolute">
+    <a href="#walks" class="banner-link"><div class="banner-button btn-apply">Start now !</div></a>
   </div>
 </div>
 
 <!-- Third section : Walks examples (id = walks) -->
 <div class="container d-flex flex-column pt-3" id="walks">
+  <div class="p-3">
+  <h1>Our best walks</h1>
+  </div>
   <div class="row">
     <div class="col cards">
 
@@ -45,7 +60,7 @@
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
         <div class="card-homepage-infos">
           <div>
-            <h2>My walk's team</h2>
+            <h4>My walk's team</h4>
             <p>My walk's description</p>
           </div>
         </div>
@@ -58,7 +73,7 @@
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
         <div class="card-homepage-infos">
           <div>
-            <h2>My walk's team</h2>
+            <h4>My walk's team</h4>
             <p>My walk's description</p>
           </div>
         </div>
@@ -71,95 +86,58 @@
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
         <div class="card-homepage-infos">
           <div>
-            <h2>My walk's team</h2>
+            <h4>My walk's team</h4>
             <p>My walk's description</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col cards">
-
-      <div class="card-homepage">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-homepage-infos">
-          <div>
-            <h2>My walk's team</h2>
-            <p>My walk's description</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col cards">
-
-      <div class="card-homepage">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-homepage-infos">
-          <div>
-            <h2>My walk's team</h2>
-            <p>My walk's description</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col cards">
-
-      <div class="card-homepage">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-homepage-infos">
-          <div>
-            <h2>My walk's team</h2>
-            <p>My walk's description</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col cards">
-
-      <div class="card-homepage">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-homepage-infos">
-          <div>
-            <h2>My walk's team</h2>
-            <p>My walk's description</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col cards">
-
-      <div class="card-homepage">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-homepage-infos">
-          <div>
-            <h2>My walk's team</h2>
-            <p>My walk's description</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col cards">
-
-      <div class="card-homepage">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-homepage-infos">
-          <div>
-            <h2>My walk's team</h2>
-            <p>My walk's description</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Fourth section : Testimonies (id = walks) -->
+<div class="p-3">
+  <h1>Walker's reviews</h1>
+</div>
+
+  <div class="row ">
+    
+    <div class="col cards">
+      <div class="card">
+        <div class="card-info d-flex align-items-center">
+          <img alt="Julien" class="rounded-circle mr-4" height="64" width="64" src="https://i.udemycdn.com/user/100x100/8872940_27b4_3.jpg">
+          <h4 class="m-0">Julien</h4>
+        </div>
+        <div class="card-description p-2">
+          <p><i>"WIM allowed me to walk into another team and discover what my cubicule neighbors are working on ! We are having lunch once a week now ! Thank you !"</i></p> 
+        </div>
+      </div>
+    </div>
+
+    <div class="col cards">
+      <div class="card">
+        <div class="card-info d-flex align-items-center">
+          <img alt="Julien" class="rounded-circle mr-4" height="64" width="64" src="https://i.udemycdn.com/user/100x100/8872940_27b4_3.jpg">
+          <h4 class="m-0">Julien</h4>
+        </div>
+        <div class="card-description p-2">
+          <p><i>"WIM allowed me to walk into another team and discover what my cubicule neighbors are working on ! We are having lunch once a week now ! Thank you !"</i></p> 
+        </div>
+      </div>
+    </div>
+
+    <div class="col cards">
+      <div class="card">
+        <div class="card-info d-flex align-items-center">
+          <img alt="Julien" class="rounded-circle mr-4" height="64" width="64" src="https://i.udemycdn.com/user/100x100/8872940_27b4_3.jpg">
+          <h4 class="m-0">Julien</h4>
+        </div>
+        <div class="card-description p-2">
+          <p><i>"WIM allowed me to walk into another team and discover what my cubicule neighbors are working on ! We are having lunch once a week now ! Thank you !"</i></p> 
+        </div>
+      </div>
+    </div>
+  </div>
+    
+</div>
+
+
