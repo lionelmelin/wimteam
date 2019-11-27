@@ -1,20 +1,24 @@
 .footer {
-  background: $my-light-blue;
+  background: $my-dark-blue;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  color: rgba(1,1,1,0.7);
   margin-top: 50px;
-  font-family: Open-sans;
+  font-family: Muli;
 }
+.footer-copyright {
+  color: $my-white;
+}
+
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: white;
+  color: $my-white;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
