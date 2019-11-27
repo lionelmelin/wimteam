@@ -46,7 +46,7 @@ before_action :set_walk, only: [:show, :update, :destroy]
   end
 
   def set_walk
-    # @walk = Walk.find(params[:id])
-    # authorize @walk
+    @walk = Walk.find(params[:id])
+    authorize @walk
   end
 end

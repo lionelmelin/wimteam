@@ -1,3 +1,71 @@
-<h1>Walks#Show</h1>
-<p>Find me in app/views/walks/show.html.erb</p>
+<div class="container m-3">
+  <h1 class="book-title">Walk with the <strong><%= @walk.team.name %></strong> team</h1>
+</div>
 
+<div class="container">
+  <div class="row">
+
+    <!-- LHS column with content -->
+    <div class="col-9">
+      <!-- Photo next to details -->
+      <div class="d-flex flex-wrap">
+        <div>
+          <% if @walk.team.photo.attached?%>
+             <%= cl_image_tag @walk.team.photo.key, width: 300, height: 300, crop: :fill, gravity: :face %>
+          <% else %>
+            <%= cl_image_tag "", width: 300, height: 300, crop: :fill, gravity: :face %>
+          <% end %>
+        </div>
+        <div style="width: 50%;">
+          <h5>Description:</h5>
+          <p><%= @walk.description %></p>
+          <h5>Prospective duration:</h5>
+          <p><%= @walk.duration %></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, repellendus! Perferendis asperiores, suscipit ducimus distinctio facere numquam dignissimos harum, accusamus cum quos maiores consectetur reiciendis laborum quod non nesciunt exercitationem!
+          </p>
+        </div>
+      </div>
+
+      <!-- Matching -->
+      <div class="row">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio a repudiandae omnis, fuga nobis expedita provident nam dolore sit porro sunt enim, commodi quibusdam saepe quos, voluptatum veritatis optio. Nisi!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa architecto nesciunt dolorem odio laboriosam mollitia neque quasi quo impedit voluptatum nisi laudantium voluptate, adipisci repellat excepturi, iste ab, nulla fugit.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet libero assumenda eos impedit error accusantium sequi deserunt cumque corporis aliquid nulla, possimus perferendis ducimus consequatur, rem vel eaque nemo temporibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae incidunt quos quia, dolorum nisi sit a nobis ratione est debitis? Aspernatur modi veniam quis corrupti dolorum? Numquam sequi praesentium eum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam dolorum veritatis commodi. Natus ex recusandae, molestias labore veritatis eos quos velit quaerat! Sint, vitae perspiciatis culpa quam dolores nam sunt.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ipsum, omnis voluptatibus tempora, officia vel, ab incidunt, quibusdam esse velit eligendi reiciendis saepe aspernatur quidem perferendis numquam consequatur dolore autem!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor porro harum eum assumenda facilis officia sed ratione nam ut tenetur. Excepturi repellendus numquam nam esse praesentium consectetur tenetur fugit soluta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium repellat, tempore aut. Labore, dolorem reiciendis amet eveniet adipisci molestiae neque non voluptate nemo, earum molestias. Magni, quod est totam harum.
+      </div>
+
+      <!-- Grid of team-members -->
+      <div class="row m-1">
+        <div class="col-12">
+
+        </div>
+      </div>
+    </div>
+
+    <!-- RHS column with booking slider -->
+    <div class="col-3">
+      <div class="booking-card text-center">
+        <div class="card p-3">
+          <h5>Apply to this <strong>Walk</strong></h5>
+          <%#= link_to  %>
+          <!--
+          <%#= simple_form_for [@walk, @user_walk] do |f| %>
+            <div class="form-row p-3">
+              <div class="col">
+                <%#= f.input :start_date, type: "text", class: "form-control", as: :string, input_html: { id: "range_start" } %>
+              </div>
+              <div class="col">
+                <%#= f.input :end_date, type: "text", class: "form-control", as: :string, input_html: { id: "range_end" } %>
+              </div>
+            </div>
+            <%#= f.submit 'Book!', class: 'btn btn-primary w-50 mb-2' %>
+          <% #end %>
+          -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
