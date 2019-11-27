@@ -1,7 +1,7 @@
 
 <!-- First section : video banner -->
 <div class="banner d-flex flex-column justify-content-between align-items-center">
-  <div class="align-self-start">
+  <div class="align-self-start" id="navbar-home">
     <%= render 'shared/navbar' %>
   </div>
   <div>
@@ -15,22 +15,22 @@
 <!-- Second section : Pain Target Solution (id = pst) -->
 <div class="container d-flex flex-column justify-content-center align-items-center pt-3" id="pts">
   <div class="text-center">
-    <h1>Walk in my team helps you connecting with your colleagues for a more connected and more efficient company</h1>
+    <h1>WalkInMy.Team helps you connect with your colleagues<br/> for a more vibrant and efficient company</h1>
   </div>
   <div class="pts-cards">
     <div class="pts-card">
-      <h4>Find</h4>
-      <p>Fill in your profile and let the app find you the best match !</p>
+      <h3>Find</h3>
+      <p>Fill in your profile and let the app suggest a great match!</p>
       <i class="fas fa-search"></i>
     </div>
     <div class="pts-card">
-      <h4>Apply</h4>
-      <p>Apply to the walks that fit best your expectatives</p>
+      <h3>Apply</h3>
+      <p>Apply to the walks that best fit your expectations</p>
       <i class="fas fa-check"></i>
     </div>
     <div class="pts-card">
-      <h4>Walk !</h4>
-      <p>Walk in a new team to learn more about your company !</p>
+      <h3>Walk !</h3>
+      <p>Walk in a new team and learn more about your company!</p>
       <i class="fas fa-walking"></i>
     </div>
   </div>
@@ -42,7 +42,6 @@
 <!-- Video -->
 <div class="video-relative" id="video-home">
   <%= video_tag ["video_blond_xs.webm", "video_blond_xs.mp4"], autoplay: true, loop: true, muted: true, class: "video" %>
-<!--   <div class="video-absolute banner-button btn-apply">Start now !</div> -->
   <div class="video-absolute">
     <a href="#walks" class="banner-link"><div class="banner-button btn-apply">Start now !</div></a>
   </div>
@@ -51,7 +50,7 @@
 <!-- Third section : Walks examples (id = walks) -->
 <div class="container d-flex flex-column pt-3" id="walks">
   <div class="p-3">
-  <h1>Our best walks</h1>
+  <h2>Our best walks</h2>
   </div>
   <div class="row">
     <div class="col cards">
@@ -95,12 +94,12 @@
   </div>
 
 <!-- Fourth section : Testimonies (id = walks) -->
-<div class="p-3">
-  <h1>Walker's reviews</h1>
+<div class="p-4">
+  <h2>Walker's reviews</h2>
 </div>
 
   <div class="row ">
-    
+
     <div class="col cards">
       <div class="card">
         <div class="card-info d-flex align-items-center">
@@ -108,7 +107,7 @@
           <h4 class="m-0">Julien</h4>
         </div>
         <div class="card-description p-2">
-          <p><i>"WIM allowed me to walk into another team and discover what my cubicule neighbors are working on ! We are having lunch once a week now ! Thank you !"</i></p> 
+          <p style="margin: 0;"><i>"WIM.T allowed me to discover what my cubicule neighbors are working on... And now we work together everyday!"</i></p>
         </div>
       </div>
     </div>
@@ -120,7 +119,7 @@
           <h4 class="m-0">Julien</h4>
         </div>
         <div class="card-description p-2">
-          <p><i>"WIM allowed me to walk into another team and discover what my cubicule neighbors are working on ! We are having lunch once a week now ! Thank you !"</i></p> 
+          <p style="margin: 0;"><i>"Great cross-knowledge experience. I have lunch with my welcoming team once a week now."</i></p>
         </div>
       </div>
     </div>
@@ -132,12 +131,12 @@
           <h4 class="m-0">Julien</h4>
         </div>
         <div class="card-description p-2">
-          <p><i>"WIM allowed me to walk into another team and discover what my cubicule neighbors are working on ! We are having lunch once a week now ! Thank you !"</i></p> 
+          <p style="margin: 0;"><i>"I discovered a whole new job through my one-week walk. Ready for a mobility now!"</i></p>
         </div>
       </div>
     </div>
   </div>
-    
+
 </div>
 
 

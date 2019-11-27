@@ -1,67 +1,129 @@
-<h1>Walks#Show</h1>
-<p>Find me in app/views/walks/show.html.erb</p>
+<div class="my-4">
+  <h1 class="book-title">Walk in the <strong><%= @walk.team.name %></strong> team from <%= @walk.team.department%> the department</h1>
+</div>
 
+<div class="row">
 
-<div class="container">
-  <div class="row">
-
-    <!-- LHS column with content -->
-    <div class="col-9">
-      <!-- Photo next to details -->
-      <div class="row">
-        <div class="col-6">
-          <div class="container">
-            <%# if @walk.team.photo.attached?%>
-               <%#= cl_image_tag @walk.team.photo.key, width: 300, height: 300, crop: :fill, gravity: :face %>
-            <%# else %>
-              <%#= cl_image_tag "", width: 300, height: 300, crop: :fill, gravity: :face %>
-            <%# end %>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="container">
-            <%#= @walk.description %>
-            <p> Description: <%#= @walk.description %> </p>
-            <p> Prospective duration: <%#= @walk.duration %> </p>
-          </div>
-        </div>
+  <!-- LHS column with content -->
+  <div class="col-9">
+    <!-- Photo next to details -->
+    <div class="d-flex flex-wrap">
+      <div>
+        <% if @walk.team.photo.attached?%>
+           <%= cl_image_tag @walk.team.photo.key, width: 400, height: 300, crop: :fill, gravity: :face %>
+        <% else %>
+          <%= cl_image_tag "", width: 400, height: 300, crop: :fill, gravity: :face %>
+        <% end %>
       </div>
-
-      <!-- Matching -->
-      <div class="row">
-
-      </div>
-
-      <!-- Grid of team-members -->
-      <div class="row m-1">
-        <div class="col-12">
-
-        </div>
+      <div class= "mx-3" style="width: 45%;">
+        <h5>Prospective duration:</h5>
+        <p><%= @walk.duration %></p>
+        <h5>Description:</h5>
+        <p><%= @walk.description %></p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, repellendus!
+        </p>
       </div>
     </div>
 
-    <!-- RHS column with walk slider -->
-    <div class="col-3">
-      <div class="walk-card text-center">
-        <div class="card p-3">
-          <h5>Apply to this <strong>Walk</strong></h5>
-          <%#= link_to  %>
-          <!--
-          <%#= simple_form_for [@walk, @user_walk] do |f| %>
-            <div class="form-row p-3">
-              <div class="col">
-                <%#= f.input :start_date, type: "text", class: "form-control", as: :string, input_html: { id: "range_start" } %>
-              </div>
-              <div class="col">
-                <%#= f.input :end_date, type: "text", class: "form-control", as: :string, input_html: { id: "range_end" } %>
-              </div>
+    <!-- Matching in words-->
+    <div class="d-flex flex-wrap my-4">
+      <h5>Matching:</h5>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio a repudiandae omnis, fuga nobis expedita provident nam dolore sit porro sunt enim, commodi quibusdam saepe quos, voluptatum veritatis optio. Nisi!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa architecto nesciunt dolorem odio laboriosam mollitia neque quasi quo impedit voluptatum nisi laudantium voluptate, adipisci repellat excepturi, iste ab, nulla fugit.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet libero assumenda eos impedit error accusantium sequi deserunt cumque corporis aliquid nulla, possimus perferendis ducimus consequatur, rem vel eaque nemo temporibus.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae incidunt quos quia, dolorum nisi sit a nobis ratione est debitis? Aspernatur modi veniam quis corrupti dolorum? Numquam sequi praesentium eum.
+    </div>
+
+    <!-- Matching in colors-->
+    <div class="row my-4">
+        <div class="col-md-3 col-sm-6">
+            <div class="progress green">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">50%</div>
             </div>
-            <%#= f.submit 'Book!', class: 'btn btn-primary w-50 mb-2' %>
-          <% #end %>
-          -->
         </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="progress pink">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">66%</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="progress yellow">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">75%</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="progress blue">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">90%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid of team-members -->
+    <div class="d-flex flex-wrap">
+      <h5>Team details and members:</h5>
+      <div>
+        <%= @walk.team.description %>
+        <% @walk.team.positions.each do |member| %>
+          <p>
+            <% if @walk.team.photo.attached?%>
+              <%= cl_image_tag member.user.photo.key, width: 50, height: 50, crop: :fill, gravity: :face %>
+            <% else %>
+              <%= cl_image_tag "", width: 50, height: 50, crop: :fill, gravity: :face %>
+            <% end %>
+            <%= member.user.first_name %> <%= member.user.last_name %>,
+            <%= member.job %>
+          </p>
+        <% end %>
       </div>
     </div>
 
   </div>
+
+  <!-- RHS column with booking slider -->
+  <div class="col-3">
+    <div class="booking-card text-center">
+      <div class="card p-3">
+        <h5>Apply to this <strong>Walk</strong></h5>
+         <%#= link_to  %>
+        <!--
+        <%#= simple_form_for [@walk, @user_walk] do |f| %>
+          <div class="form-row p-3">
+            <div class="col">
+              <%#= f.input :start_date, type: "text", class: "form-control", as: :string, input_html: { id: "range_start" } %>
+            </div>
+            <div class="col">
+              <%#= f.input :end_date, type: "text", class: "form-control", as: :string, input_html: { id: "range_end" } %>
+            </div>
+          </div>
+          <%#= f.submit 'Book!', class: 'btn btn-primary w-50 mb-2' %>
+        <% #end %>
+        -->
+      </div>
+    </div>
+  </div>
+
 </div>

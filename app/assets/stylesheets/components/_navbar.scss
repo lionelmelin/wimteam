@@ -1,7 +1,11 @@
+#navbar-home .navbar {
+  position: fixed;
+}
+
 .navbar {
+  background-color: rgba(200, 200, 200, 0.5);
   justify-content: space-between;
   transition: 0.5s background-color ease;
-  position: fixed;
   z-index: 5;
   width: 100%;
   a {
@@ -11,11 +15,11 @@
 }
 
 .navbar-transparent-1 {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(200, 200, 200, 0.75);
 }
 
 .navbar-transparent-2 {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(200, 200, 200, 1);
 }
 
 .navbar .navbar-collapse {
