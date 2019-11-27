@@ -29,8 +29,7 @@ class KeywordSearchService
       puts
     else
       puts "Most relevant occupations for \"#{kwquery}\":"
-      kwresults['occupation'].each { |occ|
-        jobs[occ['code']] = occ['title']}
+      kwresults['occupation'].each { |occ| jobs[occ['code']] = occ['title'] }
     end
     puts jobs
     return jobs
