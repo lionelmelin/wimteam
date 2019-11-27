@@ -9,18 +9,31 @@
   <a href=""><div class="banner-button btn-apply">Start now !</div></a>
 </div>
 
+<!-- <div class="video-relative">
+  <%#= video_tag "video_blond_xs.webm", autoplay: :autoplay, loop: :loop, mute: :mute, type: "video/webm", class: "video" %>
+  <div class="video-absolute banner-button btn-apply">Start now !</div>
+</div> -->
+
+<!-- <div class="video-relative">
+  <%#= video_tag "video_blond_xs.ogv", autoplay: :autoplay, loop: :loop, mute: :mute, type: "video/ogv", class: "video" %>
+  <div class="video-absolute banner-button btn-apply">Start now !</div>
+</div> -->
+
+<!-- <div class="video-relative">
+  <%#= video_tag "video_blond_xs.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, type: "video/mp4", class: "video" %>
+  <div class="video-absolute banner-button btn-apply">Start now !</div>
+</div> -->
+
 <div class="video-relative">
-  <%= video_tag "video_black.ogg", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
+  <%= video_tag ["video_blond_xs.webm", "video_blond_xs.mp4", "video_blond_xs.ogv"], autoplay: :autoplay, loop: :loop, mute: :mute, type: "video/mp4", class: "video" %>
   <div class="video-absolute banner-button btn-apply">Start now !</div>
 </div>
 
-<div class="video-relative">
-  <%= video_tag "video_red_xl.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
-  <div class="video-absolute banner-button btn-apply">Start now !</div>
-</div>
-
-<div class="video-relative">
-  <%= video_tag "video_blond_xs.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
-  <div class="video-absolute banner-button btn-apply">Start now !</div>
-</div>
-
+<!-- <div class="video-relative">
+<video autoplay="autoplay" loop="loop" mute="mute" class="video">
+  <source src="/assets/video_blond_xs-b034bca426f9ddcf3177ac42975be967fafe5e1ccdbced6e8b59761c3064c30d.webm" type= "video/webm">
+  <source src="/assets/video_blond_xs-a41980aff05ba44d4a7d41111cdef114557fd528438d00eb153096550094ae9c.ogv" type= "video/ogv">
+  <source src="/assets/video_blond_xs-e0cff383c756e50d7604d5abb17d192c9172324c5edf19f25d6af6ba762fdc66.mp4" type= "video/mp4">
+</video>
+<div class="video-absolute banner-button btn-apply">Start now !</div>
+</div> -->
