@@ -8,4 +8,8 @@ class UserWalk < ApplicationRecord
 
   def self.reviewed_walks
   end
+
+  def past?
+    return start_date < Date.today
+  end
 end

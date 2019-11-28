@@ -115,68 +115,11 @@ data_manager = Position.create!(user: lionel, team: data, role: "manager", start
   job_code: "15-1199.06", job: "Database Architects")
 support_manager = Position.create!(user: pierre, team: support, role: "manager", start_date: "05/06/2016",
   job_code: "43-1011.00", job: "First-Line Supervisors of Office and Administrative Support Workers")
-supporter_1 = Position.create!(user: john, team: support, role: "member", start_date: "05/03/2019",
+supporter1 = Position.create!(user: john, team: support, role: "member", start_date: "05/03/2019",
   job_code: "43-4051.00", job: "Customer Service Representatives")
-supporter_2 = Position.create!(user: jenny, team: support, role: "member", start_date: "05/06/2019",
+supporter2 = Position.create!(user: jenny, team: support, role: "member", start_date: "05/06/2019",
   job_code: "43-4051.00", job: "Customer Service Representatives")
 
-
-puts "Seeding skills and position skill_sets..."
-def seed_skills(position)
-  skills = SkillsSearchService.new.run(position.job_code)
-  level_range = 3.0
-  p "number of skills = #{skills.size}"
-  pace = level_range / skills.size
-  p "pace = #{pace}"
-  i = 0
-  skills.each do|skill|
-    new_skill = Skill.where(name: skill).first_or_create!
-    level = level_range - i * pace
-    i +=1
-    new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: position, level: level)
-  end
-end
-seed_skills(marketer)
-seed_skills(marketing_manager)
-seed_skills(data_analyst1)
-seed_skills(data_analyst2)
-seed_skills(data_analyst3)
-seed_skills(data_analyst4)
-seed_skills(data_analyst5)
-seed_skills(data_manager)
-seed_skills(support_manager)
-seed_skills(supporter_1)
-seed_skills(supporter_2)
-
-
-# data_analyst_skills = SkillsSearchService.new.run(data_analyst1.job_code)
-# data_analyst_skills.each do |skill|
-#   new_skill = Skill.where(name: skill).first_or_create!
-#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst1)
-#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst2)
-#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst3)
-#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst4)
-#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst5)
-# end
-
-# data_manager_skills = SkillsSearchService.new.run(data_manager.job_code)
-# data_manager_skills.each do |skill|
-#   new_skill = Skill.where(name: skill).first_or_create!
-#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_manager)
-# end
-
-# support_manager_skills = SkillsSearchService.new.run(marketer.job_code)
-# support_manager_skills.each do |skill|
-#   new_skill = Skill.where(name: skill).first_or_create!
-#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: support_manager)
-# end
-
-# supporter_1_skills = SkillsSearchService.new.run(marketer.job_code)
-# supporter_1_skills.each do |skill|
-#   new_skill = Skill.where(name: skill).first_or_create!
-#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: supporter_1)
-#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: supporter_2)
-# end
 
 puts "Seeding walks..."
 marketing_walk1 = Walk.create!(team: marketing,
@@ -214,6 +157,59 @@ support_walk2 = Walk.create!(team: support, description: "Test your willingness 
   Come and help us provide an amazing service to our customers.\
   The support team manages the essential: the daily relationships with our clients.\
   This walk should be seen as a pre-recruitment test for internal candidates.", duration: "two weeks")
+
+
+puts "Seeding skills and skill_sets..."
+def seed_skills(position)
+  skills = SkillsSearchService.new.run(position.job_code)
+  level_range = 3.0
+  pace = level_range / skills.size
+  i = 0
+  skills.each do|skill|
+    new_skill = Skill.where(name: skill).first_or_create!
+    level = level_range - i * pace
+    i +=1
+    new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: position, level: level)
+  end
+end
+
+def seed_skillable_skill_sets(skillable, position)
+  skills = SkillsSearchService.new.run(position.job_code)
+  level_range = 3.0
+  pace = level_range / skills.size
+  i = 0
+  skills.each do|skill|
+    new_skill = Skill.where(name: skill).first_or_create!
+    level = level_range - i * pace
+    i +=1
+    new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: skillable, level: level)
+  end
+end
+
+seed_skills(marketer)
+seed_skills(marketing_manager)
+seed_skills(data_analyst1)
+seed_skills(data_analyst2)
+seed_skills(data_analyst3)
+seed_skills(data_analyst4)
+seed_skills(data_analyst5)
+seed_skills(data_manager)
+seed_skills(support_manager)
+seed_skills(supporter1)
+seed_skills(supporter2)
+
+seed_skillable_skill_sets(marketing_walk1, marketer)
+seed_skillable_skill_sets(marketing_walk2, marketer)
+seed_skillable_skill_sets(data_walk1, data_analyst1)
+seed_skillable_skill_sets(data_walk2, data_analyst1)
+seed_skillable_skill_sets(support_walk1, supporter1)
+seed_skillable_skill_sets(support_walk2, supporter1)
+
+seed_skillable_skill_sets(laura, data_analyst1)
+seed_skillable_skill_sets(laetitia, supporter1)
+seed_skillable_skill_sets(john, marketer)
+seed_skillable_skill_sets(jenny, data_analyst1)
+
 
 puts "Seeding user_walks..."
 
