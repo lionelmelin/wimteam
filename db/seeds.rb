@@ -120,6 +120,7 @@ supporter1 = Position.create!(user: john, team: support, role: "member", start_d
 supporter2 = Position.create!(user: jenny, team: support, role: "member", start_date: "05/06/2019",
   job_code: "43-4051.00", job: "Customer Service Representatives")
 
+
 puts "Seeding walks..."
 marketing_walk1 = Walk.create!(team: marketing,
   description: "Learn the basics of marketing in 1 week! The walker will spend \
