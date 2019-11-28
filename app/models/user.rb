@@ -19,26 +19,26 @@ class User < ApplicationRecord
 
   def manager?
     result = false
-    positions.each do |position|
-      result ||= position.role == "manager" && position.end_date > Date.today
+    current_positions.each do |position|
+      result ||= position.role == "manager"
     end
     return result
   end
 
   def current_teams
-    current_teams = []
-    positions.each do |position|
-      current_teams << position.team if positiion.end_date > Date.today
-    end
-    return current_teams
+    return current_positions.map(&:team)
+  end
+
+  def current_positions
+    return positions.select { |position| position.end_date.nil? || position.end_date > Date.today }
   end
 
   def current_managed_teams
-    managed_teams = []
-    positions.each do |position|
-      managed_teams << position.team if positiion.end_date > Date.today && position.role == "manager"
-    end
-    return managed_teams
+    return current_positions.map { |position| position.role == "manager" }
   end
 
+  def seniority
+    start_dates = positions.map(&:start_date)
+    return (Date.today - start_dates.min).fdiv(365).truncate
+  end
 end
