@@ -11,8 +11,8 @@ before_action :set_walk, only: [:show, :update, :destroy]
   end
 
   def show
-    # @user_walk = UserWalk.new
-    # authorize @user_walk
+    @user_walk = UserWalk.new
+    authorize @user_walk
   end
 
   def new
