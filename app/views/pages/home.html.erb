@@ -51,7 +51,6 @@
   <h2>Our best walks</h2>
   </div>
   <div class="row">
-    <% raise %>
     <% @user_walks.each do |user_walked| %>
       <div class="col cards">
         <div class="card-homepage">
@@ -64,7 +63,7 @@
           <!-- Walk team details -->
           <div class="card-homepage-infos">
             <div>
-              <h4><%= user_walked.walk.team.name %></h4>
+              <h4><%= user_walked.walk.team.name %> team</h4>
               <p><%= user_walked.walk.description %></p>
             </div>
           </div>
@@ -83,14 +82,16 @@
       <div class="col cards">
         <div class="card">
           <div class="card-info d-flex align-items-center">
+            <%# raise %>
             <% if user_walked.user.photo.attached?%>
-              <%= cl_image_tag user_walked.user.photo.key, width: 64, height: 64, crop: :fill, gravity: :face, class="rounded-circle mr-4" %>
+              <%= cl_image_tag user_walked.user.photo.key, width: 64, height: 64, crop: :fill, gravity: :face, class:"rounded-circle mr-4" %>
             <% else %>
-              <%= cl_image_tag "", width: 64, height: 64, crop: :fill, class="rounded-circle mr-4" %>
-            <% end %><h4 class="m-0">user_walked.user.first_name</h4>
+              <%= cl_image_tag "", width: 64, height: 64, crop: :fill, class: "rounded-circle mr-4" %>
+            <% end %>
+            <h4 class="m-0"><%= user_walked.user.first_name %></h4>
           </div>
           <div class="card-description p-2">
-            <p style="margin: 0;"><i>"user_walked.review"</i></p>
+            <p style="margin: 0;"><i>"<%= user_walked.review %>"</i></p>
           </div>
         </div>
       </div>
