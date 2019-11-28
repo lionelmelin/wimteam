@@ -3,7 +3,7 @@
   background-position: center;
   padding-bottom: 100px;
   background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), asset-url('banner.jpg');
-  height: calc(100vh);
+  height: 60vh;
 }
 
 .banner h1 {
@@ -48,7 +48,7 @@
   // opacity: 1;
   // bottom: -80px;
   animation-name: arrow-pulse;
-  animation-duration: 0.5s;
+  animation-duration: 0.7s;
   animation-fill-mode: forwards;
   // animation-iteration-count: infinite;
   // transition: all 0.7s ease-in-out;
