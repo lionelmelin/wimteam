@@ -3,33 +3,34 @@
   <div class="border border-dark p-4 w-100 border-bottom-0 border-left-0 border-right-0">
     <br>
       <% @upcoming_user_walks.each do |user_walk| %>
-        <div class="card-dashboard">
-          <%= cl_image_tag user_walk.walk.team.photo.key, crop: :fill, gravity: :face if user_walk.walk.team.photo.attached? %>
-          <div class="card-dashboard-infos">
-            <h2>Walk in the <%= user_walk.walk.team.name %> Team!</h2>
-            <h3 class="duration"><i class="fas fa-calendar-week"></i><%= user_walk.walk.duration %> </h3>
-            <p><%= user_walk.walk.description %> </p>
-          </div>
+        <%= link_to walk_path(user_walk.walk) do %>
+          <div class="card-dashboard">
+            <%= cl_image_tag user_walk.walk.team.photo.key, crop: :fill, gravity: :face if user_walk.walk.team.photo.attached? %>
+            <div class="card-dashboard-infos">
+              <h2>Walk in the <%= user_walk.walk.team.name %> Team!</h2>
+              <h3 class="duration"><i class="fas fa-calendar-week"></i><%= user_walk.walk.duration %> </h3>
+              <p><%= user_walk.walk.description.truncate(150) %> </p>
+            </div>
 
-          <div class="gauge-index">
-            <div class="progress mx-auto" data-value='40'>
-              <span class="progress-left">
-                <span class="progress-bar"></span>
-              </span>
-              <span class="progress-right">
-                <span class="progress-bar"></span>
-              </span>
-              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                <p class="progress-font">40<sup class="small">%</sup></p>
+            <div class="gauge-index">
+              <div class="progress mx-auto" data-value='40'>
+                <span class="progress-left">
+                  <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                  <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                  <p class="progress-font">40<sup class="small">%</sup></p>
+                </div>
               </div>
             </div>
+            <div class="location-status">
+              <h3 class="location"><i class="fas fa-thumbtack"></i><%= user_walk.walk.team.location %> </h3>
+              <h2 class="status"><i class="fas fa-step-forward"></i><%= user_walk.status %> </h2>
+            </div>
           </div>
-          <div class="location-status">
-            <h3 class="location"><i class="fas fa-thumbtack"></i><%= user_walk.walk.team.location %> </h3>
-            <h2 class="status"><i class="fas fa-step-forward"></i><%= user_walk.status %> </h2>
-
-          </div>
-        </div>
+        <% end %>
       <% end %>
     <br>
   </div>
