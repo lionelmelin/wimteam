@@ -16,7 +16,14 @@
   justify-content: center;
 }
 
-.video-absolute {
+.video-absolute-typed {
+  position: absolute;
+  top: 15vh;
+  // margin: 0 auto;
+  // justify-content: center;
+}
+
+.video-absolute-btn {
   position: absolute;
   bottom: 15vh;
   // margin: 0 auto;

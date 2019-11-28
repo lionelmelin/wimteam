@@ -16,7 +16,7 @@ const initBannerButton = () => {
     $('.banner-link').on('click', function() { // Au clic sur un élément
       var page = $(this).attr('href'); // Page cible
       console.log(page);
-      var speed = 750; // Durée de l'animation (en ms)
+      var speed = 1400; // Durée de l'animation (en ms)
       $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
       return false;
     });
