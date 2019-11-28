@@ -5,9 +5,9 @@ class CreateUserWalks < ActiveRecord::Migration[5.2]
       t.references :walk, foreign_key: true
       t.date :start_date
       t.date :end_date
-      t.string :job
       t.string :status
       t.string :review
+      t.text :motivation
 
       t.timestamps
     end

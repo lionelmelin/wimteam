@@ -18,6 +18,9 @@ if (document.querySelector(".banner-button")) {
   initBannerButton();
 }
 
+//Gauge
 import { initGauge } from '../components/gauge';
 initGauge();
-console.log("coucou");
+
+//DatePicker
+import "../plugins/flatpickr"
