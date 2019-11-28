@@ -6,4 +6,14 @@ class PagesController < ApplicationController
 
   def dashboard
   end
+
+  private
+
+  def past_walks
+    return current_user.user_walks.select{|walk| walk.past?}
+  end
+
+  def upcoming_walks
+    return current_user.user_walks.reject{|walk| walk.past?}
+  end
 end
