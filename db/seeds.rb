@@ -122,46 +122,61 @@ supporter_2 = Position.create!(user: jenny, team: support, role: "member", start
 
 
 puts "Seeding skills and position skill_sets..."
-marketer_skills = SkillsSearchService.new.run(marketer.job_code)
-marketer_skills.each do|skill|
-  new_skill = Skill.where(name: skill).first_or_create!
-  new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: marketer)
+def seed_skills(position)
+  skills = SkillsSearchService.new.run(position.job_code)
+  level_range = 5.0
+  p "number of skills = #{skills.size}"
+  pace = level_range / skills.size
+  p "pace = #{pace}"
+  i = 0
+  skills.each do|skill|
+    new_skill = Skill.where(name: skill).first_or_create!
+    level = level_range - i * pace
+    i +=1
+    new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: position, level: level)
+  end
 end
+seed_skills(marketer)
+seed_skills(marketing_manager)
+seed_skills(data_analyst1)
+seed_skills(data_analyst2)
+seed_skills(data_analyst3)
+seed_skills(data_analyst4)
+seed_skills(data_analyst5)
+seed_skills(data_manager)
+seed_skills(support_manager)
+seed_skills(supporter_1)
+seed_skills(supporter_2)
 
-marketing_manager_skills = SkillsSearchService.new.run(marketing_manager.job_code)
-marketing_manager_skills.each do|skill|
-  new_skill = Skill.where(name: skill).first_or_create!
-  new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: marketing_manager)
-end
 
-data_analyst_skills = SkillsSearchService.new.run(data_analyst1.job_code)
-data_analyst_skills.each do |skill|
-  new_skill = Skill.where(name: skill).first_or_create!
-  new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst1)
-  new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst2)
-  new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst3)
-  new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst4)
-  new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst5)
-end
+# data_analyst_skills = SkillsSearchService.new.run(data_analyst1.job_code)
+# data_analyst_skills.each do |skill|
+#   new_skill = Skill.where(name: skill).first_or_create!
+#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst1)
+#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst2)
+#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst3)
+#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst4)
+#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_analyst5)
+# end
 
-data_manager_skills = SkillsSearchService.new.run(data_manager.job_code)
-data_manager_skills.each do |skill|
-  new_skill = Skill.where(name: skill).first_or_create!
-  new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_manager)
-end
+# data_manager_skills = SkillsSearchService.new.run(data_manager.job_code)
+# data_manager_skills.each do |skill|
+#   new_skill = Skill.where(name: skill).first_or_create!
+#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: data_manager)
+# end
 
-support_manager_skills = SkillsSearchService.new.run(marketer.job_code)
-support_manager_skills.each do |skill|
-  new_skill = Skill.where(name: skill).first_or_create!
-  new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: support_manager)
-end
+# support_manager_skills = SkillsSearchService.new.run(marketer.job_code)
+# support_manager_skills.each do |skill|
+#   new_skill = Skill.where(name: skill).first_or_create!
+#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: support_manager)
+# end
 
-supporter_1_skills = SkillsSearchService.new.run(marketer.job_code)
-supporter_1_skills.each do |skill|
-  new_skill = Skill.where(name: skill).first_or_create!
-  new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: supporter_1)
-  new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: supporter_2)
-end
+# supporter_1_skills = SkillsSearchService.new.run(marketer.job_code)
+# supporter_1_skills.each do |skill|
+#   new_skill = Skill.where(name: skill).first_or_create!
+#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: supporter_1)
+#   new_skill_set = SkillSet.create!(skill: new_skill, active: true, skillable: supporter_2)
+# end
 
 puts "Seeding walks..."
 marketing_walk1 = Walk.create!(team: marketing,
