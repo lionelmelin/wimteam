@@ -23,15 +23,27 @@
             <h3 class="duration"><i class="fas fa-calendar-week"></i><%= walk.duration %> </h3>
             <p><%= walk.description %> </p>
           </div>
-          <div class="score">
-            <%= rand(100) %>
+          <!-- Progress bar 1 -->
+          <div class="gauge-index">
+            <div class="progress mx-auto" data-value='40'>
+              <span class="progress-left">
+                <span class="progress-bar"></span>
+              </span>
+              <span class="progress-right">
+                <span class="progress-bar"></span>
+              </span>
+              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                <p class="progress-font">40<sup class="small">%</sup></p>
+              </div>
+            </div>
           </div>
           <div class="location-apply">
             <h3 class="location"><i class="fas fa-thumbtack"></i><%= walk.team.location %> </h3>
-            <%= link_to "Apply", walks_path(walk), class: "btn-apply" %>
+            <%= link_to "Apply", walk_path(walk), class: "btn-apply" %>
           </div>
         </div>
       <% end %>
     <br>
   </div>
 </div>
+

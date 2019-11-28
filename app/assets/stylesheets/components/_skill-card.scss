@@ -1,0 +1,35 @@
+.skill-card {
+  width: 80%;
+  background-color: lig;
+  padding: 5px;
+  color: black;
+  margin-right: 12px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  border: 1px dashed black;
+}
+
+.skill-card-wrapper {
+  width: 100%;
+  position: relative;
+  &:hover {
+    .skill-card {
+      border: 1px dashed $my-orange;
+      color: $my-orange;
+    }
+    .skill-card-tools {
+      display:block;
+    }
+  }
+}
+
+.skill-card-tools {
+  position: absolute;
+  right: 60px;
+  top: 5px;
+  display: none;
+  width: 45px;
+  font-size: 18px;
+}

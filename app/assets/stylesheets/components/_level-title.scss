@@ -1,0 +1,18 @@
+.level-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  flex: 0;
+  width: 100%;
+  padding-right: 3.75rem;
+}
+
+.level-title::after {
+  content: '';
+  flex-grow: 1;
+  margin-left: 0.8rem;
+  border-top: 1px solid #FA5D41;
+}
