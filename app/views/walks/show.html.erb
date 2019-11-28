@@ -10,9 +10,9 @@
     <div class="d-flex flex-wrap">
       <div>
         <% if @walk.team.photo.attached?%>
-           <%= cl_image_tag @walk.team.photo.key, width: 400, height: 300, crop: :fill, gravity: :face %>
+           <%= cl_image_tag @walk.team.photo.key, width: 400, height: 300, crop: :fill %>
         <% else %>
-          <%= cl_image_tag "", width: 400, height: 300, crop: :fill, gravity: :face %>
+          <%= cl_image_tag "", width: 400, height: 300, crop: :fill %>
         <% end %>
       </div>
       <div class= "mx-3" style="width: 45%;">
