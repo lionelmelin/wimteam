@@ -2,17 +2,19 @@
   <div class="tab-content" id="pills-tabContent">
     <!-- Tab d'index des walks -->
     <div class="tab-pane fade show active" id="find" role="tabpanel" aria-labelledby="find-tab">
-      Walks
+      <!-- Contenu -->
     </div>
 
     <!-- Tab des applications -->
     <div class="tab-pane fade" id="applications" role="tabpanel" aria-labelledby="applications-tab">
-      Applications
+      <!-- Contenu -->
     </div>
 
     <!-- Tab de profile -->
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="d-flex pt-5 justify-content-center flex-wrap">
+
+        <!-- Card de profile à gauche -->
         <div class="sticky-profile mr-2">
           <div class="card photo-card pt-4">
             <center><%= cl_image_tag current_user.photo.key, height: 120, width: 120, crop: :fill %></center>
@@ -25,7 +27,11 @@
             <center><a href="" class="btn-start">Edit my profile</a></center>
           </div>
         </div>
+
+        <!-- Card de details à droite -->
         <div class="card w-60 details-card">
+
+          <!-- Current position -->
           <div>
             <h2><i class="fas fa-map-marker-alt"></i> Current position</h2>
             <p><strong>Team:</strong> <%= current_user.current_teams.first.name %></p>
@@ -34,40 +40,68 @@
             <p><strong>Job:</strong> <%= current_user.current_positions.first.job %></p>
             <p><strong>Seniority:</strong> <%= current_user.current_positions.first.job %></p>
           </div>
+
+          <!-- Current skills -->
           <div class="pt-3">
             <h2><i class="fas fa-check-square"></i> Current skills</h2>
-            <h2 class="level-title">I perfectly master</h2>
-            <div>
+
+            <!-- I perfectly master -->
+            <div class="mb-4">
+              <h2 class="level-title">I perfectly master</h2>
+              <% current_user.positions.first.top_skill_sets.each do |skill_set| %>
               <div class="skill-card-wrapper">
                 <div class="skill-card">
-                  Choose the right type of math to solve a problem
+                  <%= skill_set.skill.name.capitalize %>
                 </div>
                 <div class="skill-card-tools">
-                  <div class="d-flex justify-content-between">
-                    <div><a href=""><i class="fas fa-pencil-alt"></i></a></div>
-                    <div><a href=""><i class="fas fa-times"></i></a></div></div>
+                  <div class="d-flex justify-content-between flex-wrap">
+                    <a href=""><i class="fas fa-pencil-alt"></i></a>
+                    <a href=""><i class="fas fa-times"></i></a>
+                  </div>
                 </div>
               </div>
-              <div class="skill-card">
-                Listen and understand what people say
-              </div>
-              <div class="skill-card">
-                Add, subtract, multiply, or divide
-              </div>
+              <% end %>
             </div>
-            <h2 class="level-title">I am comfortable with</h2>
-            <div class= "d-flex flex-wrap">
-              <div class="skill-card">
-                Choose the right type of math to solve a problem
+
+            <!-- I am comfortable with -->
+            <div class="mb-4">
+              <h2 class="level-title">I am comfortable with</h2>
+              <% current_user.positions.first.medium_skill_sets.each do |skill_set| %>
+              <div class="skill-card-wrapper">
+                <div class="skill-card">
+                  <%= skill_set.skill.name.capitalize %>
+                </div>
+                <div class="skill-card-tools">
+                  <div class="d-flex justify-content-between flex-wrap">
+                    <a href=""><i class="fas fa-pencil-alt"></i></a>
+                    <a href=""><i class="fas fa-times"></i></a>
+                  </div>
+                </div>
               </div>
-              <div class="skill-card">
-                Listen and understand what people say
-              </div>
-              <div class="skill-card">
-                Add, subtract, multiply, or divide
-              </div>
+              <% end %>
             </div>
+
+            <!-- I have notions -->
+            <div class="mb-4">
+              <h2 class="level-title">I have notions</h2>
+              <% current_user.positions.first.low_skill_sets.each do |skill_set| %>
+              <div class="skill-card-wrapper">
+                <div class="skill-card">
+                  <%= skill_set.skill.name.capitalize %>
+                </div>
+                <div class="skill-card-tools">
+                  <div class="d-flex justify-content-between flex-wrap">
+                    <a href=""><i class="fas fa-pencil-alt"></i></a>
+                    <a href=""><i class="fas fa-times"></i></a>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+
           </div>
+
+          <!-- Skills I'm interested in -->
           <h2>Skills I'm interested in</h2>
         </div>
       </div>

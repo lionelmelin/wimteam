@@ -124,7 +124,7 @@ supporter_2 = Position.create!(user: jenny, team: support, role: "member", start
 puts "Seeding skills and position skill_sets..."
 def seed_skills(position)
   skills = SkillsSearchService.new.run(position.job_code)
-  level_range = 5.0
+  level_range = 3.0
   p "number of skills = #{skills.size}"
   pace = level_range / skills.size
   p "pace = #{pace}"
