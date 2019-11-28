@@ -1,7 +1,7 @@
-<div class="container my-3">
-  <h1 class="book-title">Walk in... <%#= @walk.team.name %></h1>
+<div class="container my-4">
+  <h1 class="book-title">Walk in...</h1>
 
-  <div class="d-flex">
+  <div class="d-flex mt-3">
   <%= form_tag( walks_path, {method: :get, class: 'form-inline'}) do %>
     <%= text_field_tag :query,
       params[:query],
@@ -13,7 +13,7 @@
   </div>
 
 
-  <div class="border border-dark p-4 w-100 border-bottom-0 border-left-0 border-right-0">
+  <div class="">
     <br>
       <% @walks.each do |walk| %>
         <div class="card-dashboard">
