@@ -3,6 +3,7 @@ class UserWalksController < ApplicationController
     @user_walk = current_user.user_walks.new(user_walk_params)
     @walk = Walk.find(params[:walk_id])
     @user_walk.walk = @walk
+    @user_walk.status = "pending"
     authorize @user_walk
     if @user_walk.save
       redirect_to dashboard_path

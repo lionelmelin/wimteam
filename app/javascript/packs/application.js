@@ -10,3 +10,6 @@ initUpdateNavbarOnScroll();
 
 import { initBannerButton } from '../components/banner_button';
 initBannerButton();
+
+//DatePicker
+import "../plugins/flatpickr"
