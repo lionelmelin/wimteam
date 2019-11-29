@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   def myapplications
     @past_user_walks = past_user_walks
     @upcoming_user_walks = upcoming_user_walks
+    @user = current_user
   end
 
   private
