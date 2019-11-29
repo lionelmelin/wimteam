@@ -30,8 +30,8 @@
       as well as the relevance of your skills via à vis the proposed walk.</p>
       </div>
       <!-- gauge -->
-      <div class="gauge mx-5 px-5">
-        <div class="progress mx-auto" data-value='40'>
+      <div class="gauge-index mx-5 px-5">
+        <div class="progress mx-auto" data-value=<%= "#{ScoreService.new.score(@walk, current_user)}" %>>
           <span class="progress-left">
             <span class="progress-bar"></span>
           </span>
@@ -39,7 +39,7 @@
             <span class="progress-bar"></span>
           </span>
           <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-            <p class="progress-font">40<sup class="small">%</sup></p>
+            <p class="progress-font"><%= "#{ScoreService.new.score(@walk, current_user)}" %><sup class="small">%</sup></p>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@
     <div>
       <h3>Team members</h3>
       <div>
-        <div class="d-flex justify-content-between  py-3">
+        <div class=" d-flex justify-content-around flex-wrap py-3">
           <% @walk.team.positions.each do |member| %>
             <div class="d-flex m-1 p-0 card-mini-profile">
               <div>
