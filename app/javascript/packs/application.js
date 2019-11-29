@@ -23,4 +23,4 @@ import { initGauge } from '../components/gauge';
 initGauge();
 
 //DatePicker
-import "../plugins/flatpickr"
+import "../plugins/flatpickr";

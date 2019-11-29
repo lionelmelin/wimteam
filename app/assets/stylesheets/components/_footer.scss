@@ -1,13 +1,12 @@
 .footer {
-  background: $my-dark-blue;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
   color: rgba(1,1,1,0.7);
-  margin-top: 50px;
   font-family: Muli;
+  background: $my-dark-blue;
 }
 .footer-copyright {
   color: $my-white;

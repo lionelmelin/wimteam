@@ -13,8 +13,9 @@
     <%= render 'shared/navbar' unless params[:controller] == "pages" && params[:action] == "home" %>
     <%= render 'shared/flashes' %>
 
-    <%= yield %>
-
+    <div class="container-wim">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

@@ -41,4 +41,16 @@ class User < ApplicationRecord
     start_dates = positions.map(&:start_date)
     return (Date.today - start_dates.min).fdiv(365).truncate
   end
+
+  def top_skill_sets
+    return skill_sets.select { |skill_set| skill_set.level >= 2 }
+  end
+
+  def medium_skill_sets
+    return skill_sets.select { |skill_set| skill_set.level < 2 && skill_set.level >= 1 }
+  end
+
+  def low_skill_sets
+    return skill_sets.select { |skill_set| skill_set.level < 1 }
+  end
 end
