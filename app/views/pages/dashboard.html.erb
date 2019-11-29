@@ -12,7 +12,7 @@
 
     <!-- Tab de profile -->
     <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <div class="d-flex pt-5 justify-content-center flex-wrap">
+      <div class="d-flex justify-content-center flex-wrap">
 
 
         <!-- Profile -->
@@ -20,9 +20,8 @@
           <div class="d-flex justify-content-start align-items-center">
             <center><%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :fill %></center>
             <div class="pl-3">
-              <h2>Welcome <%= current_user.first_name %> <%= current_user.last_name %></h2>
+              <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
               email: <%= current_user.email %>
-              / seniority: <%= current_user.seniority %> year(s)
             </div>
           </div>
         </div>
@@ -31,25 +30,25 @@
           <!-- Current position -->
           <div class="card w-70 details-card accordion" id="accordionExample1">
 
-            <div class="d-flex justify-content-between collapse-header" id="headingOne">
+            <div class="d-flex justify-content-between collapse-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               <h2><i class="fas fa-map-marker-alt"></i> Current position</h2>
-              <div class="btn-show" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Show</div>
+              <div class="expand-notice">Click to expand</div>
             </div>
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample1">
               <p><strong>Team:</strong> <%= current_user.current_teams.first.name %></p>
               <p><strong>Department:</strong> <%= current_user.current_teams.first.department %></p>
               <p><strong>Role:</strong> <%= current_user.current_positions.first.role %></p>
               <p><strong>Job:</strong> <%= current_user.current_positions.first.job %></p>
-              <p><strong>Seniority:</strong> <%= current_user.current_positions.first.job %></p>
+              <p><strong>Seniority:</strong> <%= current_user.current_positions.first.seniority %> year(s)</p>
             </div>
           </div>
 
           <!-- Current skills -->
           <div class="card w-70 details-card accordion" id="accordionExample2">
 
-              <div class="d-flex justify-content-between collapse-header" id="headingTwo">
+              <div class="d-flex justify-content-between collapse-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <h2><i class="fas fa-check-square"></i> Current skills</h2>
-                <div class="btn-show" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Show</div>
+                <div class="expand-notice">Click to expand</div>
               </div>
 
               <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample2">
@@ -111,16 +110,16 @@
 
           <!-- Skills I'm interested in -->
           <div class="card w-70 details-card accordion" id="accordionExample3">
-              <div class="d-flex justify-content-between collapse-header" id="headingThree">
+              <div class="d-flex justify-content-between collapse-header" id="headingThree"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                 <h2><i class="fas fa-search-plus"></i> Skills I'm interested in</h2>
-                <div class="btn-show" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Show</div>
+                <div class="expand-notice">Click to expand</div>
               </div>
 
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample3">
-                <!-- Skills I really want -->
+                <!-- Must have skills -->
                 <div class="mb-4">
                   <h2 class="level-title">Must have</h2>
-                  <% current_user.positions.first.top_skill_sets.each do |skill_set| %>
+                  <% current_user.top_skill_sets.each do |skill_set| %>
                   <div class="skill-card-wrapper">
                     <div class="skill-card">
                       <%= skill_set.skill.name.capitalize %>
@@ -135,10 +134,10 @@
                   <% end %>
                 </div>
 
-                <!-- I am comfortable with -->
+                <!-- Interested in skills -->
                 <div class="mb-4">
                   <h2 class="level-title">I am interested in</h2>
-                  <% current_user.positions.first.medium_skill_sets.each do |skill_set| %>
+                  <% current_user.medium_skill_sets.each do |skill_set| %>
                   <div class="skill-card-wrapper">
                     <div class="skill-card">
                       <%= skill_set.skill.name.capitalize %>
@@ -153,10 +152,10 @@
                   <% end %>
                 </div>
 
-                <!-- I have notions -->
+                <!-- Why not skills -->
                 <div class="mb-4">
                   <h2 class="level-title">Why not ?</h2>
-                  <% current_user.positions.first.low_skill_sets.each do |skill_set| %>
+                  <% current_user.low_skill_sets.each do |skill_set| %>
                   <div class="skill-card-wrapper">
                     <div class="skill-card">
                       <%= skill_set.skill.name.capitalize %>

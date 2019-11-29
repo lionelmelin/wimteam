@@ -21,6 +21,7 @@
     color: $my-orange;
   }
   line-height: 1;
+  margin-bottom: 10px
 }
 
 
@@ -40,14 +41,26 @@
 }
 
 
+.expand-notice {
+  color: gray;
+  display: none;
+}
+
+.btn-show:hover {
+  background-color: $my-dark-blue;
+  opacity: 1;
+  cursor: pointer;
+}
+
+
 .collapse-header {
   h2 {
     font-size: 25px;
   }
   &:hover {
-    .btn-show {
-      display: flex;
-      align-items: center;
+    cursor: pointer;
+    .expand-notice {
+      display: block;
     }
   }
 }
