@@ -20,6 +20,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+        <% unless current_user.positions.where(role: "manager").empty? %>
+          <li class="nav-item">
+            <strong> <%= link_to "Manage walks", new_walk_path, class: "nav-link" %> </strong>
+          </li>
+        <% end %>
         <li class="nav-item">
           <strong> <%= link_to "Find a walk", walks_path, class: "nav-link" %> </strong>
         </li>

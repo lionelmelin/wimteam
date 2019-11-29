@@ -1,12 +1,19 @@
 h3, h4, h5, h6 {
   color: $my-light-blue;
+  font-weight: 400;
 }
 
 h1, h2 {
   color: $my-dark-blue;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 a:hover {
   text-decoration: none;
 }
+
+/* body {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+} */
