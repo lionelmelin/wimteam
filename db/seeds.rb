@@ -213,16 +213,18 @@ seed_skillable_skill_sets(jenny, data_analyst1)
 
 puts "Seeding user_walks..."
 
-laura_marketing_walk2 = UserWalk.create!(walk: marketing_walk2, user: laura, start_date: "01/01/2018",
+laura_marketing_walk2 = UserWalk.create!(walk: marketing_walk2, user: laura, start_date: "01/01/2018", end_date: "15/01/2018",
   status: "accepted", review: "My walk within the marketing department enabled my to validate
   that the job was really made for me. One month later I was part of this fantastic team!")
-laura_data_walk1 = UserWalk.create!(walk: data_walk1, user: laura, start_date: "01/01/2020", status: "pending")
-john_data_walk1 = UserWalk.create!(walk: data_walk1, user: john, start_date: "15/01/2020", status: "rejected")
-jenny_data_walk1 = UserWalk.create!(walk: data_walk1, user: jenny, start_date: "15/01/2020", status: "pending")
-laetitia_support_walk1 = UserWalk.create!(walk: support_walk1, user: laetitia, start_date: "01/02/2019",
+# laura_data_walk1 = UserWalk.create!(walk: data_walk1, user: laura, start_date: "01/01/2020", status: "pending",
+#   motivation: "I am part of the marketing team and I would love to discover your team")
+john_data_walk1 = UserWalk.create!(walk: data_walk1, user: john, start_date: "15/01/2020", status: "pending",
+  motivation:"I am part of the support team and I would love to discover your team")
+jenny_data_walk1 = UserWalk.create!(walk: data_walk1, user: jenny, start_date: "15/01/2020", status: "rejected")
+laetitia_support_walk1 = UserWalk.create!(walk: support_walk1, user: laetitia, start_date: "01/02/2019",end_date: "08/02/2019",
   status: "accepted", review: "My walk within the support team allowed me to discover the key issues
   faced by the support operators, which have to deal everyday with clients requests and complaints.")
-john_support_walk2 = UserWalk.create!(walk: support_walk2, user: john, start_date: "01/06/2019",
+john_support_walk2 = UserWalk.create!(walk: support_walk2, user: john, start_date: "01/06/2019", end_date: "08/06/2019",
   status: "accepted", review: "My walk within the support department validated my motivation to join this
   amazing team. The manager offered my a position immediately after my walk.")
 
