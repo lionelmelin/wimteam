@@ -12,8 +12,6 @@ a:hover {
   text-decoration: none;
 }
 
-/* body {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-} */
+.container-wim {
+  min-height: calc(100vh - 160px);
+}
