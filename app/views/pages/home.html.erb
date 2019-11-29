@@ -5,7 +5,7 @@
   </div>
   <%= video_tag ["video_blond_xs.webm", "video_blond_xs.mp4"], autoplay: true, loop: true, muted: true, class: "video" %>
   <div class="video-absolute-typed">
-    <h1><strong><span id="banner-typed-text"></span></strong></h1>
+    <h1><span id="banner-typed-text"></span></h1>
   </div>
   <div class="video-absolute-btn">
     <a href="#pts" class="banner-link"><div class="banner-button btn-apply">Start now !</div></a>
@@ -64,7 +64,7 @@
           <div class="card-homepage-infos">
             <div>
               <h4><%= user_walked.walk.team.name %> team</h4>
-              <p><%= user_walked.walk.description %></p>
+              <p><%= truncate(user_walked.walk.description, :length => 100, :separator => ' ') %></p>
             </div>
           </div>
         </div>
@@ -91,7 +91,7 @@
             <h4 class="ml-2"><%= user_walked.user.first_name %></h4>
           </div>
           <div class="card-description p-2">
-            <p style="margin: 0;"><i>"<%= user_walked.review %>"</i></p>
+            <p style="margin: 0;"><i>"<%= truncate(user_walked.review,:length => 60, :separator => ' ') %>"</i></p>
           </div>
 
         </div>
@@ -99,6 +99,9 @@
     <% end %>
   </div>
 
-</div>
+</div> 
 
+<!-- Call to action : Let's walk -->
+  <div class="container d-flex justify-content-around mt-5 button btn-letswalk"> Let's walk ! 
+  </div>
 
