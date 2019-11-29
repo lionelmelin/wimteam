@@ -106,8 +106,6 @@
   </div>
 </div>
 
-
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -120,7 +118,7 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for [@walk, @user_walk] do |f| %>
-          <%= f.input :review, type: "text", label: "A few words about your motivation:", class: "form-control", as: :text %>
+          <%= f.input :motivation, type: "text", label: "A few words about your motivation:", class: "form-control", as: :text %>
           <div class="form-row p-3 booking-row">
           <div class="col">
             <%= f.input :start_date, type: "text", label: "Suggested start date", class: "form-control", as: :string, input_html: { id: "range_start" } %>

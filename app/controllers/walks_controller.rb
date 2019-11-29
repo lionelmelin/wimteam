@@ -3,6 +3,7 @@ before_action :set_walk, only: [:show, :update, :destroy]
 
   def index
     @walks = policy_scope(Walk)
+    @user = current_user
     if params[:query].present?
       @walks = policy_scope(Walk).global_search(params[:query])
     else

@@ -1,4 +1,5 @@
-<div class="container py-4">
+
+<div class="container my-5">
   <h1 class="book-title">Walk in...</h1>
 
   <div class="d-flex mt-3">
@@ -12,20 +13,19 @@
   <% end %>
   </div>
 
-
   <div class="">
     <br>
       <% @walks.each do |walk| %>
         <div class="card-dashboard">
-          <%= cl_image_tag walk.team.photo.key, crop: :fill, gravity: :face if walk.team.photo.attached? %>
+          <%= cl_image_tag walk.team.photo.key, width: 140, height: 140, crop: :fill, gravity: :face if walk.team.photo.attached? %>
           <div class="card-dashboard-infos">
             <h2>Walk in the <%= walk.team.name %> Team!</h2>
             <h3 class="duration"><i class="fas fa-calendar-week"></i><%= walk.duration %> </h3>
-            <p><%= walk.description %> </p>
+            <p><%= walk.description.truncate(200) %> </p>
           </div>
           <!-- Progress bar 1 -->
           <div class="gauge-index">
-            <div class="progress mx-auto" data-value='40'>
+            <div class="progress mx-auto" data-value=<%= "#{ScoreService.new.score(walk, @user)}" %>>
               <span class="progress-left">
                 <span class="progress-bar"></span>
               </span>
@@ -33,7 +33,7 @@
                 <span class="progress-bar"></span>
               </span>
               <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                <p class="progress-font">40<sup class="small">%</sup></p>
+                <p class="progress-font"><%= "#{ScoreService.new.score(walk, @user)}" %><sup class="small">%</sup></p>
               </div>
             </div>
           </div>
