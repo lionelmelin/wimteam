@@ -1,37 +1,49 @@
 <div class="navbar navbar-expand-sm navbar-light">
     <h2><%= link_to "Walk in my team", root_path %></h2>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+ <!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav nav mr-auto" id="pills-tab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="find-tab" data-toggle="pill" href="#find" role="tab" aria-controls="find" aria-selected="true">Find a walks</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="applications-tab" data-toggle="pill" href="/myapplications" role="tab" aria-controls="applications" aria-selected="false">My applications</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-      </li>
-    </ul>
-  </div>
+  </button> -->
+<!--   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav nav mr-auto" id="pills-tab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="find-tab" data-toggle="pill" href="#find" role="tab" aria-controls="find" aria-selected="true">Find a walks</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="applications-tab" data-toggle="pill" href="/myapplications" role="tab" aria-controls="applications" aria-selected="false">My applications</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+    </li>
+  </ul>
+</div> -->
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item dropdown">
-          <%= link_to "Menu", "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <li class="nav-item">
+          <strong> <%= link_to "Find a walk", walks_path, class: "nav-link" %> </strong>
+        </li>
+        <li class="nav-item">
+          <strong> <%= link_to "My applications", myapplications_path, class: "nav-link" %>  </strong>
+        </li>
+        <li class="nav-item">
+          <strong> <%= link_to "My profile", dashboard_path, class: "nav-link" %> </strong>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <%#= link_to "Menu", "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Profile", dashboard_path, class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%#= link_to "Profile", dashboard_path, class: "dropdown-item" %>
+            <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
         <li>
           <div class="avatar">
             <div style="background-image: url("");" class="avatar-mine"></div>
           </div>
-        </li>
+        </li> -->
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
