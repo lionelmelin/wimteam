@@ -13,7 +13,8 @@
   width: 100%;
   a {
     text-decoration: none;
-    color: $my-dark-blue;
+    color: $my-orange;
+    font-weight: normal;
   }
 }
 
@@ -35,8 +36,7 @@
 
 .navbar h2 {
   font-family: 'Muli';
-  color: $my-dark-blue;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .navbar-light .navbar-nav .nav-link {
