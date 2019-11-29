@@ -1,0 +1,25 @@
+.btn-letswalk:hover {
+  opacity: 0,5;
+}
+
+.btn-letswalk {
+  color: white;
+  padding: 8px 24px;
+  background: $my-orange;
+  transition: background 0.5s ease;
+  text-align: center;
+  width: 250px;
+  font-weight: 200px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.btn-letswalk:hover {
+  background: #e53b1d;
+  color: white;
+}
+
+.btn-letswalk {
+  color: white;
+  text-decoration: none;
+}
