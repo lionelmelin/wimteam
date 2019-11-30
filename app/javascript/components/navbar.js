@@ -1,6 +1,6 @@
 const initUpdateNavbarOnScroll = () => {
-  const navbar = document.getElementById("pages_home").querySelector('.navbar');
-  if (navbar) {
+  const navbar = document.querySelector('.navbar');
+  if (navbar && document.getElementById("pages_home")) {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= 300 && window.scrollY < 600 ) {
         navbar.classList.remove('navbar-transparent-2');
@@ -12,6 +12,9 @@ const initUpdateNavbarOnScroll = () => {
         navbar.classList.remove('navbar-transparent-2');
       }
     });
+  }
+  else if (navbar) {
+    navbar.classList.add('navbar-transparent-2');
   }
 }
 
