@@ -17,7 +17,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 12px solid $my-light-blue;
+    border: 12px solid $my-dark-blue;
     position: absolute;
     top: 0;
     left: 0;
@@ -42,7 +42,7 @@
     background: none;
     border-width: 12px;
     border-style: solid;
-    border-color: $my-dark-blue;
+    border-color: $my-light-blue;
     position: absolute;
     top: 0;
   }
