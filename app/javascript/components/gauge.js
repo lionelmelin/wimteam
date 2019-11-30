@@ -7,8 +7,11 @@ $(function() {
   $(".progress").each(function() {
 
     var value = $(this).attr('data-value');
+    console.log(value);
     var left = $(this).find('.progress-left .progress-bar');
+    console.log(left);
     var right = $(this).find('.progress-right .progress-bar');
+    console.log(right);
 
     if (value > 0) {
       if (value <= 50) {
