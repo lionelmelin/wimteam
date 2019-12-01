@@ -1,9 +1,16 @@
 #searchbar {
   background-color: $my-orange;
-  // position: fixed;
-  // top: 50;
-  // width: 100vw;
 }
+
+#searchbar-container {
+  transition: all 0.3s cubic-bezier(0.84, 0.36, 0.54, 0.5);
+}
+
+// .searchcontainer-tight {
+//   width:100%;
+//   margin-right: 15px;
+//   margin-left: 15px;
+// }
 
 .searchcontainer {
   position: sticky !important;
