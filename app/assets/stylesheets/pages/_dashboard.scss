@@ -1,11 +1,3 @@
-.photo-card {
-  width:250px;
-  p {
-    margin: 0px 0px 12px 0px;
-  }
-  padding: 30px;
-}
-
 .sticky-profile {
   position:sticky;
   top: 50px;
@@ -17,10 +9,6 @@
   p {
     margin: 0px 0px 12px 0px;
   }
-  i {
-    color: $my-orange;
-  }
-  line-height: 1;
   margin-bottom: 10px
 }
 
@@ -54,6 +42,11 @@
 
 
 .collapse-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  i {
+    color: $my-orange;
+  }
   h2 {
     font-size: 25px;
   }
@@ -63,5 +56,8 @@
       display: block;
     }
   }
+}
+
+.skills-container {
 }
 
