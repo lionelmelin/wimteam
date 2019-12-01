@@ -2,14 +2,15 @@ class WalksController < ApplicationController
 before_action :set_walk, only: [:show, :update, :destroy]
 
   def index
-    @walks = policy_scope(Walk)
     @user = current_user
-    if params[:query].present?
-      @walks = policy_scope(Walk).global_search(params[:query])
-    else
-      @walks = policy_scope(Walk).order(created_at: :desc)
-    end
+    @walks = policy_scope(Walk)
+    @walks = @walks.global_search(params[:query]) if params[:query].present?
+    @walks = @walks.search_by_location(params[:location]) if params[:location].present?
+    @walks = @walks.search_by_department(params[:department]) if params[:department].present?
+    @walks = @walks.search_by_duration(params[:duration]) if params[:duration].present?
+    @walks = @walks.order(created_at: :desc)
   end
+
 
   def show
     @user_walk = UserWalk.new
