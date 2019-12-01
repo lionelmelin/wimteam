@@ -16,6 +16,10 @@ if (document.querySelector(".banner-button")) {
   initBannerButton();
 }
 
+//Searchbar for Index
+import { initUpdateSearchbarOnScroll } from '../components/searchbar';
+initUpdateSearchbarOnScroll();
+
 //Gauge
 import { initGauge } from '../components/gauge';
 initGauge();

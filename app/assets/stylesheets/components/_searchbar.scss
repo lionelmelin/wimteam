@@ -1,0 +1,13 @@
+#searchbar {
+  background-color: $my-orange;
+  // position: fixed;
+  // top: 50;
+  // width: 100vw;
+}
+
+.searchcontainer {
+  position: sticky !important;
+  top: 60px !important;
+  position: -webkit-sticky !important;
+  z-index: 10;
+}
