@@ -1,5 +1,8 @@
 import "bootstrap";
 
+import $ from 'jquery';
+global.$ = jQuery;
+
 // Dymanic text for banner
 import { loadDynamicBannerText } from '../components/banner_text';
 if (document.querySelector("#banner-typed-text")) {

@@ -51,23 +51,26 @@
       <div>
         <div class=" d-flex justify-content-around flex-wrap py-3">
           <% @walk.team.positions.each do |member| %>
-            <a class="d-flex m-2 p-0 card-mini-profile" data-toggle="modal" data-target=".modal-profile">
-            <!-- <div class="d-flex m-2 p-0 card-mini-profile"> -->
-              <div>
-                <% if @walk.team.photo.attached?%>
-                  <%= cl_image_tag member.user.photo.key, width: 50, height: 50, crop: :fill, gravity: :face %>
-                <% else %>
-                  <%= cl_image_tag "", width: 50, height: 50, crop: :fill, gravity: :face %>
-                <% end %>
+            <%= link_to position_path(member), remote: true do %>
+            <!-- , data: {toggle: "modal", target: "#profileModal"} -->
+            <!-- <a class="d-flex m-2 p-0 card-mini-profile" data-toggle="modal" data-target="#profileModal" data-whatever=<%= member.id %>> -->
+              <div class="d-flex m-2 p-0 card-mini-profile">
+                <div>
+                  <% if member.user.photo.attached?%>
+                    <%= cl_image_tag member.user.photo.key, width: 50, height: 50, crop: :fill, gravity: :face %>
+                  <% else %>
+                    <%= cl_image_tag "", width: 50, height: 50, crop: :fill, gravity: :face %>
+                  <% end %>
+                </div>
+                <div class="ml-1 align-self-center">
+                  <p class="mb-0">
+                    <%= member.user.first_name %> <%= member.user.last_name %></br>
+                    <%= truncate(member.job.delete_suffix!('s'), length: 35, separator: ' ') %>
+                  </p>
+                </div>
               </div>
-              <div class="ml-1 align-self-center">
-                <p class="mb-0">
-                  <%= member.user.first_name %> <%= member.user.last_name %></br>
-                  <%= truncate(member.job.delete_suffix!('s'), length: 35, separator: ' ') %>
-                </p>
-              </div>
-            <!-- </div> -->
-            </a>
+            <!-- </a> -->
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -82,11 +85,11 @@
 </div>
 
 <!-- Modal apply -->
-<div class="modal fade" id="applicationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="applicationModal" tabindex="-1" role="dialog" aria-labelledby="applicationModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Let's walk together!</h5>
+        <h5 class="modal-title" id="applicationModalLabel">Let's walk together!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -109,11 +112,5 @@
   </div>
 </div>
 
-<!-- Modal profile -->
-<div class="modal fade modal-profile" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      ...
-    </div>
-  </div>
-</div>
+<!-- Modal AJAX by hand -->
+<div id='member-content'></div>
