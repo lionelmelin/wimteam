@@ -82,9 +82,9 @@ ActiveRecord::Schema.define(version: 2019_11_27_150406) do
     t.bigint "walk_id"
     t.date "start_date"
     t.date "end_date"
-    t.string "job"
     t.string "status"
     t.string "review"
+    t.text "motivation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_user_walks_on_user_id"
