@@ -5,6 +5,8 @@ class Walk < ApplicationRecord
   has_many :skills, through: :skill_sets
 
   validates :team, presence: true
+  validates :purpose, presence: true
+
 
   include PgSearch::Model
   pg_search_scope :global_search,

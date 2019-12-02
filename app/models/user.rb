@@ -16,6 +16,7 @@ class User < ApplicationRecord
   # validates :last_name, presence: true
   # validates :birth_date, presence: true
   # validates :graduation_date, presence: true
+  validates :purpose, presence: true
 
   def manager?
     result = false

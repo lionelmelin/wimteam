@@ -16,10 +16,13 @@ class UserWalksController < ApplicationController
   end
 
   def destroy
-    # @user_walk = current_user.user_walks.find(params[:id])
-    # authorize @user_walk
-    # @user_walk.destroy
-    # redirect_to dashboard_path
+    @user_walk = current_user.user_walks.find(params[:id])
+    authorize @user_walk
+    @user_walk.destroy
+    respond_to do |format|
+      format.html {redirect_to myapplications_path}
+      format.js
+    end
   end
 
   private

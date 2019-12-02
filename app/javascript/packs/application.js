@@ -29,3 +29,7 @@ initGauge();
 
 //DatePicker
 import "../plugins/flatpickr";
+
+//PopOver
+import { activatePopOver } from '../components/popover';
+activatePopOver();
