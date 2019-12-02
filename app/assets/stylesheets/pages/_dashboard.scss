@@ -58,6 +58,35 @@
   }
 }
 
-.skills-container {
+.skill-new {
+  font-style: underlying;
+  text-decoration: underline;
+  font-size: 14px;
+  &:hover {
+    cursor: pointer;
+    color: $my-orange;
+    }
 }
+
+.skill-new-cancel {
+  display: flex;
+  align-items: center;
+  font-style: underlying;
+  text-decoration: underline;
+  font-size: 14px;
+  &:hover {
+    cursor: pointer;
+    color: $my-orange;
+    }
+}
+
+.skill-new-form-select {
+  width:100px
+}
+
+.skill-new-form-container {
+  display: none;
+  justify-content: space-between;
+}
+
 

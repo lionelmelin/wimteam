@@ -22,3 +22,8 @@ initGauge();
 
 //DatePicker
 import "../plugins/flatpickr";
+
+//Button to add new skill on profile
+import { displayNewSkillForm, hideNewSkillForm } from "../components/new_skill_button";
+displayNewSkillForm();
+hideNewSkillForm();
