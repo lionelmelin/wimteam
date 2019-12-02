@@ -10,4 +10,9 @@ class ScoreService
     p rough_score = rough_score * 100 / size
     return rough_score
   end
+
+  def order_score(walks, user)
+    ordered_walks = walks.sort_by {|walk| score(walk, user)}
+    scores = ordered_walks.map {|walk| score(walk, user)}
+  end
 end
