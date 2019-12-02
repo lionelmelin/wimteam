@@ -1,9 +1,10 @@
+
 .gauge-index {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
   .progress {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     background: none;
     position: relative;
   }
@@ -13,7 +14,9 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 6px solid #eee;
+    border: 12px;
+    border-style: solid;
+    border-color: $light-gray;
     position: absolute;
     top: 0;
     left: 0;
@@ -36,20 +39,21 @@
     width: 100%;
     height: 100%;
     background: none;
-    border-width: 6px;
+    border-width: 12px;
     border-style: solid;
-    border-color: $my-dark-blue;
+    border-color: $my-orange;
     position: absolute;
     top: 0;
   }
 
   .progress .progress-left .progress-bar {
     left: 100%;
-    border-top-right-radius: 27px;
-    border-bottom-right-radius: 27px;
+    border-top-right-radius: 54px;
+    border-bottom-right-radius: 54px;
     border-left: 0;
     -webkit-transform-origin: center left;
     transform-origin: center left;
+    // animation: loadingleft 1.5s linear forwards 1.8s;
   }
 
   .progress .progress-right {
@@ -58,11 +62,12 @@
 
   .progress .progress-right .progress-bar {
     left: -100%;
-    border-top-left-radius: 27px;
-    border-bottom-left-radius: 27px;
+    border-top-left-radius: 54px;
+    border-bottom-left-radius: 54px;
     border-right: 0;
     -webkit-transform-origin: center right;
     transform-origin: center right;
+    // animation: loadingright 1.5s linear forwards 1.8s;
   }
 
   .progress .progress-value {
@@ -70,306 +75,114 @@
     top: 0;
     left: 0;
   }
+
   .progress-font {
-    font-size: 16px;
+    font-size: 28px;
     font-weight: bold;
     color: $my-orange;
+    margin-top: 20px;
+    margin-left: 6px;
     .small {
-      font-size: 9px;
+      font-size: 18px;
       font-weight: 100;
     }
   }
+
+  // .progress .progress-left .progress-bar{
+  //   animation: loading 1.5s linear forwards 1.8s;
+  // }
+
+  // @keyframes loadingright{
+  //   from{
+  //       -webkit-transform: rotate(0deg);
+  //       transform: rotate(0deg);
+  //   }
+  //   to{
+  //       -webkit-transform: var(--r, 'rotate(0deg)');
+  //       transform: var(--r, 'rotate(0deg)');
+  //   }
+  // }
+
+  // @keyframes loadingleft{
+  //   from{
+  //       -webkit-transform: rotate(0deg);
+  //       transform: rotate(0deg);
+  //   }
+  //   to{
+  //       -webkit-transform: var(--l, 'rotate(0deg)');
+  //       transform: var(--l, 'rotate(0deg)');
+  //   }
+  // }
+
 }
 
 
-.progress {
-  width: 150px;
-  height: 150px;
-  background: none;
-  position: relative;
-}
-
-.progress::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 6px solid #eee;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.progress>span {
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-
-.progress .progress-left {
-  left: 0;
-}
-
-.progress .progress-bar {
-  width: 100%;
-  height: 100%;
-  background: none;
-  border-width: 6px;
-  border-style: solid;
-  position: absolute;
-  top: 0;
-}
-
-.progress .progress-left .progress-bar {
-  left: 100%;
-  border-top-right-radius: 80px;
-  border-bottom-right-radius: 80px;
-  border-left: 0;
-  -webkit-transform-origin: center left;
-  transform-origin: center left;
-}
-
-.progress .progress-right {
-  right: 0;
-}
-
-.progress .progress-right .progress-bar {
-  left: -100%;
-  border-top-left-radius: 80px;
-  border-bottom-left-radius: 80px;
-  border-right: 0;
-  -webkit-transform-origin: center right;
-  transform-origin: center right;
-}
-
-.progress .progress-value {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-
-
-// $proportion: 3;
-// $size: 150;
-// $size-index: $size / $proportion;
-
-
-// .progress{
-//     width: 150px;
-//     height: 150px;
-//     line-height: 150px;
-//     background: none;
-//     margin: 0 auto;
-//     box-shadow: none;
-//     position: relative;
-// }
-// .gauge-index .progress{
-//     width: 50px;
-//     height: 50px;
-//     line-height: 50px;
-//     background: none;
-//     margin: 0 auto;
-//     box-shadow: none;
-//     position: relative;
-// }
-// .progress:after{
-//     content: "";
-//     width: 100%;
-//     height: 100%;
-//     border-radius: 50%;
-//     border: 12px solid #fff;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-// }
-// .gauge-index .progress:after{
-//     content: "";
-//     width: 100%;
-//     height: 100%;
-//     border-radius: 50%;
-//     border: 4px solid #fff;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
+// .progress {
+//   width: 150px;
+//   height: 150px;
+//   background: none;
+//   position: relative;
 // }
 
-// .gauge-index .progress:after{
-//     content: "";
-//     width: 100%;
-//     height: 100%;
-//     border-radius: 50%;
-//     border: 4px solid #fff;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
+// .progress::after {
+//   content: "";
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 50%;
+//   border: 6px solid #eee;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
 // }
 
-// .progress > span{
-//     width: 50%;
-//     height: 100%;
-//     overflow: hidden;
-//     position: absolute;
-//     top: 0;
-//     z-index: 1;
-// }
-// .progress .progress-left{
-//     left: 0;
-// }
-// .progress .progress-bar{
-//     width: 100%;
-//     height: 100%;
-//     background: none;
-//     border-width: 12px;
-//     border-style: solid;
-//     position: absolute;
-//     top: 0;
-// }
-// .gauge-index .progress .progress-bar{
-//     width: 100%;
-//     height: 100%;
-//     background: none;
-//     border-width: 3px;
-//     border-style: solid;
-//     position: absolute;
-//     top: 0;
+// .progress>span {
+//   width: 50%;
+//   height: 100%;
+//   overflow: hidden;
+//   position: absolute;
+//   top: 0;
+//   z-index: 1;
 // }
 
-// .progress .progress-left .progress-bar{
-//     left: 100%;
-//     border-top-right-radius: 80px;
-//     border-bottom-right-radius: 80px;
-//     border-left: 0;
-//     -webkit-transform-origin: center left;
-//     transform-origin: center left;
-// }
-// .progress .progress-right{
-//     right: 0;
-// }
-// .progress .progress-right .progress-bar{
-//     left: -100%;
-//     border-top-left-radius: 80px;
-//     border-bottom-left-radius: 80px;
-//     border-right: 0;
-//     -webkit-transform-origin: center right;
-//     transform-origin: center right;
-//     animation: loading-1 1.8s linear forwards;
-// }
-// .gauge-index .progress .progress-right .progress-bar{
-//     left: -100%;
-//     border-top-left-radius: 23px;
-//     border-bottom-left-radius: 23px;
-//     border-right: 0;
-//     -webkit-transform-origin: center right;
-//     transform-origin: center right;
-//     animation: loading-1 1.8s linear forwards;
-// }
-// .progress .progress-value{
-//     width: 90%;
-//     height: 90%;
-//     border-radius: 50%;
-//     background: #44484b;
-//     font-size: 24px;
-//     color: #fff;
-//     line-height: 135px;
-//     text-align: center;
-//     position: absolute;
-//     top: 5%;
-//     left: 5%;
+// .progress .progress-left {
+//   left: 0;
 // }
 
-// .gauge-index .progress .progress-value{
-//     width: 90%;
-//     height: 90%;
-//     border-radius: 50%;
-//     background: #44484b;
-//     font-size: 12px;
-//     color: #fff;
-//     line-height: 45px;
-//     text-align: center;
-//     position: absolute;
-//     top: 5%;
-//     left: 5%;
-// }
-// .progress.blue .progress-bar{
-//     border-color: #049dff;
-// }
-// .progress.blue .progress-left .progress-bar{
-//     animation: loading-2 1.5s linear forwards 1.8s;
-// }
-// .progress.yellow .progress-bar{
-//     border-color: #fdba04;
-// }
-// .progress.yellow .progress-left .progress-bar{
-//     animation: loading-3 1s linear forwards 1.8s;
-// }
-// .progress.pink .progress-bar{
-//     border-color: #ed687c;
-// }
-// .progress.pink .progress-left .progress-bar{
-//     animation: loading-4 0.8s linear forwards 1.8s;
-// }
-// .progress.green .progress-bar{
-//     border-color: #1abc9c;
-// }
-// .progress.green .progress-left .progress-bar{
-//     animation: loading-5 0.4s linear forwards 1.8s;
-// }
-// @keyframes loading-1{
-//     0%{
-//         -webkit-transform: rotate(0deg);
-//         transform: rotate(0deg);
-//     }
-//     100%{
-//         -webkit-transform: rotate(180deg);
-//         transform: rotate(180deg);
-//     }
-// }
-// @keyframes loading-2{
-//     0%{
-//         -webkit-transform: rotate(0deg);
-//         transform: rotate(0deg);
-//     }
-//     100%{
-//         -webkit-transform: rotate(144deg);
-//         transform: rotate(144deg);
-//     }
-// }
-// @keyframes loading-3{
-//     0%{
-//         -webkit-transform: rotate(0deg);
-//         transform: rotate(0deg);
-//     }
-//     100%{
-//         -webkit-transform: rotate(90deg);
-//         transform: rotate(90deg);
-//     }
-// }
-// @keyframes loading-4{
-//     0%{
-//         -webkit-transform: rotate(0deg);
-//         transform: rotate(0deg);
-//     }
-//     100%{
-//         -webkit-transform: rotate(36deg);
-//         transform: rotate(36deg);
-//     }
-// }
-// @keyframes loading-5{
-//     0%{
-//         -webkit-transform: rotate(0deg);
-//         transform: rotate(0deg);
-//     }
-//     100%{
-//         -webkit-transform: rotate(0deg);
-//         transform: rotate(0deg);
-//     }
-// }
-// @media only screen and (max-width: 990px){
-//     .progress{ margin-bottom: 20px; }
+// .progress .progress-bar {
+//   width: 100%;
+//   height: 100%;
+//   background: none;
+//   border-width: 6px;
+//   border-style: solid;
+//   position: absolute;
+//   top: 0;
 // }
 
+// .progress .progress-left .progress-bar {
+//   left: 100%;
+//   border-top-right-radius: 80px;
+//   border-bottom-right-radius: 80px;
+//   border-left: 0;
+//   -webkit-transform-origin: center left;
+//   transform-origin: center left;
+// }
+
+// .progress .progress-right {
+//   right: 0;
+// }
+
+// .progress .progress-right .progress-bar {
+//   left: -100%;
+//   border-top-left-radius: 80px;
+//   border-bottom-left-radius: 80px;
+//   border-right: 0;
+//   -webkit-transform-origin: center right;
+//   transform-origin: center right;
+// }
+
+// .progress .progress-value {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
 
