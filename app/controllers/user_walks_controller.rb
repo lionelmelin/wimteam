@@ -6,7 +6,7 @@ class UserWalksController < ApplicationController
     @user_walk.status = "pending"
     authorize @user_walk
     if @user_walk.save
-      redirect_to dashboard_path
+      redirect_to myapplications_path
     else
       render 'walks/show'
     end

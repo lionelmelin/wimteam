@@ -3,7 +3,7 @@
 <h1 class="book-title mb-3">Walk in the <%= @walk.team.name %> Team from the <%= @walk.team.department%> Department</h1>
 
   <!-- LHS column with content -->
-  <div class="card p-4">
+  <div class="card details-card p-4">
     <!-- Photo next to details -->
     <div class="d-flex justify-content-between">
       <div >
@@ -51,86 +51,66 @@
       <div>
         <div class=" d-flex justify-content-around flex-wrap py-3">
           <% @walk.team.positions.each do |member| %>
-            <div class="d-flex m-1 p-0 card-mini-profile">
-              <div>
-              <% if @walk.team.photo.attached?%>
-                <%= cl_image_tag member.user.photo.key, width: 50, height: 50, crop: :fill, gravity: :face %>
-              <% else %>
-                <%= cl_image_tag "", width: 50, height: 50, crop: :fill, gravity: :face %>
-              <% end %>
+            <%= link_to position_path(member), remote: true do %>
+            <!-- , data: {toggle: "modal", target: "#profileModal"} -->
+            <!-- <a class="d-flex m-2 p-0 card-mini-profile" data-toggle="modal" data-target="#profileModal" data-whatever=<%= member.id %>> -->
+              <div class="d-flex m-2 p-0 card-mini-profile">
+                <div>
+                  <% if member.user.photo.attached?%>
+                    <%= cl_image_tag member.user.photo.key, width: 50, height: 50, crop: :fill, gravity: :face %>
+                  <% else %>
+                    <%= cl_image_tag "", width: 50, height: 50, crop: :fill, gravity: :face %>
+                  <% end %>
+                </div>
+                <div class="ml-1 align-self-center">
+                  <p class="mb-0">
+                    <%= member.user.first_name %> <%= member.user.last_name %></br>
+                    <%= truncate(member.job.delete_suffix!('s'), length: 35, separator: ' ') %>
+                  </p>
+                </div>
               </div>
-              <div class="ml-1">
-                <p class="mb-0">
-                  <%= member.user.first_name %> <%= member.user.last_name %></br>
-                  <%= truncate(member.job.delete_suffix!('s'), length: 35, separator: ' ') %>
-                </p>
-              </div>
-            </div>
+            <!-- </a> -->
+            <% end %>
           <% end %>
         </div>
       </div>
     </div>
 
-
-
-  <!-- RHS column with booking slider -->
-  <!--
-  <div class="col-3">
-    <div class="booking-card text-center">
-      <div class="card p-3">
-        <h5>Apply to this <strong>Walk</strong></h5>
-         <%#= link_to  %>-->
-        <!--
-        <%#= simple_form_for [@walk, @user_walk] do |f| %>
-          <div class="form-row p-3">
-            <div class="col">
-              <%#= f.input :start_date, type: "text", class: "form-control", as: :string, input_html: { id: "range_start" } %>
-            </div>
-            <div class="col">
-              <%#= f.input :end_date, type: "text", class: "form-control", as: :string, input_html: { id: "range_end" } %>
-            </div>
-          </div>
-          <%#= f.submit 'Book!', class: 'btn btn-primary w-50 mb-2' %>
-        <% #end %>
-        --><!--
-      </div>
-    </div>
-  </div>
-  -->
-
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-apply mt-4 w-100" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-apply mt-4 w-100" data-toggle="modal" data-target="#applicationModal">
       Apply
     </button>
 
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal apply -->
+<div class="modal fade" id="applicationModal" tabindex="-1" role="dialog" aria-labelledby="applicationModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Let's walk together!</h5>
+        <h5 class="modal-title" id="applicationModalLabel">Let's walk together!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <%= simple_form_for [@walk, @user_walk] do |f| %>
-          <%= f.input :motivation, type: "text", label: "A few words about your motivation:", class: "form-control", as: :text %>
+          <%= f.input :motivation, type: "text", label: "A few words about my motivation", class: "form-control", as: :text %>
           <div class="form-row p-3 booking-row">
           <div class="col">
-            <%= f.input :start_date, type: "text", label: "Suggested start date", class: "form-control", as: :string, input_html: { id: "range_start" } %>
+            <%= f.input :start_date, type: "text", label: "Start date I suggest", class: "form-control", as: :string, input_html: { id: "range_start" } %>
           </div>
           <div class="col">
-            <%= f.input :end_date, type: "text", label: "Suggested end date", class: "form-control", as: :string, input_html: { id: "range_end" } %>
+            <%= f.input :end_date, type: "text", label: "End date I suggest", class: "form-control", as: :string, input_html: { id: "range_end" } %>
           </div>
           </div>
-            <%= f.submit 'Book!', class: 'btn btn-apply w-100 mb-2' %>
+            <%= f.submit 'Send', class: 'btn btn-apply w-100 mb-2' %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Modal AJAX by hand -->
+<div id='member-content'></div>

@@ -1,12 +1,17 @@
+<div class="align-self-start" id="navbar-home">
+  <%= render 'shared/navbar' %>
+</div>
 <!-- First section : video banner -->
 <div class="video-relative" id="video-home">
-  <div class="align-self-start" id="navbar-home">
-    <%= render 'shared/navbar' %>
-  </div>
-  <%= video_tag ["video_blond_xs.webm", "video_blond_xs.mp4"], autoplay: true, loop: true, muted: true, class: "video" %>
-  <div class="video-absolute-typed">
+  <%= video_tag "Office.mp4", autoplay: true, loop: true, muted: true, class: "video" %>
+  <!-- <div class="video-absolute-typed">
     <h1><span id="banner-typed-text"></span></h1>
+  </div> -->
+  <div class="video-absolute-title">
+    <h1>Curious? Antsy? Lonesome?</br>
+    Discover your colleagues across the hall!</h1>
   </div>
+
   <div class="video-absolute-btn">
     <a href="#pts" class="banner-link"><div class="banner-button btn-apply">Start now !</div></a>
   </div>

@@ -1,3 +1,7 @@
+body {
+  color: $gray;
+}
+
 h3, h4, h5, h6 {
   color: $my-light-blue;
   font-weight: 400;
@@ -5,7 +9,7 @@ h3, h4, h5, h6 {
 
 h1, h2 {
   color: $my-dark-blue;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 a:hover {

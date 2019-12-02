@@ -1,12 +1,15 @@
-.booking-card {
-  position: sticky;
-  top: 100px;
+.details-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // border: 1px solid rgb(230,230,230);
 
 }
 
 .card-mini-profile {
   background-color: $light-gray;
-  width: 300px;
+  width: 310px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  color: $gray !important;
 }
 
 // .cards-small {

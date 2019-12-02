@@ -1,4 +1,4 @@
-console.log($(".banner-button"));
+// console.log($(".banner-button"));
 
 const initBannerButton = () => {
   const button = document.querySelector(".banner-button")
