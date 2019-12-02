@@ -9,6 +9,9 @@
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   cursor: pointer;
   color: $gray !important;
+  &:hover {
+      transform: scale(1.05);
+    }
 }
 
 // .cards-small {
