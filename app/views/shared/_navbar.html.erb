@@ -1,5 +1,5 @@
 
-<div class="navbar navbar-expand-sm navbar-light"> 
+<div class="navbar navbar-expand-sm navbar-light">
     <h2><%= link_to "Walk in my team", root_path %> </h2>
  <!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -22,11 +22,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <% unless current_user.positions.where(role: "manager").empty? %>
-          <li class="nav-item">
-            <strong> <%= link_to "Manage walks", new_walk_path, class: "nav-link" %> </strong>
-          </li>
-        <% end %>
+        <%# unless current_user.positions.where(role: "manager").empty? %>
+          <!-- <li class="nav-item">
+            <strong> <%#= link_to "Manage walks", new_walk_path, class: "nav-link" %> </strong>
+          </li> -->
+        <%# end %>
         <li class="nav-item">
           <strong> <%= link_to "Find a walk", walks_path, class: "nav-link" %> </strong>
         </li>

@@ -29,3 +29,8 @@ initGauge();
 
 //DatePicker
 import "../plugins/flatpickr";
+
+//Dropdown with Select2
+import 'select2/dist/css/select2.css';
+import { initSelect2 } from '../components/dropdown_select2';
+initSelect2();
