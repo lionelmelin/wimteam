@@ -16,17 +16,21 @@ class Walk < ApplicationRecord
       tsearch: { prefix: true }
     }
   pg_search_scope :search_by_location,
-    against: :location,
+    associated_against: {
+      team: [:location]
+    },
     using: {
       tsearch: { prefix: true }
     }
   pg_search_scope :search_by_department,
-    against: :department,
+    associated_against: {
+      team: [:department]
+    },
     using: {
       tsearch: { prefix: true }
     }
   pg_search_scope :search_by_duration,
-    against: :duration,
+    against: [:duration],
     using: {
       tsearch: { prefix: true }
     }

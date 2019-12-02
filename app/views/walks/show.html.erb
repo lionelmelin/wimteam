@@ -62,11 +62,13 @@
                     <%= cl_image_tag "", width: 50, height: 50, crop: :fill, gravity: :face %>
                   <% end %>
                 </div>
-                <div class="ml-1 align-self-center">
-                  <p class="mb-0">
-                    <%= member.user.first_name %> <%= member.user.last_name %></br>
+                <div class="ml-2 align-self-center">
+                  <div >
+                    <h6 class="mb-1"> <%= member.user.first_name %> <%= member.user.last_name %> </h6>
+                  </div>
+                  <div>
                     <%= truncate(member.job.delete_suffix!('s'), length: 35, separator: ' ') %>
-                  </p>
+                  </div>
                 </div>
               </div>
             <!-- </a> -->
