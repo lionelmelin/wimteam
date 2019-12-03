@@ -1,13 +1,5 @@
 .cards-walks {
   margin: 0px 100px 0px 100px;
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  a:hover {
-    text-decoration: none;
-    color: black;
-  }
 }
 
 .card-dashboard {
@@ -89,6 +81,7 @@
 
 .application-status {
   position: absolute;
+  font-size: 19px;
   top: 10px;
   left: 5px;
   margin: 0;
