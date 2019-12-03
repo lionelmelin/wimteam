@@ -25,9 +25,13 @@ pierre_pic = URI.open("https://images.unsplash.com/photo-1534030347209-467a5b0ad
 pierre.photo.attach(io: pierre_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 laura = User.create!(purpose: "Discovery", email: "laura@giggle.com", password: "password", first_name: "Laura",
-  last_name: "Jane", gender: "female", birth_date: "30/07/1990", graduation_date: "30/06/2014")
+  last_name: "Jane", gender: "female", birth_date: "30/07/1990", graduation_date: "30/06/2014",
+  description: "I have a master in Computer Science from the MIT. I graduated in 2014 and \
+started in Facebook's data science department. I joined Giggle's Data team in \
+2018 as a head of the Data team.")
 laura_pic = URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
 laura.photo.attach(io: laura_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
+
 
 david = User.create!(purpose: "Recruitment", email: "david@giggle.com", password: "password", first_name: "David",
   last_name: "Elliot", gender: "male", birth_date: "23/03/1976", graduation_date: "30/06/2000")
@@ -40,7 +44,10 @@ lionel_pic = URI.open("https://images.unsplash.com/photo-1548372290-8d01b6c8e78c
 lionel.photo.attach(io: lionel_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 laetitia = User.create!(purpose: "Discovery", email: "laetitia@giggle.com", password: "password", first_name: "Laetitia",
-  last_name: "Delta", gender: "female", birth_date: "12/07/1992", graduation_date: "30/06/2016")
+  last_name: "Delta", gender: "female", birth_date: "12/07/1992", graduation_date: "30/06/2016",
+  description: "I have a master in Computer Science from the MIT. I graduated in 2016 and \
+started with an internship in Facebook's data science department. I joined Giggle's Data team in \
+2017 as a Business intelligence Analyst.")
 laetitia_pic = URI.open("https://images.unsplash.com/photo-1504703395950-b89145a5425b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
 laetitia.photo.attach(io: laetitia_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
@@ -55,25 +62,36 @@ jenny_pic = URI.open("https://images.unsplash.com/photo-1484863137850-59afcfe053
 jenny.photo.attach(io: jenny_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 charles = User.create!(purpose: "Recruitment", email: "charles@giggle.com", password: "password", first_name: "Charles",
-  last_name: "Day", gender: "male", birth_date: "07/03/1985", graduation_date: "30/06/2010")
+  last_name: "Day", gender: "male", birth_date: "07/03/1985", graduation_date: "30/06/2010",
+  description: "I have a master in Computer Science from the MIT. I graduated in 2010 and \
+started in Facebook's data science department. I joined Giggle's Data team in \
+2016 as a Business intelligence Analyst.")
 charles_pic = URI.open("https://images.unsplash.com/flagged/photo-1561530822-923d268fa0a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80")
 charles.photo.attach(io: charles_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 julien = User.create!(purpose: "Discovery", email: "julien@giggle.com", password: "password", first_name: "Julien",
-  last_name: "Menisson", gender: "male", birth_date: "02/11/1992", graduation_date: "30/06/2016")
+  last_name: "Menisson", gender: "male", birth_date: "02/11/1992", graduation_date: "30/06/2016",
+  description: "I have a master in Computer Science from the MIT. I graduated in 2016 and \
+started in Facebook's data science department. I joined Giggle's Data team in \
+2016 as a Business intelligence Analyst.")
 julien_pic = URI.open("https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80")
 julien.photo.attach(io: julien_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 elisa = User.create!(purpose: "Recruitment", email: "elisa@giggle.com", password: "password", first_name: "Elisa",
-  last_name: "Laster", gender: "female", birth_date: "07/04/1995", graduation_date: "30/06/2018")
+  last_name: "Laster", gender: "female", birth_date: "07/04/1995", graduation_date: "30/06/2018",
+  description: "I have a master in Computer Science from the MIT. I graduated in 2018 and \
+started with an internship in Facebook's data science department. I joined Giggle's Data team in \
+june 2019 as a Business intelligence Analyst.")
 elisa_pic = URI.open("https://images.unsplash.com/photo-1524593689594-aae2f26b75ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
 elisa.photo.attach(io: elisa_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 max = User.create!(purpose: "Discovery", email: "max@giggle.com", password: "password", first_name: "Max",
-  last_name: "Dilligham", gender: "male", birth_date: "07/05/1994", graduation_date: "30/06/2017")
+  last_name: "Dilligham", gender: "male", birth_date: "07/05/1994", graduation_date: "30/06/2017",
+  description: "I have a master in Computer Science from the MIT. I graduated in 2017 and \
+started with an internship in Facebook's data science department. I joined Giggle's Data team in \
+2018 as a Business intelligence Analyst.")
 max_pic = URI.open("https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
 max.photo.attach(io: max_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
-
 
 puts "Seeding teams..."
 marketing = Team.create!(name: "Marketing", location: "Paris", department: "Sales & Marketing",
@@ -155,7 +173,7 @@ marketing_walk = Walk.create!(title: "Become a marketer", team: marketing,
   make sure this is the job you want. This walk should be seen as a pre-recruitment test for internal candidates.",
   duration: "2 weeks", purpose: "Recruitment")
 
-data_walk = Walk.create!(title: "Understand Data science", team: data,
+data_walk = Walk.create!(title: "Everything you always wanted to know about Data science", team: data,
   description: "Learn the basics of data in 1 week! The walker will spend\
   the week learning the the key concepts underlying data science.\
   In the current environment, it is key to have a good understanding of the technologies\
@@ -209,6 +227,7 @@ def seed_skillable_skill_sets(skillable, position)
   end
 end
 
+seed_skills(sales_rep)
 seed_skills(marketer)
 seed_skills(marketing_manager)
 seed_skills(data_analyst1)
