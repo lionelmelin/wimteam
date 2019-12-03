@@ -96,11 +96,11 @@
               <!-- Add new skill -->
               <div class="skill-new">Add new skill</div>
               <div class="skill-new-form-container">
-                <%= form_tag(skill_sets_path(@position_skill_set), {method: :post}) do %>
-                <%= select_tag(:skill, options_for_select(Skill.all_short.sort, :skill), include_blank: "Select skill", class: "mr-2 w-70vw") %>
-                <%= select_tag(:level, options_for_select(["Master", "Comfortable with", "Notions"], :level), include_blank: "Select level", class: "mr-2 w-70vw") %>
-                <%= hidden_field(:skillable_type, "Position") %>
-                <%= submit_tag 'Add', class: 'btn-start' %>
+                <%= simple_form_for @position_skill_set, method: :post, class: "form-inline" do |f| %>
+                <%= f.association :skill, label_method: :name, value_method: :id, include_blank: "Select skill", class: "mr-2 w-70vw" %>
+                <%= f.input :level, collection: ["Master", "Comfortable with", "Notions"], include_blank: "Select level", class: "mr-2 w-70vw" %>
+                <%= f.input :skillable_type, value: "Position", as: :hidden %>
+                <%= f.submit 'Add', class: 'btn-start' %>
                 <% end %>
                 <div class="skill-new-cancel">Cancel</div>
               </div>
