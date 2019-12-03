@@ -62,7 +62,7 @@
   <h2>Our best walks</h2>
   </div>
   <div class="row">
-    <% @user_walks.each do |user_walked| %> 
+    <% @user_walks.each do |user_walked| %>
 
       <div class="col cards">
         <%= link_to walk_path(user_walked),:action => 'go' do  %>
@@ -118,6 +118,8 @@
 
 <!-- Call to action : Let's walk -->
 
-  <div class="container d-flex justify-content-around my-5 button btn-letswalk">
-    <%= link_to "Let's walk !", walks_path, style: "color: white;" %>
-  </div>
+  <%= link_to dashboard_path, style: "color: white;" do %>
+    <div class="container d-flex justify-content-around my-5 button btn-letswalk">
+      Let's get ready to walk!
+    </div>
+  <% end %>
