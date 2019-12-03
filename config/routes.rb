@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   resources :positions,   only: [:create, :update, :show]
   resources :team,        only: [:create, :update]
   resources :walks,       only: [:create, :update, :destroy, :index, :show, :new] do
-    resources :user_walks,  only: [:create, :update, :destroy]
+    resources :user_walks,  only: [:create, :update]
   end
+  resources :user_walks, only: [:destroy]
   resources :skill_sets,  only: [:create, :update, :destroy]
   resources :skills,      only: [:create, :update]
 end
