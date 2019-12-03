@@ -230,6 +230,7 @@ def seed_skillable_skill_sets(skillable, position)
   end
 end
 
+
 seed_skills(sales_rep)
 seed_skills(marketer)
 seed_skills(marketing_manager)

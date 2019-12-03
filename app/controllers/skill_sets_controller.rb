@@ -2,22 +2,8 @@ class SkillSetsController < ApplicationController
   before_action :set_skill_set, only: [:destroy]
 
   def create
-    @skill_set = SkillSet.new(skill_id: skill_set_params[:skill_id], skillable_type: skill_set_params[:skillable_type])
-    case skill_set_params[:level]
-    when "Master"
-      @skill_set.level = 2
-    when "Comfortable with"
-      @skill_set.level = 1
-    when "Notions"
-      @skill_set.level = 0
-    end
-
-    case skill_set_params[:skillable_type]
-    when "Position"
-      @skill_set.skillable = current_user.current_positions.first
-    when "User"
-      @skill_set.skillable = current_user
-    end
+    @skill_set = SkillSet.new(skill_set_params)
+    configure_skillable(@skill_set)
 
     authorize @skill_set
 
@@ -50,5 +36,14 @@ class SkillSetsController < ApplicationController
 
   def skill_set_params
     params.require(:skill_set).permit(:skill_id, :level, :skillable_type)
+  end
+
+  def configure_skillable(skill_set)
+    case skill_set.skillable_type
+    when "Position"
+      skill_set.skillable = current_user.current_positions.first
+    when "User"
+      skill_set.skillable = current_user
+    end
   end
 end
