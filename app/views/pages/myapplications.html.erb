@@ -8,14 +8,14 @@
       <br>
         <% @upcoming_user_walks.each do |user_walk| %>
             <div class="card-application" data-user-walk-id="<%= user_walk.id %>">
-              <!-- <div class=""> -->
+              <div class="">
                 <div class="application-status">
                   <span class="badge badge-primary"><%= user_walk.status %></span>
                 </div>
                 <div class="card-application-image">
                   <%= cl_image_tag user_walk.walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :face if user_walk.walk.team.photo.attached? %>
                 </div>
-              <!-- </div> -->
+              </div>
               <div class="card-application-infos">
                 <h2><%= user_walk.walk.title %></h2>
                 <h6 class="duration mb-2"><i class="fas fa-calendar-week"></i><%= user_walk.display_start_date %> - <%= user_walk.display_end_date %> </h6>
