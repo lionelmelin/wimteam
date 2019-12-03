@@ -30,6 +30,12 @@ initGauge();
 //DatePicker
 import "../plugins/flatpickr";
 
+
 //PopOver
 import { activatePopOver } from '../components/popover';
 activatePopOver();
+
+//Dropdown with Select2
+import { initSelect2 } from '../components/dropdown_select2';
+initSelect2();
+

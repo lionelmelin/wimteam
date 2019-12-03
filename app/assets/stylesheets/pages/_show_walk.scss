@@ -1,15 +1,17 @@
 .details-card {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // border: 1px solid rgb(230,230,230);
-
 }
 
 .card-mini-profile {
-  background-color: $light-gray;
+  background-color: $my-white;
   width: 310px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   cursor: pointer;
   color: $gray !important;
+  &:hover {
+      transform: scale(1.05);
+    }
 }
 
 // .cards-small {

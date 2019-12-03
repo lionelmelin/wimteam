@@ -1,19 +1,24 @@
-.pts-card img {
-  width: 150px;
+.pts-card-image img {
+  width: 200px;
+  height: 150px;
+  opacity: .8;
+  background-image: $my-white;
 }
 
 .pts-card p {
+  height: 27%;
   opacity: .5;
 }
 
 .pts-card {
-  width: 200px;
+  width: 250px;
   box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
   padding: 20px;
   border: 1px solid rgb(230,230,230);
   margin-left: 10px;
   margin-right: 10px;
+  background: white;
 }
 
 .pts-cards {
@@ -21,22 +26,3 @@
   justify-content: space-between;
   margin: 50px;
 }
-
-.fa-search:before {
-  content: "\f002";
-  font-size: 50px;
-  opacity: .2;
-}
-
-.fa-check:before {
-  content: "\f00c";
-  font-size: 50px;
-  opacity: .2;
-}
-
-.fa-walking:before {
-  content: "\f554";
-  font-size: 50px;
-  opacity: .2;
-}
-
