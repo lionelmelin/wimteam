@@ -1,47 +1,30 @@
 
 <div class="navbar navbar-expand-sm navbar-light">
     <h2><%= link_to "Walk in my Team", root_path %> </h2>
- <!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> -->
-<!--   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav nav mr-auto" id="pills-tab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="find-tab" data-toggle="pill" href="#find" role="tab" aria-controls="find" aria-selected="true">Find a walks</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="applications-tab" data-toggle="pill" href="/myapplications" role="tab" aria-controls="applications" aria-selected="false">My applications</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-    </li>
-  </ul>
-</div> -->
-
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <%# unless current_user.positions.where(role: "manager").empty? %>
-          <!-- <li class="nav-item">
+          <!-- <li class="nav-item pt-3">
             <strong> <%#= link_to "Manage walks", new_walk_path, class: "nav-link" %> </strong>
           </li> -->
         <%# end %>
-        <li class="nav-item">
-          <strong> <%= link_to "Find a walk", walks_path, class: "nav-link" %> </strong>
+        <li class="nav-item pt-3">
+          <h5> <%= link_to "Find a walk", walks_path, class: "nav-link" %> </h5>
         </li>
-        <li class="nav-item">
-          <strong> <%= link_to "My applications", myapplications_path, class: "nav-link" %>  </strong>
+        <li class="nav-item pt-3">
+          <h5> <%= link_to "My applications", myapplications_path, class: "nav-link" %>  </h5>
         </li>
-        <li class="nav-item">
-          <strong> <%= link_to "My profile", dashboard_path, class: "nav-link" %> </strong>
+        <li class="nav-item pt-3">
+          <h5> <%= link_to "My profile", dashboard_path, class: "nav-link" %> </h5>
         </li>
-        <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <li class="nav-item pt-3">
+          <h5> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %> </h5>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <li class="nav-item pt-3">
+          <h5> <%= link_to "Login", new_user_session_path, class: "nav-link" %> </h5>
         </li>
       <% end %>
     </ul>

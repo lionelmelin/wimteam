@@ -1,20 +1,37 @@
 #searchbar {
-  background-color: $my-orange;
+  background-color: $my-dark-blue;
 }
 
 #searchbar-container {
   transition: all 0.3s cubic-bezier(0.84, 0.36, 0.54, 0.5);
 }
 
-// .searchcontainer-tight {
-//   width:100%;
-//   margin-right: 15px;
-//   margin-left: 15px;
-// }
-
 .searchcontainer {
   position: sticky !important;
   top: 60px !important;
   position: -webkit-sticky !important;
   z-index: 10;
+}
+
+.btn-search {
+  // font-size: 13px;
+  text-align: center;
+  color: $my-orange;
+  border: 1px solid $my-orange;
+  // padding-top: 8px;
+  // padding-bottom: 8px;
+  width: 100px;
+  background: white;
+  transition: background 0.5s ease;
+}
+
+.btn-search:hover {
+  background: $my-orange;
+  color: white;
+  opacity: 0.8;
+}
+
+.btn-search a {
+  background: white;
+  color: $my-orange;
 }
