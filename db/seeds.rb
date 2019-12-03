@@ -209,6 +209,7 @@ def seed_skillable_skill_sets(skillable, position)
   end
 end
 
+
 seed_skills(marketer)
 seed_skills(marketing_manager)
 seed_skills(data_analyst1)

@@ -1,0 +1,36 @@
+function initializeForm() {
+  let newSkillForm = "";
+  const skillable_type = '<%= @skill_set.skillable_type %>';
+  if (skillable_type === "Position") {
+    newSkillForm = document.getElementById('position-skill-form');
+  } else if (skillable_type === "User"){
+    newSkillForm = document.getElementById('user-skill-form');
+  }
+  return newSkillForm;
+};
+
+function refreshForm(form, skillFormHTML) {
+  form.innerHTML = skillFormHTML;
+}
+
+function hideForm(form) {
+  form.style.display = "none";
+}
+
+function addSkillSet(skillShowHTML) {
+  const skillContainer = document.getElementById('<%=@skill_set.skillable_type.downcase%>-skills-<%=@skill_set.level%>-container');
+  skillContainer.insertAdjacentHTML('beforeend', skillShowHTML);
+}
+
+function showNewButton(form) {
+  form.previousElementSibling.style.display = "block";
+}
+
+<% if @skill_set.errors.any? %>
+  refreshForm(initializeForm(), '<%= j render "skill_sets/form", skill_set: @skill_set, skillable_type: @skill_set.skillable_type %>');
+<% else %>
+  addSkillSet('<%= j render "skill_sets/show", skill_set: @skill_set %>');
+  refreshForm(initializeForm(), '<%= j render "skill_sets/form", skill_set: SkillSet.new, skillable_type: @skill_set.skillable_type %>');
+  hideForm(initializeForm());
+  showNewButton(initializeForm());
+<% end %>
