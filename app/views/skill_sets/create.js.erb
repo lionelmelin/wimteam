@@ -14,7 +14,7 @@ function refreshForm(form, skillFormHTML) {
 }
 
 function hideForm(form) {
-  form.style.display = "none";
+  form.parentNode.style.display = "none";
 }
 
 function addSkillSet(skillShowHTML) {
@@ -23,7 +23,7 @@ function addSkillSet(skillShowHTML) {
 }
 
 function showNewButton(form) {
-  form.previousElementSibling.style.display = "block";
+  form.parentNode.previousElementSibling.style.display = "block";
 }
 
 <% if @skill_set.errors.any? %>
