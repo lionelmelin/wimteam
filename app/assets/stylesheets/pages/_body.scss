@@ -1,6 +1,3 @@
-body {
-  color: $gray;
-}
 
 h3, h4, h5, h6 {
   color: $my-light-blue;
@@ -12,6 +9,12 @@ h1, h2 {
   font-weight: 500;
 }
 
+p {
+  font-size: 14px;
+  color: black;
+  line-height: 1.4;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -19,3 +22,4 @@ a:hover {
 .container-wim {
   min-height: calc(100vh - 160px);
 }
+
