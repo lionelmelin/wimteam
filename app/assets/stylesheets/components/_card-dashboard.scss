@@ -1,34 +1,49 @@
+.cards-walks {
+  margin: 0px 100px 0px 100px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
 .card-dashboard {
   overflow: hidden;
-  height: 140px;
+  height: 180px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 27px 0px 27px 0px;
+  margin: 50px 0px 27px 0px;
+  transition: all 0.3s ease;
+  position: relative;
+    &:hover {
+    // transform: scale(1.002);
+    // margin: 48px 0px 29px 0px;
+    top: -2px;
+    box-shadow: 2px 0 25px rgba(0,0,0,0.2);
+  }
 }
 
-.card-dashboard img {
-  height: 100%;
-  width: 140px;
-  object-fit: cover;
+.card-dashboard-image {
+  position: relative;
 }
 
 .card-dashboard h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 17px;
 }
 
 .card-dashboard h3 {
-  font-size: 14px;
+  font-size: 18px;
   margin: 0;
 }
-
 .card-dashboard-infos p {
-  font-size: 14px;
-  line-height: 1.4;
   margin: 10px 0px 10px 10px
 }
 
@@ -59,7 +74,7 @@
   padding: 16px;
   .location {
     color: $my-dark-blue;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     .fas {
       margin-right: 5px;
     }
@@ -68,21 +83,15 @@
 
 .card-dashboard .location-status {
   margin: 0px 10px 10px 10px;
-  padding: 16px;
-  width: 180px;
-  .location {
-    color: $my-dark-blue;
-    margin-bottom: 20px;
-    .fas {
-      margin-right: 5px;
-    }
-  }
-  .status {
-    color: $my-dark-blue;
-    margin-bottom: 20px;
-    .fas {
-      margin-right: 10px;
-    }
-  }
+  padding: 5px;
+  width: 100px;
+}
+
+.application-status {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  margin: 0;
+  padding: 0px 3px 0px 3px;
 }
 

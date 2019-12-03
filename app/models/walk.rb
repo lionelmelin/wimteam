@@ -5,31 +5,35 @@ class Walk < ApplicationRecord
   has_many :skills, through: :skill_sets
 
   validates :team, presence: true
+  validates :purpose, presence: true
+
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [ :description, :duration ],
+    against: [:description, :duration],
     associated_against: {
-      team: [ :location, :department, :name, :description ]
+      team: [:location, :department, :name, :description]
     },
     using: {
       tsearch: { prefix: true }
     }
-
-  # pg_search_scope :search_by_location,
-  #   against: :location,
-  #   using: {
-  #     tsearch: { prefix: true }
-  #   }
-  # pg_search_scope :search_by_department,
-  #   against: :department,
-  #   using: {
-  #     tsearch: { prefix: true }
-  #   }
-
-  # pg_search_scope :search_by_duration,
-  #   against: :duration,
-  #   using: {
-  #     tsearch: { prefix: true }
-  #   }
+  pg_search_scope :search_by_location,
+    associated_against: {
+      team: [:location]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+  pg_search_scope :search_by_department,
+    associated_against: {
+      team: [:department]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+  pg_search_scope :search_by_duration,
+    against: [:duration],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

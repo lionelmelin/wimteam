@@ -1,5 +1,8 @@
 import "bootstrap";
 
+import $ from 'jquery';
+global.$ = jQuery;
+
 // Dymanic text for banner
 import { loadDynamicBannerText } from '../components/banner_text';
 if (document.querySelector("#banner-typed-text")) {
@@ -16,6 +19,10 @@ if (document.querySelector(".banner-button")) {
   initBannerButton();
 }
 
+//Searchbar for Index
+import { initUpdateSearchbarOnScroll } from '../components/searchbar';
+initUpdateSearchbarOnScroll();
+
 //Gauge
 import { initGauge } from '../components/gauge';
 initGauge();
@@ -27,3 +34,11 @@ import "../plugins/flatpickr";
 import { displayNewSkillForm, hideNewSkillForm } from "../components/new_skill_button";
 displayNewSkillForm();
 hideNewSkillForm();
+
+//PopOver
+import { activatePopOver } from '../components/popover';
+activatePopOver();
+
+//Dropdown with Select2
+import { initSelect2 } from '../components/dropdown_select2';
+initSelect2();
