@@ -8,7 +8,7 @@
     <h1><span id="banner-typed-text"></span></h1>
   </div> -->
   <div class="video-absolute-title">
-    <h1>Curious? Antsy? Lonesome?</br>
+    <h1>Curious? Eager to learn?</br>
     Discover your colleagues across the hall!</h1>
   </div>
 
@@ -96,7 +96,7 @@
     <% @user_walks.each do |user_walked| %>
       <div class="col cards">
         <div class="card">
-          <div class="card-info d-flex align-items-center">
+          <div class="card-info d-flex align-items-center", class="avatar">
             <%# raise %>
             <% if user_walked.user.photo.attached?%>
               <%= cl_image_tag user_walked.user.photo.key, width: 64, height: 64, crop: :fill, gravity: :face %>
