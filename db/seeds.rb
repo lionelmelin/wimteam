@@ -173,7 +173,7 @@ marketing_walk = Walk.create!(title: "Become a marketer", team: marketing,
   make sure this is the job you want. This walk should be seen as a pre-recruitment test for internal candidates.",
   duration: "2 weeks", purpose: "Recruitment")
 
-data_walk = Walk.create!(title: "Everything you always wanted to know about Data science", team: data,
+data_walk = Walk.create!(title: "Understand Data science", team: data,
   description: "Learn the basics of data in 1 week! The walker will spend\
   the week learning the the key concepts underlying data science.\
   In the current environment, it is key to have a good understanding of the technologies\
