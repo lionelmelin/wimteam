@@ -32,7 +32,6 @@ started in Facebook's data science department. I joined Giggle's Data team in \
 laura_pic = URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
 laura.photo.attach(io: laura_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
-
 david = User.create!(purpose: "Recruitment", email: "david@giggle.com", password: "password", first_name: "David",
   last_name: "Elliot", gender: "male", birth_date: "23/03/1976", graduation_date: "30/06/2000")
 david_pic = URI.open("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
@@ -78,7 +77,7 @@ julien_pic = URI.open("https://images.unsplash.com/photo-1527980965255-d3b416303
 julien.photo.attach(io: julien_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 elisa = User.create!(purpose: "Recruitment", email: "elisa@giggle.com", password: "password", first_name: "Elisa",
-  last_name: "Laster", gender: "female", birth_date: "07/04/1995", graduation_date: "30/06/2018",
+  last_name: "Laster", gender: "female", birth_date: "07/04/1995", graduation_date: "30/05/2018",
   description: "I have a master in Computer Science from the MIT. I graduated in 2018 and \
 started with an internship in Facebook's data science department. I joined Giggle's Data team in \
 june 2019 as a Business intelligence Analyst.")
@@ -144,7 +143,7 @@ data_analyst1 = Position.create!(user: laetitia, team: data, role: "member", sta
   job_code: "15-1199.08", job: "Business Intelligence Analysts")
 data_analyst2 = Position.create!(user: charles, team: data, role: "member", start_date: "05/08/2016",
   job_code: "15-1199.08", job: "Business Intelligence Analysts")
-data_analyst3 = Position.create!(user: julien, team: data, role: "member", start_date: "05/12/2016",
+data_analyst3 = Position.create!(user: julien, team: data, role: "member", start_date: "05/12/2017",
   job_code: "15-1199.08", job: "Business Intelligence Analysts")
 data_analyst4 = Position.create!(user: elisa, team: data, role: "member", start_date: "05/06/2019",
   job_code: "15-1199.08", job: "Business Intelligence Analysts")
@@ -152,12 +151,16 @@ data_analyst5 = Position.create!(user: max, team: data, role: "member", start_da
   job_code: "15-1199.08", job: "Business Intelligence Analysts")
 data_manager = Position.create!(user: laura, team: data, role: "manager", start_date: "05/06/2018",
   job_code: "15-1199.06", job: "Database Architects")
+accountant = Position.create!(user: julien, team: hr, role: "member", start_date: "05/09/2016", end_date: "04/12/2017",
+  job_code: "13-2011.01", job: "Accountants")
 support_manager = Position.create!(user: pierre, team: support, role: "manager", start_date: "05/06/2016",
   job_code: "43-1011.00", job: "First-Line Supervisors of Office and Administrative Support Workers")
 supporter1 = Position.create!(user: john, team: support, role: "member", start_date: "05/03/2019",
   job_code: "43-4051.00", job: "Customer Service Representatives")
 supporter2 = Position.create!(user: jenny, team: support, role: "member", start_date: "05/06/2019",
   job_code: "43-4051.00", job: "Customer Service Representatives")
+hrbp = Position.create!(user: elisa, team: hr, role: "member", start_date: "05/06/2018", end_date: "04/06/2019",
+  job_code: "13-1071.00", job: "Human Resources Specialists")
 
 
 puts "Seeding walks..."
@@ -236,18 +239,22 @@ seed_skills(data_analyst3)
 seed_skills(data_analyst4)
 seed_skills(data_analyst5)
 seed_skills(data_manager)
+seed_skills(accountant)
 seed_skills(support_manager)
 seed_skills(supporter1)
 seed_skills(supporter2)
+seed_skills(hrbp)
 
 seed_skillable_skill_sets(marketing_walk, marketer)
 seed_skillable_skill_sets(sales_walk, sales_rep)
 seed_skillable_skill_sets(data_walk, sales_rep)
-seed_skillable_skill_sets(accounting_walk, data_analyst1)
+seed_skillable_skill_sets(accounting_walk, accountant)
 seed_skillable_skill_sets(support_walk, supporter1)
-seed_skillable_skill_sets(hr_walk, supporter1)
+seed_skillable_skill_sets(hr_walk, hrbp)
 
 seed_skillable_skill_sets(laura, data_analyst1)
+seed_skillable_skill_sets(lionel, data_analyst1)
+seed_skillable_skill_sets(pierre, supporter1)
 seed_skillable_skill_sets(laetitia, supporter1)
 seed_skillable_skill_sets(john, marketer)
 seed_skillable_skill_sets(jenny, data_analyst1)
