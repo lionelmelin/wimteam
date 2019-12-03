@@ -10,14 +10,14 @@ class SkillSetPolicy < ApplicationPolicy
   end
 
   def create?
-    record.user == user || user.current_managed_teams.include?(record.walk.team)
+    record.skillable == user || user.current_managed_teams.include?(record.skillable.team) || user.positions.include?(record.skillable)
   end
 
   def update?
-    record.user == user || user.current_managed_teams.include?(record.walk.team)
+    record.skillable == user || user.current_managed_teams.include?(record.skillable.team) || user.positions.include?(record.skillable)
   end
 
   def destroy?
-    record.user == user || user.current_managed_teams.include?(record.walk.team)
+    record.skillable == user || user.current_managed_teams.include?(record.skillable.team) || user.positions.include?(record.skillable)
   end
 end

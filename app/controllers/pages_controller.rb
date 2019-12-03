@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user_skill_set = SkillSet.new(skillable: current_user, skillable_type: "User")
+    @position_skill_set = SkillSet.new(skillable: current_user.positions.first, skillable_type: "Position")
   end
 
   def myapplications
@@ -16,10 +18,10 @@ class PagesController < ApplicationController
   private
 
   def past_user_walks
-    return current_user.user_walks.select{|walk| walk.past?}
+    return current_user.user_walks.select { |walk| walk.past? }
   end
 
   def upcoming_user_walks
-    return current_user.user_walks.reject{|walk| walk.past?}
+    return current_user.user_walks.reject { |walk| walk.past? }
   end
 end

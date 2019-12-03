@@ -30,6 +30,10 @@ initGauge();
 //DatePicker
 import "../plugins/flatpickr";
 
+//Button to add new skill on profile
+import { displayNewSkillForm, hideNewSkillForm } from "../components/new_skill_button";
+displayNewSkillForm();
+hideNewSkillForm();
 
 //PopOver
 import { activatePopOver } from '../components/popover';
@@ -38,4 +42,3 @@ activatePopOver();
 //Dropdown with Select2
 import { initSelect2 } from '../components/dropdown_select2';
 initSelect2();
-

@@ -31,7 +31,7 @@
           <div class="card w-70 details-card accordion" id="accordionExample1">
 
             <div class="d-flex justify-content-between collapse-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <h2 class="m-0"><i class="fas fa-street-view mx-3"></i>   Current position</h2>
+              <h2 class="m-0"><i class="fas fa-street-view mr-3"></i>   Current position</h2>
               <!-- fa-map-marker / fa-map-marker-alt / fa-map-pin -->
               <div class="expand-notice">Click to expand</div>
             </div>
@@ -47,131 +47,116 @@
           <!-- Current skills -->
           <div class="card w-70 details-card accordion" id="accordionExample2">
 
-              <div class="d-flex justify-content-between collapse-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                <h2 class="m-0"><i class="fa fa-check-circle mx-3"></i>   Current skills</h2>
-                <div class="expand-notice">Click to expand</div>
+            <div class="d-flex justify-content-between collapse-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+              <h2 class="m-0"><i class="fa fa-check-circle mr-3"></i>   Current skills</h2>
+              <div class="expand-notice">Click to expand</div>
+            </div>
+
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample2">
+
+              <!-- I perfectly master -->
+              <div class="mb-4">
+                <h2 class="level-title">I perfectly master</h2>
+                <% current_user.positions.first.top_skill_sets.each do |skill_set| %>
+                <div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
+                  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
+                  <%=link_to skill_set_path(skill_set), method: :delete, remote: true do %>
+                  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
+                  <% end %>
+                </div>
+                <% end %>
               </div>
 
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample2">
-                <!-- I perfectly master -->
-                <div class="mb-4">
-                  <h2 class="level-title">I perfectly master</h2>
-                  <% current_user.positions.first.top_skill_sets.each do |skill_set| %>
-                  <div class="skill-card-wrapper">
-                    <div class="skill-card">
-                      <%= skill_set.skill.name.capitalize %>
-                    </div>
-                    <div class="skill-card-tools">
-                      <div class="d-flex justify-content-between flex-wrap">
-                        <a href=""><i class="fas fa-pencil-alt"></i></a>
-                        <a href=""><i class="fas fa-times"></i></a>
-                      </div>
-                    </div>
-                  </div>
+              <!-- I am comfortable with -->
+              <div class="mb-4">
+                <h2 class="level-title">I am comfortable with</h2>
+                <% current_user.positions.first.medium_skill_sets.each do |skill_set| %>
+                <div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
+                  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
+                  <%=link_to skill_set_path(skill_set), method: :delete, data: {confirm: "Are you sure you want to delete the skill \"#{skill_set.skill.name}\" ?"}, remote: true do %>
+                  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
                   <% end %>
                 </div>
-
-                <!-- I am comfortable with -->
-                <div class="mb-4">
-                  <h2 class="level-title">I am comfortable with</h2>
-                  <% current_user.positions.first.medium_skill_sets.each do |skill_set| %>
-                  <div class="skill-card-wrapper">
-                    <div class="skill-card">
-                      <%= skill_set.skill.name.capitalize %>
-                    </div>
-                    <div class="skill-card-tools">
-                      <div class="d-flex justify-content-between flex-wrap">
-                        <a href=""><i class="fas fa-pencil-alt"></i></a>
-                        <a href=""><i class="fas fa-times"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <% end %>
-                </div>
-
-                <!-- I have notions -->
-                <div class="mb-4">
-                  <h2 class="level-title">I have notions</h2>
-                  <% current_user.positions.first.low_skill_sets.each do |skill_set| %>
-                  <div class="skill-card-wrapper">
-                    <div class="skill-card">
-                      <%= skill_set.skill.name.capitalize %>
-                    </div>
-                    <div class="skill-card-tools">
-                      <div class="d-flex justify-content-between flex-wrap">
-                        <a href=""><i class="fas fa-pencil-alt"></i></a>
-                        <a href=""><i class="fas fa-times"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <% end %>
-                </div>
+                <% end %>
               </div>
+
+              <!-- I have notions -->
+              <div class="mb-4">
+                <h2 class="level-title">I have notions</h2>
+                <% current_user.positions.first.low_skill_sets.each do |skill_set| %>
+                <div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
+                  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
+                  <%=link_to skill_set_path(skill_set), method: :delete, remote: true do %>
+                  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
+                  <% end %>
+                </div>
+                <% end %>
+              </div>
+
+              <!-- Add new skill -->
+              <div class="skill-new">Add new skill</div>
+              <div class="skill-new-form-container">
+                <%= form_tag(skill_sets_path(@position_skill_set), {method: :post}) do %>
+                <%= select_tag(:skill, options_for_select(Skill.all_short.sort, :skill), include_blank: "Select skill", class: "mr-2 w-70vw") %>
+                <%= select_tag(:level, options_for_select(["Master", "Comfortable with", "Notions"], :level), include_blank: "Select level", class: "mr-2 w-70vw") %>
+                <%= hidden_field(:skillable_type, "Position") %>
+                <%= submit_tag 'Add', class: 'btn-start' %>
+                <% end %>
+                <div class="skill-new-cancel">Cancel</div>
+              </div>
+
+            </div>
           </div>
 
           <!-- Skills I'm interested in -->
           <div class="card w-70 details-card accordion" id="accordionExample3">
-              <div class="d-flex justify-content-between collapse-header" id="headingThree"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                <h2 class="m-0"><i class="fas fa-search-plus mx-3"></i>Skills I'm interested in</h2>
-                <div class="expand-notice">Click to expand</div>
+            <div class="d-flex justify-content-between collapse-header" id="headingThree"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+              <h2 class="m-0"><i class="fas fa-search-plus mr-3"></i>Skills I'm interested in</h2>
+              <div class="expand-notice">Click to expand</div>
+            </div>
+
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample3">
+
+              <!-- Must have skills -->
+              <div class="mb-4">
+                <h2 class="level-title">Must have</h2>
+                <% current_user.top_skill_sets.each do |skill_set| %>
+                <div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
+                  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
+                  <%=link_to skill_set_path(skill_set), method: :delete, remote: true do %>
+                  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
+                  <% end %>
+                </div>
+                <% end %>
               </div>
 
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample3">
-                <!-- Must have skills -->
-                <div class="mb-4">
-                  <h2 class="level-title">Must have</h2>
-                  <% current_user.top_skill_sets.each do |skill_set| %>
-                  <div class="skill-card-wrapper">
-                    <div class="skill-card">
-                      <%= skill_set.skill.name.capitalize %>
-                    </div>
-                    <div class="skill-card-tools">
-                      <div class="d-flex justify-content-between flex-wrap">
-                        <a href=""><i class="fas fa-pencil-alt"></i></a>
-                        <a href=""><i class="fas fa-times"></i></a>
-                      </div>
-                    </div>
-                  </div>
+              <!-- Interested in skills -->
+              <div class="mb-4">
+                <h2 class="level-title">I am interested in</h2>
+                <% current_user.medium_skill_sets.each do |skill_set| %>
+                <div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
+                  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
+                  <%=link_to skill_set_path(skill_set), method: :delete, remote: true do %>
+                  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
                   <% end %>
                 </div>
-
-                <!-- Interested in skills -->
-                <div class="mb-4">
-                  <h2 class="level-title">I am interested in</h2>
-                  <% current_user.medium_skill_sets.each do |skill_set| %>
-                  <div class="skill-card-wrapper">
-                    <div class="skill-card">
-                      <%= skill_set.skill.name.capitalize %>
-                    </div>
-                    <div class="skill-card-tools">
-                      <div class="d-flex justify-content-between flex-wrap">
-                        <a href=""><i class="fas fa-pencil-alt"></i></a>
-                        <a href=""><i class="fas fa-times"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <% end %>
-                </div>
-
-                <!-- Why not skills -->
-                <div class="mb-4">
-                  <h2 class="level-title">Why not ?</h2>
-                  <% current_user.low_skill_sets.each do |skill_set| %>
-                  <div class="skill-card-wrapper">
-                    <div class="skill-card">
-                      <%= skill_set.skill.name.capitalize %>
-                    </div>
-                    <div class="skill-card-tools">
-                      <div class="d-flex justify-content-between flex-wrap">
-                        <a href=""><i class="fas fa-pencil-alt"></i></a>
-                        <a href=""><i class="fas fa-times"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <% end %>
-                </div>
+                <% end %>
               </div>
 
+              <!-- Why not skills -->
+              <div class="mb-4">
+                <h2 class="level-title">Why not ?</h2>
+                <% current_user.low_skill_sets.each do |skill_set| %>
+                <div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
+                  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
+                  <%=link_to skill_set_path(skill_set), method: :delete, remote: true do %>
+                  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
+                  <% end %>
+                </div>
+                <% end %>
+              </div>
+
+            </div>
           </div>
 
           <!-- </div> -->
@@ -179,4 +164,3 @@
       </div>
     </div>
   </div>
-</div>
