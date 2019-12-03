@@ -10,7 +10,7 @@ class SkillsSearchService
     puts "Connected to O*NET Web Services version #{vinfo['api_version']}"
     # code = '17-2051.00'
 
-    kwresults = onet_ws.call_skills("mnm/careers/#{job_code}/abilities")
+    kwresults = onet_ws.call_skills("mnm/careers/#{job_code}/knowledge")
     end_result = kwresults["group"].map do |result|
       result["element"].map {|e| e["name"] }
     end.flatten

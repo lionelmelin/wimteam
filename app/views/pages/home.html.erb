@@ -27,17 +27,23 @@
     <div class="pts-card">
       <h3>Find</h3>
       <p>Fill in your profile and let the app suggest a great match!</p>
-      <i class="fas fa-search"></i>
+        <div class="pts-card-image">
+        <%= image_tag 'find.png', alt: "find" %>
+        </div>
     </div>
     <div class="pts-card">
       <h3>Apply</h3>
       <p>Apply to the walks that best fit your expectations</p>
-      <i class="fas fa-check"></i>
+        <div class="pts-card-image">
+        <%= image_tag 'apply.png', alt: "apply" %>
+        </div>
     </div>
     <div class="pts-card">
       <h3>Walk !</h3>
       <p>Walk in a new team and learn more about your company!</p>
-      <i class="fas fa-walking"></i>
+        <div class="pts-card-image">
+        <%= image_tag 'walk.png', alt: "walk" %>
+        </div>
     </div>
   </div>
   <div>
@@ -107,6 +113,7 @@
 </div>
 
 <!-- Call to action : Let's walk -->
+
   <div class="container d-flex justify-content-around my-5 button btn-letswalk">
     <%= link_to "Let's walk !", walks_path, style: "color: white;" %>
   </div>

@@ -1,47 +1,97 @@
-
-<div class="container my-5">
+<div class="container my-4">
   <h1 class="book-title">Walk in...</h1>
-
-  <div class="d-flex mt-3">
+</div>
+  <!-- Searchbar -->
+<div class="container", id="searchbar-container">
+  <div class="d-flex justify-content-around py-2", id="searchbar">
   <%= form_tag( walks_path, {method: :get, class: 'form-inline'}) do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control mr-2 w-70vw",
       placeholder: "Find a Walk"
     %>
-    <%= submit_tag "Search", class: "btn btn-dark" %>
+    <%= select_tag(
+      :location,
+      options_for_select(Team.all.map{|t| t.location}.sort_by{|l| l}, :location),
+      include_blank: "Location",
+      class: "select2"
+    ) %>
+
+    <%= select_tag(
+      :department,
+      options_for_select(Team.all.map{|t| t.department}.sort_by{|d| d}.uniq!, :department),
+      include_blank: "Department",
+      class: "select2"
+    ) %>
+    <%= select_tag(
+      :duration,
+      options_for_select(Walk.all.map{|w| w.duration}.sort_by{|d| d}.uniq!, :duration),
+      include_blank: "Duration",
+      class: "select2"
+    ) %>
+    <%= submit_tag "Search", class: "btn btn-dark ml-2" %>
   <% end %>
   </div>
+</div>
 
-  <div class="">
+
+<div class="container my-2">
+  <div class="cards-walks">
     <br>
       <% @walks.each do |walk| %>
-        <div class="card-dashboard">
-          <%= cl_image_tag walk.team.photo.key, width: 140, height: 140, crop: :fill, gravity: :face if walk.team.photo.attached? %>
-          <div class="card-dashboard-infos">
-            <h2>Walk in the <%= walk.team.name %> Team!</h2>
-            <h3 class="duration"><i class="fas fa-calendar-week"></i><%= walk.duration %> </h3>
-            <p><%= walk.description.truncate(200) %> </p>
-          </div>
-          <!-- Progress bar 1 -->
-          <div class="gauge-index">
-            <div class="progress mx-auto" data-value=<%= "#{ScoreService.new.score(walk, @user)}" %>>
-              <span class="progress-left">
-                <span class="progress-bar"></span>
+        <%= link_to walk_path(walk) do %>
+          <div class="card-dashboard">
+            <div class="card-dashboard-image">
+              <%= cl_image_tag walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :face if walk.team.photo.attached? %>
+            </div>
+            <div class="card-dashboard-infos">
+              <h2><%= walk.title %></h2>
+              <h3 class="duration">
+                <span class="walk-popover" data-container="body" data-toggle="popover" data-trigger="hover"
+                data-placement="bottom" data-content="Suggested walk duration">
+                  <i class="fas fa-calendar-week">
+                  </i><%= walk.duration %>
+                </span>
+                <span class="walk-popover" data-container="body" data-toggle="popover" data-trigger="hover"
+                  data-placement="bottom" data-content="Purpose of the Walk">
+                  <% if walk.purpose == "Recruitment"%>
+                    <i class="ml-3 fas far fa-handshake">
+                    </i> Recruitment
+                  <% else %>
+                    <i class="ml-3 fas fa-rocket">
+                    </i> Discovery
+                  <% end %>
+                </span>
+              <span class="walk-popover" data-container="body" data-toggle="popover" data-trigger="hover"
+                  data-placement="bottom" data-content="Team offering the Walk">
+                <i class="ml-3 fas fa-users">
+                </i><%= walk.team.name %>
               </span>
-              <span class="progress-right">
-                <span class="progress-bar"></span>
+              <span class="walk-popover" data-container="body" data-toggle="popover" data-trigger="hover"
+                  data-placement="bottom" data-content="Location of the Walk">
+                <i class="ml-3 fas fa-thumbtack">
+                </i><%= walk.team.location %> </h3>
               </span>
-              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                <p class="progress-font"><%= "#{ScoreService.new.score(walk, @user)}" %><sup class="small">%</sup></p>
+              <p><%= walk.description.truncate(200) %> </p>
+            </div>
+
+            <!-- Progress bar 1 -->
+            <div class="gauge-index walk-popover" data-container="body" data-toggle="popover" data-trigger="hover"
+                  data-placement="right" data-content="Matching score based on your skills and on the Walk's required skills">
+              <div class="progress mx-auto" data-value=<%= "#{ScoreService.new.score(walk, @user)}" %>>
+                <span class="progress-left">
+                  <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                  <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                  <p class="progress-font"><%= "#{ScoreService.new.score(walk, @user)}" %><sup class="small">%</sup></p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="location-apply">
-            <h3 class="location"><i class="fas fa-thumbtack"></i><%= walk.team.location %> </h3>
-            <%= link_to "Apply", walk_path(walk), class: "btn-apply" %>
-          </div>
-        </div>
+        <% end %>
       <% end %>
     <br>
   </div>
