@@ -62,11 +62,14 @@
   <h2>Our best walks</h2>
   </div>
   <div class="row">
-    <% @user_walks.each do |user_walked| %>
+    <% @user_walks.each do |user_walked| %> 
+
       <div class="col cards">
+        <%= link_to walk_path(user_walked),:action => 'go' do  %>
         <div class="card-homepage">
           <!-- Walk team picture -->
           <% if user_walked.walk.team.photo.attached?%>
+
             <%= cl_image_tag user_walked.walk.team.photo.key, width: 400, height: 300, crop: :fill %>
           <% else %>
             <%= cl_image_tag "", width: 400, height: 300, crop: :fill %>
@@ -75,13 +78,14 @@
           <div class="card-homepage-infos">
             <div>
               <h4><%= user_walked.walk.team.name %> team</h4>
-              <p><%= truncate(user_walked.walk.description, :length => 100, :separator => ' ') %></p>
+              <p><%= truncate(user_walked.walk.description, :length => 80, :separator => ' ') %></p>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
 <!-- Fourth section : Testimonies (id = walks) -->
 <div class="py-4">

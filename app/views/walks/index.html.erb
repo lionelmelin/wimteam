@@ -1,4 +1,4 @@
-<div class="container my-4">
+<div class="container mt-4 mb-2">
   <h1 class="book-title">Walk in...</h1>
 </div>
   <!-- Searchbar -->
@@ -12,24 +12,24 @@
     %>
     <%= select_tag(
       :location,
-      options_for_select(Team.all.map{|t| t.location}.sort_by{|l| l}, :location),
+      options_for_select(Team.all.map{|t| t.location}.sort.uniq!, :location),
       include_blank: "Location",
-      class: "select2"
+      class: "form-control mr-2 w-70vw"
     ) %>
 
     <%= select_tag(
       :department,
-      options_for_select(Team.all.map{|t| t.department}.sort_by{|d| d}.uniq!, :department),
-      include_blank: "Department",
-      class: "select2"
+      options_for_select(Team.all.map{|t| t.department}.sort.uniq!, :department),
+      prompt: "Department",
+      class: "form-control mr-2 w-70vw"
     ) %>
     <%= select_tag(
       :duration,
-      options_for_select(Walk.all.map{|w| w.duration}.sort_by{|d| d}.uniq!, :duration),
+      options_for_select(Walk.all.map{|w| w.duration}.sort.uniq!, :duration),
       include_blank: "Duration",
-      class: "select2"
+      class: "form-control mr-2 w-70vw"
     ) %>
-    <%= submit_tag "Search", class: "btn btn-dark ml-2" %>
+    <%= submit_tag "Search", class: "btn btn-search" %>
   <% end %>
   </div>
 </div>

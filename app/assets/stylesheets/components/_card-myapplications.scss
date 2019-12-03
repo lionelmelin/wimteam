@@ -1,8 +1,6 @@
-.cards-walks {
-  margin: 0px 100px 0px 100px;
-}
 
-.card-dashboard {
+
+.card-application {
   overflow: hidden;
   height: 180px;
   background: white;
@@ -13,35 +11,29 @@
   margin: 50px 0px 27px 0px;
   transition: all 0.3s ease;
   position: relative;
-    &:hover {
-    // transform: scale(1.002);
-    // margin: 48px 0px 29px 0px;
-    top: -2px;
-    box-shadow: 2px 0 25px rgba(0,0,0,0.2);
-  }
 }
 
-.card-dashboard-image {
+.card-application-image {
   position: relative;
   width: 180;
   height: 180;
 }
 
-.card-dashboard h2 {
+.card-application h2 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 17px;
 }
 
-.card-dashboard h3 {
+.card-application h3 {
   font-size: 18px;
   margin: 0;
 }
-.card-dashboard-infos p {
+.card-application-infos p {
   margin: 10px 0px 10px 10px
 }
 
-.card-dashboard .card-dashboard-infos {
+.card-application .card-application-infos {
   padding: 16px;
   margin: 10px 0px 10px 0px;
   flex-grow: 1;
@@ -51,10 +43,9 @@
       margin-right: 5px;
     }
   }
-
 }
 
-.card-dashboard .score {
+.card-application .score {
   border-color: $my-dark-blue;
   border-style: solid;
   color: $my-orange;
@@ -63,7 +54,7 @@
   border-radius: 50%;
 }
 
-.card-dashboard .location-apply {
+.card-application .location-apply {
   margin: 0px 10px 10px 10px;
   padding: 16px;
   .location {
@@ -75,7 +66,7 @@
   }
 }
 
-.card-dashboard .location-status {
+.card-application .location-status {
   margin: 0px 10px 10px 10px;
   padding: 5px;
   width: 100px;
@@ -88,6 +79,5 @@
   left: 5px;
   margin: 0;
   padding: 0px 3px 0px 3px;
-  z-index: 1;
 }
 
