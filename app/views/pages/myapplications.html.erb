@@ -7,16 +7,16 @@
     <div class="cards-walks">
       <br>
         <% @upcoming_user_walks.each do |user_walk| %>
-            <div class="card-dashboard" data-user-walk-id="<%= user_walk.id %>">
-              <div class="card-dashboard-image">
+            <div class="card-application" data-user-walk-id="<%= user_walk.id %>">
+              <div class="">
                 <div class="application-status">
                   <span class="badge badge-primary"><%= user_walk.status %></span>
                 </div>
-                <div class="card-dashboard-image">
+                <div class="card-application-image">
                   <%= cl_image_tag user_walk.walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :face if user_walk.walk.team.photo.attached? %>
                 </div>
               </div>
-              <div class="card-dashboard-infos">
+              <div class="card-application-infos">
                 <h2><%= user_walk.walk.title %></h2>
                 <h6 class="duration mb-2"><i class="fas fa-calendar-week"></i><%= user_walk.display_start_date %> - <%= user_walk.display_end_date %> </h6>
                 <h6 class="duration">
@@ -82,6 +82,7 @@
               <% unless user_walk.review.empty? %>
                 <p class="ml-0"> <em>"<%= user_walk.review %>"</em> </p>
               <% end %>
+
             </div>
             <div class="myapp-btns mb-0">
               <%= link_to walk_path(user_walk.walk) do %>

@@ -27,7 +27,10 @@
         </div>
 
         <!-- <div class="accordion" id="accordionExample"> -->
+
+          <!-- ---------------- -->
           <!-- Current position -->
+          <!-- ---------------- -->
           <div class="card w-70 details-card accordion" id="accordionExample1">
 
             <div class="d-flex justify-content-between collapse-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -44,7 +47,9 @@
             </div>
           </div>
 
+          <!-- -------------- -->
           <!-- Current skills -->
+          <!-- -------------- -->
           <div class="card w-70 details-card accordion" id="accordionExample2">
 
             <div class="d-flex justify-content-between collapse-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -57,58 +62,47 @@
               <!-- I perfectly master -->
               <div class="mb-4">
                 <h2 class="level-title">I perfectly master</h2>
-                <% current_user.positions.first.top_skill_sets.each do |skill_set| %>
-                <div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
-                  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
-                  <%=link_to skill_set_path(skill_set), method: :delete, remote: true do %>
-                  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
+                <div id="position-skills-2-container">
+                  <% current_user.current_positions.first.top_skill_sets.each do |skill_set| %>
+                    <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
                 </div>
-                <% end %>
               </div>
 
               <!-- I am comfortable with -->
               <div class="mb-4">
                 <h2 class="level-title">I am comfortable with</h2>
-                <% current_user.positions.first.medium_skill_sets.each do |skill_set| %>
-                <div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
-                  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
-                  <%=link_to skill_set_path(skill_set), method: :delete, data: {confirm: "Are you sure you want to delete the skill \"#{skill_set.skill.name}\" ?"}, remote: true do %>
-                  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
+                <div id="position-skills-1-container">
+                  <% current_user.current_positions.first.medium_skill_sets.each do |skill_set| %>
+                    <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
                 </div>
-                <% end %>
               </div>
 
               <!-- I have notions -->
               <div class="mb-4">
                 <h2 class="level-title">I have notions</h2>
-                <% current_user.positions.first.low_skill_sets.each do |skill_set| %>
-                <div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
-                  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
-                  <%=link_to skill_set_path(skill_set), method: :delete, remote: true do %>
-                  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
+                <div id="position-skills-0-container">
+                  <% current_user.current_positions.first.low_skill_sets.each do |skill_set| %>
+                    <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
                 </div>
-                <% end %>
               </div>
 
               <!-- Add new skill -->
               <div class="skill-new">Add new skill</div>
               <div class="skill-new-form-container">
-                <%= simple_form_for @position_skill_set, method: :post, class: "form-inline" do |f| %>
-                <%= f.association :skill, label_method: :name, value_method: :id, include_blank: "Select skill", class: "mr-2 w-70vw" %>
-                <%= f.input :level, collection: ["Master", "Comfortable with", "Notions"], include_blank: "Select level", class: "mr-2 w-70vw" %>
-                <%= f.input :skillable_type, value: "Position", as: :hidden %>
-                <%= f.submit 'Add', class: 'btn-start' %>
-                <% end %>
+                <div id="position-skill-form">
+                  <%= render 'skill_sets/form', skill_set: @skill_set, skillable_type: "Position" %>
+                </div>
                 <div class="skill-new-cancel">Cancel</div>
               </div>
-
             </div>
           </div>
 
+          <!-- ------------------------ -->
           <!-- Skills I'm interested in -->
+          <!-- ------------------------ -->
           <div class="card w-70 details-card accordion" id="accordionExample3">
             <div class="d-flex justify-content-between collapse-header" id="headingThree"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
               <h2 class="m-0"><i class="fas fa-search-plus mr-3"></i>Skills I'm interested in</h2>
@@ -120,42 +114,38 @@
               <!-- Must have skills -->
               <div class="mb-4">
                 <h2 class="level-title">Must have</h2>
-                <% current_user.top_skill_sets.each do |skill_set| %>
-                <div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
-                  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
-                  <%=link_to skill_set_path(skill_set), method: :delete, remote: true do %>
-                  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
+                <div id="user-skills-2-container">
+                  <% current_user.top_skill_sets.each do |skill_set| %>
+                    <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
                 </div>
-                <% end %>
               </div>
 
               <!-- Interested in skills -->
               <div class="mb-4">
                 <h2 class="level-title">I am interested in</h2>
-                <% current_user.medium_skill_sets.each do |skill_set| %>
-                <div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
-                  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
-                  <%=link_to skill_set_path(skill_set), method: :delete, remote: true do %>
-                  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
+                <div id="user-skills-1-container">
+                  <% current_user.medium_skill_sets.each do |skill_set| %>
+                    <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
                 </div>
-                <% end %>
               </div>
 
               <!-- Why not skills -->
               <div class="mb-4">
                 <h2 class="level-title">Why not ?</h2>
-                <% current_user.low_skill_sets.each do |skill_set| %>
-                <div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
-                  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
-                  <%=link_to skill_set_path(skill_set), method: :delete, remote: true do %>
-                  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
+                <div id="user-skills-0-container">
+                  <% current_user.low_skill_sets.each do |skill_set| %>
+                    <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
                 </div>
-                <% end %>
               </div>
 
+              <!-- Add new skill -->
+              <div class="skill-new">Add new skill</div>
+              <div class="skill-new-form-container" id="user-skill-form">
+                <%= render 'skill_sets/form', skill_set: @skill_set, skillable_type: "User" %>
+              </div>
             </div>
           </div>
 

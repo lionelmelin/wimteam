@@ -1,0 +1,6 @@
+<div class="skill-card" data-skill-set-id="<%= skill_set.id %>">
+  <div class="skill-card-name"><%= skill_set.skill.name.capitalize %></div>
+  <%=link_to skill_set_path(skill_set), method: :delete, remote: true do %>
+  <div class="skill-card-delete"><i class="fas fa-times"></i></div>
+  <% end %>
+</div>

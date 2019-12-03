@@ -1,0 +1,6 @@
+<%= simple_form_for skill_set, method: :post, remote: true, class: "form-inline" do |f| %>
+  <%= f.association :skill, label_method: :name, value_method: :id, include_blank: "Select skill", class: "mr-2 w-70vw" %>
+  <%= f.input :level, collection: { "Master" => 2, "Comfortable with" => 1, "Notions" => 0 }, include_blank: "Select level", class: "mr-2 w-70vw" %>
+  <%= f.input :skillable_type, input_html: { value: skillable_type }, as: :hidden %>
+  <%= f.submit 'Add', class: 'btn-start' %>
+<% end %>

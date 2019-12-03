@@ -5,8 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @user_skill_set = SkillSet.new(skillable: current_user, skillable_type: "User")
-    @position_skill_set = SkillSet.new(skillable: current_user.positions.first, skillable_type: "Position")
+    @skill_set = SkillSet.new()
   end
 
   def myapplications
