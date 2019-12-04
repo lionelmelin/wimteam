@@ -8,15 +8,14 @@
     <h1><span id="banner-typed-text"></span></h1>
   </div> -->
   <div class="video-absolute-title">
-    <h1>Curious? Antsy? Lonesome?</br>
+    <h1>Curious? Eager to learn?</br>
     Discover your colleagues across the hall!</h1>
-  </div>
+ </div>
 
   <div class="video-absolute-btn">
     <a href="#pts" class="banner-link"><div class="banner-button btn-apply">Start now !</div></a>
   </div>
 </div>
-
 
 <!-- Second section : Pain Target Solution (id = pst) -->
 <div class="container d-flex flex-column justify-content-center align-items-center pt-3" id="pts">
@@ -62,7 +61,7 @@
   <h2>Our best walks</h2>
   </div>
   <div class="row">
-    <% @user_walks.each do |user_walked| %> 
+    <% @user_walks.each do |user_walked| %>
 
       <div class="col cards">
         <%= link_to walk_path(user_walked),:action => 'go' do  %>
@@ -96,19 +95,21 @@
     <% @user_walks.each do |user_walked| %>
       <div class="col cards">
         <div class="card">
-          <div class="card-info d-flex align-items-center">
-            <%# raise %>
-            <% if user_walked.user.photo.attached?%>
-              <%= cl_image_tag user_walked.user.photo.key, width: 64, height: 64, crop: :fill, gravity: :face %>
-            <% else %>
-              <%= cl_image_tag "", width: 64, height: 64, crop: :fill, class: "rounded-circle mr-4" %>
-            <% end %>
-            <h4 class="ml-2"><%= user_walked.user.first_name %></h4>
+          <div class="card-info d-flex align-items-center", class="avatar">
+            <div style="{width: 85; height: 85;}">
+              <% if user_walked.user.photo.attached?%>
+                <%= cl_image_tag user_walked.user.photo.key, width: 85, height: 85, crop: :thumb, gravity: :face %>
+              <% else %>
+                <%= cl_image_tag "", width: 75, height: 75, crop: :fill, class: "rounded-circle mr-4" %>
+              <% end %>
+            </div>
+            <div class="">
+              <h4 class="mb-1 mx-2"><%= user_walked.user.first_name %></h4>
+              <!-- <div class="card-description p-2"> -->
+              <p class="mx-2 mb-1"><i>"<%= truncate(user_walked.review,:length => 60, :separator => ' ') %>"</i></p>
+            <!-- </div> -->
+            </div>
           </div>
-          <div class="card-description p-2">
-            <p style="margin: 0;"><i>"<%= truncate(user_walked.review,:length => 60, :separator => ' ') %>"</i></p>
-          </div>
-
         </div>
       </div>
     <% end %>
@@ -118,6 +119,8 @@
 
 <!-- Call to action : Let's walk -->
 
-  <div class="container d-flex justify-content-around my-5 button btn-letswalk">
-    <%= link_to "Let's walk !", walks_path, style: "color: white;" %>
-  </div>
+  <%= link_to dashboard_path, style: "color: white;" do %>
+    <div class="container d-flex justify-content-around my-5 button btn-letswalk">
+      Get started!
+    </div>
+  <% end %>

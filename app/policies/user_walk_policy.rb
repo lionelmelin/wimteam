@@ -14,6 +14,7 @@ class UserWalkPolicy < ApplicationPolicy
   end
 
   def update?
+    # true
     record.user == user || user.current_managed_teams.include?(record.walk.team)
   end
 

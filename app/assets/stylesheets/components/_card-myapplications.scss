@@ -2,7 +2,7 @@
 
 .card-application {
   overflow: hidden;
-  height: 180px;
+  height: 150px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -13,8 +13,24 @@
   position: relative;
 }
 
-.card-application-image {
+.card-application > a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.myapp-btns {
   position: relative;
+  z-index: 20;
+  padding: 5px;
+  width: 200px;
+  height: 100%;
+}
+
+.card-application-image {
   width: 180;
   height: 180;
 }
@@ -73,11 +89,12 @@
 }
 
 .application-status {
-  position: absolute;
   font-size: 19px;
-  top: 10px;
-  left: 5px;
   margin: 0;
   padding: 0px 3px 0px 3px;
+}
+
+.past-application {
+  opacity: 0.7;
 }
 

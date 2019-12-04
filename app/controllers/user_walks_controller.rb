@@ -12,7 +12,19 @@ class UserWalksController < ApplicationController
     end
   end
 
+  def edit
+    @user_walk = current_user.user_walks.find(params[:id])
+    authorize @user_walk
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def update
+    @user_walk = UserWalk.find(params[:id])
+    authorize @user_walk
+    @user_walk.update(user_walk_params)
+    redirect_to myapplications_path
   end
 
   def destroy
@@ -28,6 +40,6 @@ class UserWalksController < ApplicationController
   private
 
   def user_walk_params
-    params.require(:user_walk).permit(:start_date, :end_date, :motivation, :user, :walk)
+    params.require(:user_walk).permit(:start_date, :end_date, :review, :motivation, :user, :walk)
   end
 end

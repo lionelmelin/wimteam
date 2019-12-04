@@ -14,24 +14,28 @@
 }
 
 .btn-search {
-  // font-size: 13px;
   text-align: center;
   color: $my-orange;
-  border: 1px solid $my-orange;
-  // padding-top: 8px;
-  // padding-bottom: 8px;
+  // border: 1px solid $my-orange;
   width: 100px;
-  background: white;
-  transition: background 0.5s ease;
-}
-
-.btn-search:hover {
+  height: 39px;
   background: $my-orange;
   color: white;
-  opacity: 0.8;
+  transition: background 0.5s ease;
+  &:hover {
+    opacity: 0.8;
+    color: white;
+  }
 }
 
-.btn-search a {
-  background: white;
-  color: $my-orange;
+.search-field {
+  border-radius: 0 !important;
+  border: none;
 }
+
+select {
+  appearance: none;
+  border-radius: 0px;
+}    
+
+
