@@ -16,6 +16,7 @@
     text-decoration: none;
     color: $my-orange;
     font-weight: normal;
+    font-size: 25px;
   }
   h2 {
     margin: 0 0 0 0;
@@ -51,6 +52,10 @@
 
 .navbar-light .navbar-nav .nav-link {
   opacity: 1;
+  font-size: 17px;
+&:hover {
+    transform: scale(1.030);
+    }
 }
 
 // .nav-link.active {

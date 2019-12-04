@@ -35,7 +35,7 @@
     </ul>
     <% if user_signed_in? %>
       <div class="avatar pl-2">
-        <div class="avatar-mine" style="background-image: url(<%= cl_image_path current_user.photo.key %>);">
+        <div class="avatar-mine" style="background-image: url(<%= cl_image_path current_user.photo.key %>)">
         </div>
       </div>
     <% end %>
