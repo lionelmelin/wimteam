@@ -21,7 +21,7 @@ User.destroy_all
 puts "Seeding users..."
 pierre = User.create!(purpose: "Recruitment", email: "pierre@giggle.com", password: "password", first_name: "Pierre",
   last_name: "Nevada", gender: "male", birth_date: "01/02/1990", graduation_date: "30/06/2013")
-pierre_pic = URI.open("https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+pierre_pic = URI.open("https://lh3.googleusercontent.com/1isXGKAlIeZULddq6oJN3xlvCZOtJrTjhFJpf10pIOIaGq37DlqiDgB_W7oaoXISzykRz-Ls_NsN2-Iou3OXBE6l1ENB5OWcB9-A5OPQaHvQ95lJg4U4Tt9rDy3qL906MgcU2tIeP4AAEbFH3xpqjb9BgiZV-9sYPaUTW2czh_6x1PP7w1OTPNBBwPT2_znqnT2SqSYGBi2w9VYAIA8_kq3AC4VcDTfIL0Rui1JH9BB-J_TT_53e2yrFNgWu0Ro4HC_ODHSLspya4UDp9oW0O0Jr0DrW_1sOFvopmtH4vX_WlStMZrzD7JPuaT5ljmXmccxfQ0yLCySGSm8IUhixEwNlFFXoPHuphH888-vdVsP1nm2GNo1WGeDAYOc6oz5o5MeDT5V4h39E6kwahUF6m33xB02nnoRd4a2_4_QMN87kWbS08zTcB5a03BFjV_tEn-AXr5T3b-h7ecSL5Bm34YV8-vmi6s5wZtKkMH47b_GS3KBu9XKGWC5iisF5z5D1cj9Ps00Smb9X_ejIrbcYpzjsd3_7Den8w4KL_doCiIpxK87EmAw0v5ozFuj1UXbpoE55g9_xSaXL0mql7N2EC6NJVNQOYfdc-JrW4oxAA5uQq-wEqCqFLXhPWxsUMX-alpTKXVlUbFXxoAH3cCOy5iYt_U4DTixahgWyV1J75aOMCM_y2xZurceG6g6zN8bNDXM0ma_ZfLgGcjC02itN0-9Wq8YZQhETIVls4Pb9aE4=w962-h640-no")
 pierre.photo.attach(io: pierre_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 laura = User.create!(purpose: "Discovery", email: "laura@giggle.com", password: "password", first_name: "Laura",
@@ -29,7 +29,7 @@ laura = User.create!(purpose: "Discovery", email: "laura@giggle.com", password: 
   description: "I have a master in Computer Science from the MIT. I graduated in 2014 and \
 started in Facebook's data science department. I joined Giggle's Data team in \
 2018 as a head of the Data team.")
-laura_pic = URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+laura_pic = URI.open("https://lh3.googleusercontent.com/7IlSPaHM1Cwr-8PM42ylJUAr0IUNlcHM-cCebDGqSIsiMFcBt8ceut_dnD7KbaUcOLzdOiCzUWkuN8SsOjV87ikl_Iq86b0sfVPMpJBhUPBvU4c5vm3WYfySqRXJE227mlL3uetQVpVO-fdHmxnctVn7aIz2XQTXTOMNE4D0x_895kCTsp5lUEbaZTJ_Yqa-6I6J9FmPI9w8u0wt9E7Z8G8MZl3_XYW0KijhPaUcjNMNtWRFoZJovVTjer_taQHf4s-YF-SqIWJAfKAUPimVuyaCLB2OZ4X8r2awbXr7ycPhIlPWb0421ENy1AoCp5Gi4VKEFxyUz96wlexES_rPG3nC3G49rtK4N4MYeYgiy5r9UK-J-yG_TiC8Tm8K1fZufh8-IwL1AXX0JMZZuCYSGILHC7U7VXvOiubNdTO-I6ccr90lgWKwgJd5FVJVsp2coi26qi08i6XUjynVm1o5USRbYXYhHIiLqIrUW9t4in6tPZrmDMzAh1J5FTRXE_e-nN1JZOaV7oJ6EayxeNzLv-FLsGk5mWCFeJ7EbyDa5ouV7_NloTJOpqzlv4TqXTciNvv6U2yTIJnTpU1siXA4xJ_EJG-hwyyWdfSDLvtRPf1L97k6T03SxSWR3PnsqyyZ2MpryQHx34yFrp5iBxyhPN-kmJjTJkMXQWsuhL8bbzKafh8I6X9UQpbjhGmozzoMZ15sbZ7IdliPtdTY5IrVbwgKn8WWMXEZfydX8_MAhq4=w962-h640-no")
 laura.photo.attach(io: laura_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 david = User.create!(purpose: "Recruitment", email: "david@giggle.com", password: "password", first_name: "David",
@@ -39,7 +39,7 @@ david.photo.attach(io: david_pic, filename: 'some-image.jpg', content_type: 'ima
 
 lionel = User.create!(purpose: "Discovery", email: "lionel@giggle.com", password: "password", first_name: "Lionel",
   last_name: "Minton", gender: "male", birth_date: "01/02/1990", graduation_date: "30/06/2013")
-lionel_pic = URI.open("https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+lionel_pic = URI.open("https://lh3.googleusercontent.com/mKyFk21H4vqbjG-MOZ-hrJ43DbRe6c0oFfdkSG3nFbnsi-ocQYJr6kNq3AjHyg7Gb4vnSZXhFL5ZV3cwLsii0-WPgTsnBTEHCVATZYpT4mWNNzgUn0X9-qRowvEbqjCiv8m98-_DzpPewgKyy8mcLrtWmxS2GW1mp72rMbIJO6genH63sLx44MnElCgbK2La4vAeDh62Oqv5-v254rqM5TuMEOlMHplD1c2lbx03FL56xRritOUU57sqYBs6yZ2QXZqQ7nFbKcw17QqAdFVRvVbATPR7JfxhokrRicY___5p6r-Zl1L40XwCImu71nVBFkyUUSDv_EVLM9E5OXk0tEUZvhhTZhoLeAw-teGZEsMR6W-Zbzzhy9xsd4EoHY5-vLeHEnRvB7iKGLshcg-aM7rchXqQWxzJrF8vueeiDg7EqpMc1l9TCvJv9zf5hqV5Z1NGCQTCWIAIgnXMYomkrk7vtTdfTqMAa9JthT-Zm8glAZkjrUxZ6NeVQJdOVKehc9v-P1dAWH19Q9JbY5cEdxl9p_4Ma6GA0OslXs_x0HKIEsn_zr6MNRuN3g9yQfRtJ0e-K9K0O5f4e2_4xYmb1v3u1KXlM9EfsicY5OitbLJ_AFI4VeaNaKCreNtk8LzkAjy2Lfwf_-Yw83pX28alDdsrKVDUoSkj6_vr_AkgmZR3RQn_EsfNNi3Zw2-0fub-4ouOKAou8--dSGxSlv_enP4K_Vd99Uhrt7E0hosmgmk=w962-h640-no")
 lionel.photo.attach(io: lionel_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 laetitia = User.create!(purpose: "Discovery", email: "laetitia@giggle.com", password: "password", first_name: "Laetitia",
@@ -47,7 +47,7 @@ laetitia = User.create!(purpose: "Discovery", email: "laetitia@giggle.com", pass
   description: "I have a master in Computer Science from the MIT. I graduated in 2016 and \
 started with an internship in Facebook's data science department. I joined Giggle's Data team in \
 2017 as a Business intelligence Analyst.")
-laetitia_pic = URI.open("https://images.unsplash.com/photo-1504703395950-b89145a5425b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+laetitia_pic = URI.open("https://lh3.googleusercontent.com/BFuVd_8UYCRU5YFk8ZNQxQglRb2iZ3gP5awZFvSdbb6XuANMQytmP6S72-UyPMPzxpel9exC7AIHNhWT31XdCUsAEmwGa3DtG1CD7RinoYsaYh4HzbHsH1UQ_KF1YdhzOd94X10ZGbCt89vyvtrDBFpf-vXOgMkM7feV5ZPFzwriYXILhqwC80Ruij6wcadOheVG_DvjlEWcoXy9iAOnZgtiyYZ8bSnZurxGpqz8EwQKAq7bfgJQhXaf_-EUuEBBaenQ2yEQ5ECIMxgILP2DSqbUnuRDFsEe-uWN9FrzCfKjANt59pa3lR7WCmCDTu3_I_-nae-CILnsjmFbu7rpBqalULsrunmpU0h6rqZIkWmLYv1A0A91c1som4PCwiK9S5B9d1iiWM2Mabu5n5ft4Py-2YYgYY8z2hZ9nd3aNUYjNH42njriTn65XZXjVPm-QevpjntAUmZn8paLIihd97suf9OvQg3dpprkBsGgK_EpdDG_oZZwJlFEIm2rIoYvZhM_YK4JwQLYkofu9LA2_bxL24sHZzvnPw2ZEhvgdrWdvpg7xNilUz1QFJ-zu1tjGXzKT3bv3y4uW2-9NgTr3Bn6wOFsW9QH1XO5DRvcGRCbaXuHcK2WRLlnqN7cyHTKfJ-HYKgYxwibQmr42mCuZqfIWIFdag3HovKo3X-8YJIW-JIVN9FeC2ALrpKWZ08No6GrBv1cT4nGrl4UUROv44-NNMT1zowh7xi3yyXM_O4=w962-h640-no")
 laetitia.photo.attach(io: laetitia_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 john = User.create!(purpose: "Recruitment", email: "john@giggle.com", password: "password", first_name: "John",
@@ -109,7 +109,7 @@ data.photo.attach(io: data_pic, filename: 'some-image.jpg', content_type: 'image
 support = Team.create!(name: "Support", location: "Nantes", department: "Sales & Marketing",
   description: "the support team is in charge of handling the support requests of the \
   existing clients, using telephone, chat and emails as communication channels.")
-support_pic = URI.open("https://www.allbusiness.com/asset/2016/09/business-group.jpg")
+support_pic = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG_XOBhOuCCDRxMgfny81s-1O33ERMdUbO_W7h3sxuCi0D5Vfn&s")
 support.photo.attach(io: support_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 sales = Team.create!(name: "Sales", location: "Paris", department: "Sales & Marketing",
@@ -128,7 +128,7 @@ accounting.photo.attach(io: accounting_pic, filename: 'some-image.jpg', content_
 hr = Team.create!(name: "Human resources", location: "London", department: "Human resources & communication",
   description: "The human resources team is always here to support the workers and the teams \
   within the firm. It also defines the recruitment and the retention policies.")
-hr_pic = URI.open("https://images.unsplash.com/photo-1520694478166-daaaaec95b69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
+hr_pic = URI.open("https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
 hr.photo.attach(io: hr_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 
@@ -176,7 +176,7 @@ marketing_walk = Walk.create!(title: "Become a marketer", team: marketing,
   make sure this is the job you want. This walk should be seen as a pre-recruitment test for internal candidates.",
   duration: "2 weeks", purpose: "Recruitment")
 
-data_walk = Walk.create!(title: "Understand Data science", team: data,
+data_walk = Walk.create!(title: "Discover Data science", team: data,
   description: "Learn the basics of data in 1 week! The walker will spend\
   the week learning the the key concepts underlying data science.\
   In the current environment, it is key to have a good understanding of the technologies\

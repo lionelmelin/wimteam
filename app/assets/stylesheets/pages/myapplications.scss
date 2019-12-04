@@ -11,6 +11,7 @@
 }
 
 .btn-details {
+  z-index: 20;
   font-size: 16px;
   text-align: center;
   color: $my-orange;
@@ -26,6 +27,7 @@
 
 .btn-details:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 #past-walks {
@@ -42,5 +44,15 @@
 }
 
 .edit-icon {
-  color: $medium-gray;
+  color: $my-orange;
+  font-size:110%;
+ }
+
+.edit-icon:hover {
+  font-size:120%;
+  }
+
+ .review-edit {
+  position: absolute;
+  z-index: 20;
  }
