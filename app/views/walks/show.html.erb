@@ -57,12 +57,16 @@
       <p><%= @walk.team.description %></p>
 
         <div class=" d-flex justify-content-around flex-wrap">
-          <% @walk.team.positions.sort_by{|p| p.user.first_name}.each do |member| %>
+          <% @walk.team.positions.sort_by{|p| p.user.first_name}.sort_by{|p| p.role}.each do |member| %>
             <%= link_to position_path(member), remote: true do %>
               <div class="mt-3 p-0 card-mini-profile">
                 <!-- <div> -->
                   <% if member.user.photo.attached?%>
-                    <%= cl_image_tag member.user.photo.key, width: 85, height: 85, crop: :thumb, gravity: :face, class: "avatar-large" %>
+                    <% if member.role == "manager" %>
+                     <%= cl_image_tag member.user.photo.key, width: 85, height: 85, crop: :thumb, gravity: :face, class: "avatar-large-bordered" %>
+                    <% else %>
+                      <%= cl_image_tag member.user.photo.key, width: 85, height: 85, crop: :thumb, gravity: :face, class: "avatar-large" %>
+                    <% end %>
                   <% else %>
                     <%= cl_image_tag "", width: 65, height: 65%>
                   <% end %>
