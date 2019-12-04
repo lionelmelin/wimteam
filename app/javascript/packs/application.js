@@ -58,6 +58,6 @@ initSweetalert('#sweet-alert-delete', {
 });
 
 //Active link
-import { activeLinkNav } from '../components/navbar_menu_bold';
+import { activeLinkNav } from '../components/navbar_menu';
 activeLinkNav();
 
