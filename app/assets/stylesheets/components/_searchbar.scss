@@ -1,5 +1,5 @@
 #searchbar {
-  background-color: $my-dark-blue;
+  background-color: $light-gray;
 }
 
 #searchbar-container {
@@ -30,12 +30,17 @@
 
 .search-field {
   border-radius: 0 !important;
-  border: none;
+  border: 1px solid $medium-gray;
+  font-size: 14px;
 }
 
 select {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
-  border-radius: 0px;
-}    
+}
+
+
 
 

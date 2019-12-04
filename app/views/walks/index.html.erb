@@ -1,8 +1,6 @@
-<div class="container mt-4 mb-2">
-</div>
   <!-- Searchbar -->
 <div class="searchcontainer container-fluid p-0", id="searchbar-container">
-  <div class="d-flex justify-content-around py-2", id="searchbar">
+  <div class="d-flex justify-content-around py-3", id="searchbar">
   <%= form_tag( walks_path, {method: :get, class: 'form-inline'}) do %>
     <%= text_field_tag :query,
       params[:query],
@@ -43,7 +41,7 @@
         <%= link_to walk_path(walk) do %>
           <div class="card-dashboard">
             <div class="card-dashboard-image">
-              <%= cl_image_tag walk.team.photo.key, width: 160, height: 160, crop: :fill, gravity: :face if walk.team.photo.attached? %>
+              <%= cl_image_tag walk.team.photo.key, width: 140, height: 140, crop: :fill, gravity: :face if walk.team.photo.attached? %>
             </div>
             <div class="card-dashboard-infos">
               <h2><%= walk.title %></h2>
