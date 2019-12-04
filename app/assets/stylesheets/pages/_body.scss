@@ -11,7 +11,7 @@ h1, h2 {
 
 p {
   font-size: 14px;
-  color: black;
+  color: $gray;
   line-height: 1.4;
 }
 
@@ -20,6 +20,6 @@ a:hover {
 }
 
 .container-wim {
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 120px);
 }
 

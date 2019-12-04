@@ -42,3 +42,8 @@ activatePopOver();
 //Dropdown with Select2
 import { initSelect2 } from '../components/dropdown_select2';
 initSelect2();
+
+
+//Active link
+import { activeLinkNav } from '../components/navbar_menu_bold';
+activeLinkNav();
