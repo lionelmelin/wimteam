@@ -1,8 +1,7 @@
 <div class="container mt-4 mb-2">
-  <h1 class="book-title">Walk in...</h1>
 </div>
   <!-- Searchbar -->
-<div class="container", id="searchbar-container">
+<div class="searchcontainer container-fluid p-0", id="searchbar-container">
   <div class="d-flex justify-content-around py-2", id="searchbar">
   <%= form_tag( walks_path, {method: :get, class: 'form-inline'}) do %>
     <%= text_field_tag :query,
@@ -14,7 +13,7 @@
       :location,
       options_for_select(Team.all.map{|t| t.location}.sort.uniq!, :location),
       include_blank: "Location",
-      class: "form-control mr-2 w-70vw"
+      class: "form-control mr-2 w-70vw rounded-0"
     ) %>
 
     <%= select_tag(
@@ -35,14 +34,14 @@
 </div>
 
 
-<div class="container my-2">
+<div class="container">
   <div class="cards-walks">
     <br>
       <% @walks.each do |walk| %>
         <%= link_to walk_path(walk) do %>
           <div class="card-dashboard">
             <div class="card-dashboard-image">
-              <%= cl_image_tag walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :face if walk.team.photo.attached? %>
+              <%= cl_image_tag walk.team.photo.key, width: 160, height: 160, crop: :fill, gravity: :face if walk.team.photo.attached? %>
             </div>
             <div class="card-dashboard-infos">
               <h2><%= walk.title %></h2>
@@ -72,7 +71,7 @@
                 <i class="ml-3 fas fa-thumbtack">
                 </i><%= walk.team.location %> </h3>
               </span>
-              <p><%= walk.description.truncate(200) %> </p>
+              <p><%= walk.description.truncate(150) %> </p>
             </div>
 
             <!-- Progress bar 1 -->
