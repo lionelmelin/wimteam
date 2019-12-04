@@ -18,7 +18,7 @@
         <div class="card w-70">
           <div class="profile-card">
             <div class="profile-picture">
-              <%= cl_image_tag current_user.photo.key, height: 200, width: 150, crop: :fill, gravity: :face %>
+              <%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill, gravity: :face %>
             </div>
             <div class="profile-info">
               <div><h1><%= current_user.first_name %> <%= current_user.last_name %></h1></div>
