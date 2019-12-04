@@ -1,7 +1,10 @@
 import "bootstrap";
+import { bootstrapToggle } from 'bootstrap4-toggle';
 
 import $ from 'jquery';
 global.$ = jQuery;
+
+// $(function(){ $('.checkToggle').bootstrapToggle() });
 
 // Dymanic text for banner
 import { loadDynamicBannerText } from '../components/banner_text';
@@ -42,3 +45,9 @@ activatePopOver();
 //Dropdown with Select2
 import { initSelect2 } from '../components/dropdown_select2';
 initSelect2();
+
+//Toggle
+import { toggleButtonInit } from '../components/toggle';
+toggleButtonInit();
+// import { initializeToggle } from '../components/toggle';
+// initializeToggle();

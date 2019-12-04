@@ -5,13 +5,42 @@
 }
 
 .details-card {
-  padding: 20px 20px 15px 20px;
+  padding: 10px 20px 10px 20px;
   p {
     margin: 0px 0px 12px 0px;
   }
   margin-bottom: 10px
 }
 
+.skills-card {
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 10px
+}
+
+
+.profile-card {
+  padding: 20px;
+  display: flex;
+  position: relative;
+}
+
+.profile-info {
+  margin-left:20px;
+  p {
+    margin-right: 10px;
+    color: $my-dark-blue;
+  }
+}
+
+.profile-description {
+  font-size: 14px;
+}
+
+.current-position {
+  p {
+    margin: 5px;
+  }
+}
 
 .btn-show {
   color: white;
@@ -59,9 +88,10 @@
 }
 
 .skill-new {
-  font-style: underlying;
   text-decoration: underline;
   font-size: 14px;
+  padding-top: 5px;
+  width: 110px;
   &:hover {
     cursor: pointer;
     color: $my-orange;
@@ -71,13 +101,22 @@
 .skill-new-cancel {
   display: flex;
   align-items: center;
-  font-style: underlying;
-  text-decoration: underline;
-  font-size: 14px;
   &:hover {
     cursor: pointer;
     color: $my-orange;
     }
+}
+
+.close-cross {
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 3px;
+  margin-top: 1px;
+}
+
+.close-text {
+  text-decoration: underline;
+  font-size: 14px;
 }
 
 .skill-new-form-select {
@@ -89,4 +128,19 @@
   justify-content: space-between;
 }
 
+.skill-new-container {
+  height: 50px;
+  padding: 12px 0px;
+}
+
+#new_skill_set {
+  font-size: 14px;
+  select {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  .btn-apply {
+    padding: 5px 23px;
+  }
+}
 

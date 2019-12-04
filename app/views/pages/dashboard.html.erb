@@ -1,4 +1,4 @@
-<div class="container pt-5">
+<div class="container">
   <div class="tab-content" id="pills-tabContent">
     <!-- Tab d'index des walks -->
     <div class="tab-pane fade" id="find" role="tabpanel" aria-labelledby="find-tab">
@@ -12,45 +12,45 @@
 
     <!-- Tab de profile -->
     <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <div class="d-flex justify-content-center flex-wrap">
-
+      <div class="d-flex justify-content-center flex-wrap mt-5">
 
         <!-- Profile -->
-        <div class="card w-70 details-card">
-          <div class="d-flex justify-content-start align-items-center">
-            <center><%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :fill %></center>
-            <div class="pl-3">
-              <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
-              email: <%= current_user.email %>
+        <div class="card w-70">
+          <div class="profile-card">
+            <div class="profile-picture">
+              <%= cl_image_tag current_user.photo.key, height: 200, width: 150, crop: :fill, gravity: :face %>
+            </div>
+            <div class="profile-info">
+              <div><h1><%= current_user.first_name %> <%= current_user.last_name %></h1></div>
+              <div class="d-flex">
+                  <p><strong>Team:</strong> <%= current_user.current_teams.first.name %></p><p> - </p>
+                  <p><strong>Department:</strong> <%= current_user.current_teams.first.department %></p><p> - </p>
+                  <p><strong>Seniority:</strong> <%= current_user.current_positions.first.seniority %> year(s)</p>
+              </div>
+            <div class="search-toggle mb-2">
+              <!-- <div class="mr-2"><strong><p>I am looking for a:<p></strong></div> -->
+              <div class="toggle-color d-flex">
+                <span class="mr-1 rocket checked"><i class="fas fa-rocket mr-1"></i></span>
+                <ul class="tg-list">
+                  <li class="tg-list-item">
+                  <input class="tgl tgl-flat" id="cb4" type="checkbox" />
+                    <label class="tgl-btn" for="cb4"></label>
+                  </li>
+                </ul>
+                <span class="ml-1 handshake"><i class="fas far fa-handshake ml-1"></i></span>
+              </div>
+            </div>
+              <div class="profile-description">
+                <em><%= current_user.description %></em>
+            </div>
             </div>
           </div>
         </div>
 
-        <!-- <div class="accordion" id="accordionExample"> -->
-
-          <!-- ---------------- -->
-          <!-- Current position -->
-          <!-- ---------------- -->
-          <div class="card w-70 details-card accordion" id="accordionExample1">
-
-            <div class="d-flex justify-content-between collapse-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <h2 class="m-0"><i class="fas fa-street-view mr-3"></i>   Current position</h2>
-              <!-- fa-map-marker / fa-map-marker-alt / fa-map-pin -->
-              <div class="expand-notice">Click to expand</div>
-            </div>
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample1">
-              <p><strong>Team:</strong> <%= current_user.current_teams.first.name %></p>
-              <p><strong>Department:</strong> <%= current_user.current_teams.first.department %></p>
-              <p><strong>Role:</strong> <%= current_user.current_positions.first.role %></p>
-              <p><strong>Job:</strong> <%= current_user.current_positions.first.job %></p>
-              <p><strong>Seniority:</strong> <%= current_user.current_positions.first.seniority %> year(s)</p>
-            </div>
-          </div>
-
           <!-- -------------- -->
           <!-- Current skills -->
           <!-- -------------- -->
-          <div class="card w-70 details-card accordion" id="accordionExample2">
+          <div class="card w-70 skills-card accordion mt-2" id="accordionExample2">
 
             <div class="d-flex justify-content-between collapse-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
               <h2 class="m-0"><i class="fa fa-check-circle mr-3"></i>   Current skills</h2>
@@ -60,7 +60,7 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample2">
 
               <!-- I perfectly master -->
-              <div class="mb-4">
+              <div class="mb-2">
                 <h2 class="level-title">I perfectly master</h2>
                 <div id="position-skills-2-container">
                   <% current_user.current_positions.first.top_skill_sets.each do |skill_set| %>
@@ -70,7 +70,7 @@
               </div>
 
               <!-- I am comfortable with -->
-              <div class="mb-4">
+              <div class="mb-2">
                 <h2 class="level-title">I am comfortable with</h2>
                 <div id="position-skills-1-container">
                   <% current_user.current_positions.first.medium_skill_sets.each do |skill_set| %>
@@ -80,7 +80,7 @@
               </div>
 
               <!-- I have notions -->
-              <div class="mb-4">
+              <div class="mb-2">
                 <h2 class="level-title">I have notions</h2>
                 <div id="position-skills-0-container">
                   <% current_user.current_positions.first.low_skill_sets.each do |skill_set| %>
@@ -90,20 +90,23 @@
               </div>
 
               <!-- Add new skill -->
-              <div class="skill-new">Add new skill</div>
-              <div class="skill-new-form-container">
-                <div id="position-skill-form">
-                  <%= render 'skill_sets/form', skill_set: @skill_set, skillable_type: "Position" %>
+              <div class="skill-new-container">
+                <div class="skill-new"><i class="fas fa-plus"></i> Add new skill</div>
+                <div class="skill-new-form-container">
+                  <div id="position-skill-form">
+                    <%= render 'skill_sets/form', skill_set: @skill_set, skillable_type: "Position" %>
+                  </div>
+                  <div class="skill-new-cancel"><div class="close-cross"><i class="fas fa-times"></i></div> <div class="close-text">Close</div></div>
                 </div>
-                <div class="skill-new-cancel">Cancel</div>
               </div>
+
             </div>
           </div>
 
           <!-- ------------------------ -->
           <!-- Skills I'm interested in -->
           <!-- ------------------------ -->
-          <div class="card w-70 details-card accordion" id="accordionExample3">
+          <div class="card w-70 skills-card accordion" id="accordionExample3">
             <div class="d-flex justify-content-between collapse-header" id="headingThree"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
               <h2 class="m-0"><i class="fas fa-search-plus mr-3"></i>Skills I'm interested in</h2>
               <div class="expand-notice">Click to expand</div>
@@ -112,7 +115,7 @@
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample3">
 
               <!-- Must have skills -->
-              <div class="mb-4">
+              <div class="mb-2">
                 <h2 class="level-title">Must have</h2>
                 <div id="user-skills-2-container">
                   <% current_user.top_skill_sets.each do |skill_set| %>
@@ -122,7 +125,7 @@
               </div>
 
               <!-- Interested in skills -->
-              <div class="mb-4">
+              <div class="mb-2">
                 <h2 class="level-title">I am interested in</h2>
                 <div id="user-skills-1-container">
                   <% current_user.medium_skill_sets.each do |skill_set| %>
@@ -132,7 +135,7 @@
               </div>
 
               <!-- Why not skills -->
-              <div class="mb-4">
+              <div class="mb-2">
                 <h2 class="level-title">Why not ?</h2>
                 <div id="user-skills-0-container">
                   <% current_user.low_skill_sets.each do |skill_set| %>
@@ -142,12 +145,18 @@
               </div>
 
               <!-- Add new skill -->
-              <div class="skill-new">Add new skill</div>
-              <div class="skill-new-form-container" id="user-skill-form">
-                <%= render 'skill_sets/form', skill_set: @skill_set, skillable_type: "User" %>
-              </div>
+              <div class="skill-new-container">
+                <div class="skill-new"><i class="fas fa-plus"></i> Add new skill</div>
+                <div class="skill-new-form-container">
+                  <div id="user-skill-form">
+                    <%= render 'skill_sets/form', skill_set: @skill_set, skillable_type: "User" %>
+                  </div>
+                  <div class="skill-new-cancel"><div class="close-cross"><i class="fas fa-times"></i></div> <div class="close-text">Close</div></div>
+                </div>
             </div>
+
           </div>
+        </div>
 
           <!-- </div> -->
         </div>
