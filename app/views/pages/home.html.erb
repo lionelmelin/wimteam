@@ -10,13 +10,12 @@
   <div class="video-absolute-title">
     <h1>Curious? Eager to learn?</br>
     Discover your colleagues across the hall!</h1>
-  </div>
+ </div>
 
   <div class="video-absolute-btn">
     <a href="#pts" class="banner-link"><div class="banner-button btn-apply">Start now !</div></a>
   </div>
 </div>
-
 
 <!-- Second section : Pain Target Solution (id = pst) -->
 <div class="container d-flex flex-column justify-content-center align-items-center pt-3" id="pts">
@@ -99,9 +98,9 @@
           <div class="card-info d-flex align-items-center", class="avatar">
             <%# raise %>
             <% if user_walked.user.photo.attached?%>
-              <%= cl_image_tag user_walked.user.photo.key, width: 64, height: 64, crop: :fill, gravity: :face %>
+              <%= cl_image_tag user_walked.user.photo.key, width: 85, height: 85, crop: :thumb, gravity: :face %>
             <% else %>
-              <%= cl_image_tag "", width: 64, height: 64, crop: :fill, class: "rounded-circle mr-4" %>
+              <%= cl_image_tag "", width: 75, height: 75, crop: :fill, class: "rounded-circle mr-4" %>
             <% end %>
             <h4 class="ml-2"><%= user_walked.user.first_name %></h4>
           </div>
@@ -120,6 +119,6 @@
 
   <%= link_to dashboard_path, style: "color: white;" do %>
     <div class="container d-flex justify-content-around my-5 button btn-letswalk">
-      Let's get ready to walk!
+      Get started!
     </div>
   <% end %>
