@@ -56,26 +56,30 @@
               <%= cl_image_tag user_walk.walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :face if user_walk.walk.team.photo.attached? %>
             </div>
           <div class="card-application-infos">
-          <h2><%= user_walk.walk.title %></h2>
-          <h6 class="duration mb-2"><i class="fas fa-calendar-week"></i><%= user_walk.display_start_date %> - <%= user_walk.display_end_date %> </h6>
-          <h6 class="duration">
-          <% if user_walk.walk.purpose == "Recruitment"%>
-            <i class="fas far fa-handshake">
-            </i> Recruitment
-          <% else %>
-            <i class="fas fa-rocket">
-            </i> Discovery
-          <% end %>
-          <i class="ml-3 fas fa-users">
-          </i><%= user_walk.walk.team.name %>
-          <i class="ml-3 fas fa-thumbtack"></i>
-          <%= user_walk.walk.team.location %> </h6>
-          <p><%=user_walk.walk.description.truncate(100) %></p>
-          </div>
-           <div class="myapp-btns">
-            <%= link_to walk_path(user_walk.walk) do %>
-              <div class="btn-details">Details</div>
+            <h2><%= user_walk.walk.title %></h2>
+            <h6 class="duration mb-2"><i class="fas fa-calendar-week"></i><%= user_walk.display_start_date %> - <%= user_walk.display_end_date %> </h6>
+            <h6 class="duration">
+            <% if user_walk.walk.purpose == "Recruitment"%>
+              <i class="fas far fa-handshake">
+              </i> Recruitment
+            <% else %>
+              <i class="fas fa-rocket">
+              </i> Discovery
             <% end %>
+            <i class="ml-3 fas fa-users">
+            </i><%= user_walk.walk.team.name %>
+            <i class="ml-3 fas fa-thumbtack"></i>
+            <%= user_walk.walk.team.location %> </h6>
+            <div class="myapp-btns">
+              <p class="ml-0">Review
+              <%= link_to edit_user_walk_path(user_walk), remote: true do %>
+                <i class="fas fa-pen edit-icon ml-1"></i>
+              <% end %>
+              </p>
+              <% unless user_walk.review.empty? %>
+                <p class="ml-0"> <em>"<%= user_walk.review %>"</em> </p>
+              <% end %>
+            </div>
           </div>
         </div>
 
