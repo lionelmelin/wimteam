@@ -109,7 +109,7 @@ data.photo.attach(io: data_pic, filename: 'some-image.jpg', content_type: 'image
 support = Team.create!(name: "Support", location: "Nantes", department: "Sales & Marketing",
   description: "the support team is in charge of handling the support requests of the \
   existing clients, using telephone, chat and emails as communication channels.")
-support_pic = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG_XOBhOuCCDRxMgfny81s-1O33ERMdUbO_W7h3sxuCi0D5Vfn&s")
+support_pic = URI.open("https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fcdn.welcometothejungle.co%2Fuploads%2Fwebsite_organization%2Fcover_image%2Fwttj_fr%2Fen-gitguardian.jpg")
 support.photo.attach(io: support_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 sales = Team.create!(name: "Sales", location: "Paris", department: "Sales & Marketing",
@@ -128,7 +128,7 @@ accounting.photo.attach(io: accounting_pic, filename: 'some-image.jpg', content_
 hr = Team.create!(name: "Human resources", location: "London", department: "Human resources & communication",
   description: "The human resources team is always here to support the workers and the teams \
   within the firm. It also defines the recruitment and the retention policies.")
-hr_pic = URI.open("https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
+hr_pic = URI.open("https://image.freepik.com/free-photo/group-business-executives-smiling-camera_1170-1894.jpg")
 hr.photo.attach(io: hr_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 
