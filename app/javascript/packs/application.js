@@ -1,7 +1,10 @@
 import "bootstrap";
+import { bootstrapToggle } from 'bootstrap4-toggle';
 
 import $ from 'jquery';
 global.$ = jQuery;
+
+// $(function(){ $('.checkToggle').bootstrapToggle() });
 
 // Dymanic text for banner
 import { loadDynamicBannerText } from '../components/banner_text';
@@ -43,6 +46,13 @@ activatePopOver();
 import { initSelect2 } from '../components/dropdown_select2';
 initSelect2();
 
+
+//Toggle
+import { toggleButtonInit } from '../components/toggle';
+toggleButtonInit();
+// import { initializeToggle } from '../components/toggle';
+// initializeToggle();
+
 //Sweetalert
 import { initSweetalert } from '../plugins/init_sweetalert';
 initSweetalert('#sweet-alert-delete', {
@@ -60,4 +70,5 @@ initSweetalert('#sweet-alert-delete', {
 //Active link
 import { activeLinkNav } from '../components/navbar_menu';
 activeLinkNav();
+
 
