@@ -1,20 +1,14 @@
-.btn-apply:hover {
-  opacity: 1;
-}
-
 .btn-apply {
   color: white;
   padding: 8px 24px;
   background: $my-orange;
   transition: background 0.5s ease;
-}
-
-.btn-apply:hover {
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  &:hover {
   background: $my-orange;
   color: white;
-}
-
-.btn-apply a {
-  color: white;
-  text-decoration: none;
+  }
 }

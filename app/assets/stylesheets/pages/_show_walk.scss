@@ -4,11 +4,13 @@
 }
 
 .card-mini-profile {
-  background-color: $my-white;
-  width: 310px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  // background-color: $my-white;
+  text-align: center;
+  width: 100px;
+  // border-radius: 50%;
+  // box-shadow: 0 0 5px rgba(0,0,0,0.2);
   cursor: pointer;
-  color: $gray !important;
+  // color: $gray !important;
   &:hover {
       transform: scale(1.05);
     }
