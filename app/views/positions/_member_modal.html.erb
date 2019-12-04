@@ -16,23 +16,25 @@
           <div class="d-inline-flex p-2 bd-highlight"><%= cl_image_tag member.user.photo.key, height: 130, width: 130, crop: :fill %>
           </div>
         <div class="p-2">
+          <h6 class="mb-3">
+            <%= member.user.current_positions.first.job.delete_suffix!('s') %>
+          </h6>
           <p>
-            <strong> Email:</strong> <%= member.user.email %>
+            <i class="fas fa-users"></i> <%= member.user.teams.first.name %> team in the <%= member.user.teams.first.department %> department
           </p>
           <p>
-            <strong>Dept & Team:</strong> <%= member.user.teams.first.department %> / <%= member.user.teams.first.name %>
+            <i class="fas fa-graduation-cap"></i> <%= member.user.current_positions.first.seniority %> year(s) of experience
+            <!-- <strong>Experience:</strong>  -->
           </p>
           <p>
-          <strong>Position:</strong> <%= member.user.current_positions.first.job.delete_suffix!('s')  %>
-          </p>
-          <p>
-            <strong>Experience:</strong> <%= member.user.current_positions.first.seniority %> year(s)
+            <i class="fas fa-envelope"></i> <%= member.user.email %>
+           <!--  <strong> Email:</strong>  -->
           </p>
         </div>
       </div>
         <div class="p-2">
           <p>
-            <%= member.user.description %>
+            <em> "<%= member.user.description %>" </em>
           </p>
         </div>
       </div>
