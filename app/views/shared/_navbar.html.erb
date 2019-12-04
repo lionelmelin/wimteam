@@ -1,7 +1,7 @@
 
 <div class="navbar navbar-expand-sm navbar-light">
     <h2><%= link_to "Walk in my Team", root_path %> </h2>
-
+    
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -35,7 +35,7 @@
     </ul>
     <% if user_signed_in? %>
       <div class="avatar pl-2">
-        <div class="avatar-mine" style="background-image: url(<%= cl_image_path current_user.photo.key %>)">
+        <div class="avatar-mine" style="background-image: url(<%= cl_image_path current_user.photo.key, gravity: :face, width: 40 , height: 40, crop: :thumb; %>)">
         </div>
       </div>
     <% end %>
