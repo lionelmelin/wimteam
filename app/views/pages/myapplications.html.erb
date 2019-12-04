@@ -1,64 +1,54 @@
-<div class="container my-5">
-
+<div class="banner-myapp">
+</div>
+<div class="container my-3">
 
   <!-- My applications---------------------------------------->
-  <h3>My applications</h3>
-  <div class="border border-dark-blue p-4 w-100 border-bottom-0 border-left-0 border-right-0">
     <div class="cards-walks">
-      <br>
-        <% @upcoming_user_walks.each do |user_walk| %>
-
-          <div class="card-application" data-user-walk-id="<%= user_walk.id %>">
-            <%= link_to "", walk_path(user_walk.walk) %>
-            <div class="card-application-image">
-              <%= cl_image_tag user_walk.walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :face if user_walk.walk.team.photo.attached? %>
-            </div>
-            <div class="card-application-infos">
-              <h2><%= user_walk.walk.title %></h2>
-              <h6 class="duration mb-2"><i class="fas fa-calendar-week"></i><%= user_walk.display_start_date %> - <%= user_walk.display_end_date %> </h6>
-              <h6 class="duration">
-              <% if user_walk.walk.purpose == "Recruitment"%>
-                <i class="fas far fa-handshake">
-                </i> Recruitment
-              <% else %>
-                <i class="fas fa-rocket">
-                </i> Discovery
-              <% end %>
-              <i class="ml-3 fas fa-users">
-              </i><%= user_walk.walk.team.name %>
-              <i class="ml-3 fas fa-thumbtack">
-              </i><%= user_walk.walk.team.location %> </h6>
-              <p>My message:
-              <i><%= user_walk.motivation.truncate(100) %></i>
-              </p>
-            </div>
-            <div class="myapp-btns">
-              <div class="badge badge-primary badge-pill status"><%= user_walk.status %></div>
-              <div id="sweet-alert-delete" class="btn-details"><i class="fas fa-window-close"></i>  Cancel application</div>
-              <%= link_to "", user_walk, method: :delete, id: "delete-link", class: "hidden", remote: true %>
-            </div>
-          </div>
-        <% end %>
-      <br>
-    </div>
+    <h3>My applications</h3>
+      <% @upcoming_user_walks.each do |user_walk| %>
+      <div class="card-application" data-user-walk-id="<%= user_walk.id %>">
+        <%= link_to "", walk_path(user_walk.walk) %>
+        <div class="card-application-image">
+          <%= cl_image_tag user_walk.walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :face if user_walk.walk.team.photo.attached? %>
+        </div>
+        <div class="card-application-infos">
+          <h2><%= user_walk.walk.title %></h2>
+          <h6 class="duration mb-2"><i class="fas fa-calendar-week"></i><%= user_walk.display_start_date %> - <%= user_walk.display_end_date %> </h6>
+          <h6 class="duration">
+          <% if user_walk.walk.purpose == "Recruitment"%>
+            <i class="fas far fa-handshake">
+            </i> Recruitment
+          <% else %>
+            <i class="fas fa-rocket">
+            </i> Discovery
+          <% end %>
+          <i class="ml-3 fas fa-users">
+          </i><%= user_walk.walk.team.name %>
+          <i class="ml-3 fas fa-thumbtack">
+          </i><%= user_walk.walk.team.location %> </h6>
+          <p>My message:
+          <i><%= user_walk.motivation.truncate(100) %></i>
+          </p>
+        </div>
+        <div class="myapp-btns">
+          <div class="badge badge-primary badge-pill status"><%= user_walk.status %></div>
+          <div id="sweet-alert-delete" class="btn-details"><i class="fas fa-window-close"></i>  Cancel application</div>
+          <%= link_to "", user_walk, method: :delete, id: "delete-link", class: "hidden", remote: true %>
+        </div>
+      </div>
+    <% end %>
   </div>
 
-
-  <h3 id="past-walks">My past walks</h3>
-  <div class="border border-gray p-4 w-100 border-bottom-0 border-left-0 border-right-0">
-    <div class="cards-walks">
-      <br>
-        <% @past_user_walks.each do |user_walk| %>
-
-          <div class="card-application past-application">
-            <%= link_to "", walk_path(user_walk.walk) %>
-            <div class="card-application-image">
-              <%= cl_image_tag user_walk.walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :face if user_walk.walk.team.photo.attached? %>
-            </div>
-          <div class="card-application-infos">
-            <h2><%= user_walk.walk.title %></h2>
-            <h6 class="duration mb-2"><i class="fas fa-calendar-week"></i><%= user_walk.display_start_date %> - <%= user_walk.display_end_date %> </h6>
-            <h6 class="duration">
+  <div class="cards-walks">
+      <% @past_user_walks.each do |user_walk| %>
+        <div class="card-application past-application">
+          <div class="card-application-image">
+            <%= cl_image_tag user_walk.walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :face if user_walk.walk.team.photo.attached? %>
+          </div>
+        <div class="card-application-infos past-application">
+          <h2><%= user_walk.walk.title %></h2>
+          <h6 class="duration mb-2"></i><%= user_walk.display_start_date %> - <%= user_walk.display_end_date %> </h6>
+          <h6 class="duration">
             <% if user_walk.walk.purpose == "Recruitment"%>
               <i class="fas far fa-handshake">
               </i> Recruitment
@@ -66,27 +56,33 @@
               <i class="fas fa-rocket">
               </i> Discovery
             <% end %>
-            <i class="ml-3 fas fa-users">
-            </i><%= user_walk.walk.team.name %>
+            <i class="ml-3 fas fa-users"></i>
+            <%= user_walk.walk.team.name %>
             <i class="ml-3 fas fa-thumbtack"></i>
-            <%= user_walk.walk.team.location %> </h6>
-            <div class="myapp-btns">
-              <p class="ml-0">Review
-              <%= link_to edit_user_walk_path(user_walk), remote: true do %>
-                <i class="fas fa-pen edit-icon ml-1"></i>
-              <% end %>
-              </p>
+            <%= user_walk.walk.team.location %>
+          </h6>
+          <div class="mypastapp-btns">
+            <h6 class="ml-0">My review:</h6>
+            <p class="ml-0">
               <% unless user_walk.review.empty? %>
-                <p class="ml-0"> <em>"<%= user_walk.review %>"</em> </p>
+                  <em>"<%= user_walk.review.truncate(100) %>"</em>
               <% end %>
-            </div>
+              <span class="review-edit">
+                <%= link_to edit_user_walk_path(user_walk), remote: true do %>
+                  <i class="fas fa-pen edit-icon ml-1"></i>
+                <% end %>
+              </span>
+            </p>
           </div>
         </div>
-
-        <% end %>
-      <br>
-    </div>
+        <div class="mypastapp-status">
+          <div class="badge badge-secondary badge-pill status"><%= user_walk.status %></div>
+        </div>
+        <%= link_to "", walk_path(user_walk.walk) %>
+      </div>
+      <% end %>
   </div>
+
 
 </div>
 
