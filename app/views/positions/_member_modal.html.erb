@@ -1,41 +1,38 @@
 <div id="member-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog  modal-dialog-centered modal-lg" role="document">
+  <div class="modal-dialog  modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>
-          <%= member.user.first_name + ' ' + member.user.last_name.upcase %>
-        </h3>
+        <h5>
+          <%= member.user.first_name + ' ' + member.user.last_name %>
+          <% if member.role == 'manager' %>
+            [manager]
+          <% end %>
+        </h5>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
-      <div class="modal-body p-2">
+      <div class="modal-body">
         <div class="d-flex">
-          <div class="d-inline-flex p-2 bd-highlight"><%= cl_image_tag member.user.photo.key, height: 140, width: 140, crop: :fill %>
+          <div class="d-inline-flex p-2 bd-highlight"><%= cl_image_tag member.user.photo.key, height: 130, width: 130, crop: :fill %>
           </div>
         <div class="p-2">
           <p>
             <strong> Email:</strong> <%= member.user.email %>
           </p>
           <p>
-            <strong>Team:</strong> <%= member.user.teams.first.name %>
+            <strong>Dept & Team:</strong> <%= member.user.teams.first.department %> / <%= member.user.teams.first.name %>
           </p>
           <p>
-            <strong>Department:</strong> <%= member.user.teams.first.department %>
+          <strong>Position:</strong> <%= member.user.current_positions.first.job.delete_suffix!('s')  %>
           </p>
           <p>
-          <strong>Job:</strong> <%= member.user.current_positions.first.job %>
+            <strong>Experience:</strong> <%= member.user.current_positions.first.seniority %> year(s)
           </p>
         </div>
       </div>
         <div class="p-2">
           <p>
-            <strong>Role:</strong> <%= member.user.current_positions.first.role %>
-          </p>
-          <p>
-            <strong>Seniority:</strong> <%= member.user.current_positions.first.seniority %> year(s)
-          </p>
-          <p>
-            <strong>Description:</strong> <%= member.user.description %>
+            <%= member.user.description %>
           </p>
         </div>
       </div>
