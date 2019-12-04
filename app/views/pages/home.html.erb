@@ -96,18 +96,20 @@
       <div class="col cards">
         <div class="card">
           <div class="card-info d-flex align-items-center", class="avatar">
-            <%# raise %>
-            <% if user_walked.user.photo.attached?%>
-              <%= cl_image_tag user_walked.user.photo.key, width: 85, height: 85, crop: :thumb, gravity: :face %>
-            <% else %>
-              <%= cl_image_tag "", width: 75, height: 75, crop: :fill, class: "rounded-circle mr-4" %>
-            <% end %>
-            <h4 class="ml-2"><%= user_walked.user.first_name %></h4>
+            <div style="{width: 85; height: 85;}">
+              <% if user_walked.user.photo.attached?%>
+                <%= cl_image_tag user_walked.user.photo.key, width: 85, height: 85, crop: :thumb, gravity: :face %>
+              <% else %>
+                <%= cl_image_tag "", width: 75, height: 75, crop: :fill, class: "rounded-circle mr-4" %>
+              <% end %>
+            </div>
+            <div class="">
+              <h4 class="mb-1 mx-2"><%= user_walked.user.first_name %></h4>
+              <!-- <div class="card-description p-2"> -->
+              <p class="mx-2 mb-1"><i>"<%= truncate(user_walked.review,:length => 60, :separator => ' ') %>"</i></p>
+            <!-- </div> -->
+            </div>
           </div>
-          <div class="card-description p-2">
-            <p style="margin: 0;"><i>"<%= truncate(user_walked.review,:length => 60, :separator => ' ') %>"</i></p>
-          </div>
-
         </div>
       </div>
     <% end %>
