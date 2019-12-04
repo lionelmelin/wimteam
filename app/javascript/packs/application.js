@@ -20,8 +20,8 @@ if (document.querySelector(".banner-button")) {
 }
 
 //Searchbar for Index
-import { initUpdateSearchbarOnScroll } from '../components/searchbar';
-initUpdateSearchbarOnScroll();
+// import { initUpdateSearchbarOnScroll } from '../components/searchbar';
+// initUpdateSearchbarOnScroll();
 
 //Gauge
 import { initGauge } from '../components/gauge';
@@ -35,7 +35,7 @@ import { displayNewSkillForm, hideNewSkillForm } from "../components/new_skill_b
 displayNewSkillForm();
 hideNewSkillForm();
 
-//PopOver
+//PopOver for Index
 import { activatePopOver } from '../components/popover';
 activatePopOver();
 
@@ -43,7 +43,21 @@ activatePopOver();
 import { initSelect2 } from '../components/dropdown_select2';
 initSelect2();
 
+//Sweetalert
+import { initSweetalert } from '../plugins/init_sweetalert';
+initSweetalert('#sweet-alert-delete', {
+  title: "Are you sure you want to cancel your application?",
+  text: "This action cannot be reversed",
+  icon: "warning"
+  }, (value) => {
+  console.log(value);
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
 
 //Active link
 import { activeLinkNav } from '../components/navbar_menu_bold';
 activeLinkNav();
+
