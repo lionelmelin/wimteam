@@ -7,6 +7,7 @@
     <div class="cards-walks">
       <br>
         <% @upcoming_user_walks.each do |user_walk| %>
+
           <div class="card-application" data-user-walk-id="<%= user_walk.id %>">
             <%= link_to "", walk_path(user_walk.walk) %>
             <div class="card-application-image">
@@ -48,6 +49,7 @@
     <div class="cards-walks">
       <br>
         <% @past_user_walks.each do |user_walk| %>
+
           <div class="card-application past-application">
             <%= link_to "", walk_path(user_walk.walk) %>
             <div class="card-application-image">
@@ -85,5 +87,6 @@
 </div>
 
 
-
+<!-- Modal AJAX by hand -->
+<div id='user-walk-edit-content'></div>
 

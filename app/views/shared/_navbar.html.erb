@@ -10,13 +10,13 @@
             <strong> <%#= link_to "Manage walks", new_walk_path, class: "nav-link" %> </strong>
           </li> -->
         <%# end %>
-        <li class="nav-item pt-3">
-          <h5> <%= link_to "Find a walk", walks_path, class: "nav-link" %> </h5>
+        <li class="nav-item pt-3 walks_index">
+          <h5> <%= link_to "Find a walk", walks_path, class: "nav-link active" %> </h5>
         </li>
-        <li class="nav-item pt-3">
+        <li class="nav-item pt-3 pages_myapplications">
           <h5> <%= link_to "My applications", myapplications_path, class: "nav-link" %>  </h5>
         </li>
-        <li class="nav-item pt-3">
+        <li class="nav-item pt-3 pages_dashboard">
           <h5> <%= link_to "My profile", dashboard_path, class: "nav-link" %> </h5>
         </li>
         <li class="nav-item pt-3">
@@ -36,8 +36,9 @@
     <% if user_signed_in? %>
       <div class="avatar pl-2">
         <div class="avatar-mine" style="background-image: url(<%= cl_image_path current_user.photo.key %>);">
+        </div>
       </div>
     <% end %>
   </div>
 </div>
-</div>
+

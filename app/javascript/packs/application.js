@@ -43,8 +43,8 @@ activatePopOver();
 import { initSelect2 } from '../components/dropdown_select2';
 initSelect2();
 
+//Sweetalert
 import { initSweetalert } from '../plugins/init_sweetalert';
-
 initSweetalert('#sweet-alert-delete', {
   title: "Are you sure you want to cancel your application?",
   text: "This action cannot be reversed",
@@ -57,10 +57,7 @@ initSweetalert('#sweet-alert-delete', {
   }
 });
 
-
-
-
-
-
-
+//Active link
+import { activeLinkNav } from '../components/navbar_menu_bold';
+activeLinkNav();
 

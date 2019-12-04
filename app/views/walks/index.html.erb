@@ -6,29 +6,31 @@
   <%= form_tag( walks_path, {method: :get, class: 'form-inline'}) do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control mr-2 w-70vw",
+      class: "form-control search-field mr-2 w-70vw",
       placeholder: "Find a Walk"
     %>
     <%= select_tag(
       :location,
       options_for_select(Team.all.map{|t| t.location}.sort.uniq!, :location),
       include_blank: "Location",
-      class: "form-control mr-2 w-70vw rounded-0"
+
+      class: "form-control search-field mr-2 w-70vw" #select2
+
     ) %>
 
     <%= select_tag(
       :department,
       options_for_select(Team.all.map{|t| t.department}.sort.uniq!, :department),
       prompt: "Department",
-      class: "form-control mr-2 w-70vw"
+      class: "form-control search-field mr-2 w-70vw"
     ) %>
     <%= select_tag(
       :duration,
       options_for_select(Walk.all.map{|w| w.duration}.sort.uniq!, :duration),
       include_blank: "Duration",
-      class: "form-control mr-2 w-70vw"
+      class: "form-control search-field mr-2 w-70vw"
     ) %>
-    <%= submit_tag "Search", class: "btn btn-search" %>
+    <%= submit_tag "Search", class: "btn btn-search search-field" %>
   <% end %>
   </div>
 </div>
@@ -72,6 +74,7 @@
                 </i><%= walk.team.location %> </h3>
               </span>
               <p><%= walk.description.truncate(150) %> </p>
+
             </div>
 
             <!-- Progress bar 1 -->

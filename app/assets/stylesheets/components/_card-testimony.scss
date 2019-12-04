@@ -3,12 +3,11 @@
   justify-content: space-between;
   position: relative;
   box-sizing: border-box;
-  font-family: Muli;
+  color: $gray;
 }
 
 .card-info {
   display: inline-block;
-  font-family: Muli;
   font-size: 16px;
   color: $my-dark-blue;
 }
