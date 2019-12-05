@@ -62,7 +62,10 @@
                 <!-- <div> -->
                   <% if member.user.photo.attached?%>
                     <% if member.role == "manager" %>
-                     <%= cl_image_tag member.user.photo.key, width: 85, height: 85, crop: :thumb, gravity: :face, class: "avatar-large-bordered" %>
+                    <!-- <span class="walk-popover" data-container="body" data-toggle="popover" data-trigger="hover"
+                data-placement="top" data-content="manager"> -->
+                      <%= cl_image_tag member.user.photo.key, width: 85, height: 85, crop: :thumb, gravity: :face, class: "avatar-large-bordered"%>
+                    <!-- </span> -->
                     <% else %>
                       <%= cl_image_tag member.user.photo.key, width: 85, height: 85, crop: :thumb, gravity: :face, class: "avatar-large" %>
                     <% end %>
