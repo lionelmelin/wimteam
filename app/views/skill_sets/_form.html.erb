@@ -1,9 +1,9 @@
 <%= simple_form_for skill_set, method: :post, remote: true, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
   <%= f.association :skill, label_method: :name, value_method: :id, include_blank: "Select skill", wrapper_html: { class: 'form-group' } %>
   <% if skillable_type == "Position" %>
-  <%= f.input :level, collection: { "Master" => 3, "Comfortable with" => 2, "Notions" => 1 }, include_blank: "Select level",  wrapper_html: { class: 'form-group' } %>
+    <%= f.input :level, collection: { "Master" => 3, "Comfortable with" => 2, "Notions" => 1 }, include_blank: "Select level",  wrapper_html: { class: 'form-group' } %>
   <% else %>
-  <%= f.input :level, collection: { "Must have" => 3, "Interested in" => 2, "Why not" => 1 }, include_blank: "Select level",  wrapper_html: { class: 'form-group' } %>
+    <%= f.input :level, input_html: { value: 3 }, as: :hidden %>
   <% end %>
   <%= f.input :skillable_type, input_html: { value: skillable_type }, as: :hidden %>
   <%= f.submit 'Add', class: 'btn-apply' %>
