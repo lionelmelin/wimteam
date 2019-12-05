@@ -274,13 +274,12 @@ seed_skillable_skill_sets(laetitia, supporter1)
 seed_skillable_skill_sets(john, marketer)
 seed_skillable_skill_sets(jenny, data_analyst1)
 
-seed_skillable_skill_sets_by_hand(lionel,["management", "design", "accounting and economics"])
+# seed_skillable_skill_sets_by_hand(lionel,["management", "design", "accounting and economics"])
 
 puts "Seeding user_walks..."
 
 lionel_marketing_walk = UserWalk.create!(walk: marketing_walk, user: lionel, start_date: "01/01/2019", end_date: "15/01/2019",
-  status: "past", review: "My walk within the marketing department enabled me to validate\
-  that the job was really made for me. One month later I was part of this fantastic team!")
+  status: "past")
 # laura_data_walk = UserWalk.create!(walk: data_walk, user: laura, start_date: "01/01/2020", status: "pending",
 #   motivation: "I am part of the marketing team and I would love to discover your team")
 john_data_walk = UserWalk.create!(walk: data_walk, user: john, start_date: "15/01/2020", status: "pending",
