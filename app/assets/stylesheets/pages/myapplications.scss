@@ -57,11 +57,34 @@
   z-index: 20;
  }
 
- .swal-button {
-  // background-color:$my-light-blue;
+.swal-button {
+  border-radius: 0px;
+}
+
+ .swal-button--confirm {
+  background-color:$my-dark-blue;
+  border: none;
+  &:hover {
+    background-color:$medium-gray !important;
+  }
+ }
+
+ .swal-title {
+  font-size: 22px;
+  font-weight: 400;
  }
 
  .swal-footer {
   display: flex;
   justify-content: center;
  }
+
+ #user_walk_review {
+  height: 160px;
+  border-color: $medium-gray;
+}
+
+.modal-review-submit {
+  display: block;
+  margin: 0 auto;
+}
