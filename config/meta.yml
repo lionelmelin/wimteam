@@ -1,0 +1,5 @@
+meta_product_name: "WalkInMy.Team"
+meta_title: "WalkInMy.Team - Discover your colleagues across the hall"
+meta_description: "WalkInMy.Team enables employees to discover people, methods and jobs in their own company through short shadowing experiences. The program fosters networking and co-training, while naturally improving productivity and job-satisfaction."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@walkinmy_team_twitter_account"   # required for Twitter Cards
