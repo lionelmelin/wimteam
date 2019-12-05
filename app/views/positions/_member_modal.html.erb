@@ -20,14 +20,14 @@
             <%= member.user.current_positions.first.job.delete_suffix!('s') %>
           </h6>
           <p>
-            <i class="fas fa-users p-2"></i><%= member.user.teams.first.name %>team in the <%= member.user.teams.first.department %> department
+            <i class="fas fa-users mr-1"></i><%= member.user.teams.first.name %>team in the <%= member.user.teams.first.department %> department
           </p>
           <p>
-            <i class="fas fa-graduation-cap p-2"></i><%= member.user.current_positions.first.seniority %> year(s) of experience
+            <i class="fas fa-graduation-cap mr-1"></i><%= member.user.current_positions.first.seniority %> year(s) of experience
             <!-- <strong>Experience:</strong>  -->
           </p>
           <p>
-            <i class="fas fa-envelope p-2"></i><%= member.user.email %>
+            <i class="fas fa-envelope mr-2"></i><%= member.user.email %>
            <!--  <strong> Email:</strong>  -->
           </p>
         </div>
