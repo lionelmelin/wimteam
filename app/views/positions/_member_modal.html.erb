@@ -1,11 +1,11 @@
 <div id="member-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog  modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header p-3">
         <h5>
           <%= member.user.first_name + ' ' + member.user.last_name %>
           <% if member.role == 'manager' %>
-            [manager]
+            <span class="modal-manager">(manager)</span>
           <% end %>
         </h5>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -20,14 +20,14 @@
             <%= member.user.current_positions.first.job.delete_suffix!('s') %>
           </h6>
           <p>
-            <i class="fas fa-users"></i> <%= member.user.teams.first.name %> team in the <%= member.user.teams.first.department %> department
+            <i class="fas fa-users p-2"></i><%= member.user.teams.first.name %>team in the <%= member.user.teams.first.department %> department
           </p>
           <p>
-            <i class="fas fa-graduation-cap"></i> <%= member.user.current_positions.first.seniority %> year(s) of experience
+            <i class="fas fa-graduation-cap p-2"></i><%= member.user.current_positions.first.seniority %> year(s) of experience
             <!-- <strong>Experience:</strong>  -->
           </p>
           <p>
-            <i class="fas fa-envelope"></i> <%= member.user.email %>
+            <i class="fas fa-envelope p-2"></i><%= member.user.email %>
            <!--  <strong> Email:</strong>  -->
           </p>
         </div>
