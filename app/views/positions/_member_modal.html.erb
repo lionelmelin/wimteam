@@ -1,7 +1,7 @@
 <div id="member-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog  modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header p-3">
+      <div class="modal-header m-2">
         <h5>
           <%= member.user.first_name + ' ' + member.user.last_name %>
           <% if member.role == 'manager' %>
@@ -20,14 +20,14 @@
             <%= member.user.current_positions.first.job.delete_suffix!('s') %>
           </h6>
           <p>
-            <i class="fas fa-users p-2"></i><%= member.user.teams.first.name %>team in the <%= member.user.teams.first.department %> department
+            <i class="fas fa-users mr-1"></i><%= member.user.teams.first.name %>team in the <%= member.user.teams.first.department %> department
           </p>
           <p>
-            <i class="fas fa-graduation-cap p-2"></i><%= member.user.current_positions.first.seniority %> year(s) of experience
+            <i class="fas fa-graduation-cap mr-1"></i><%= member.user.current_positions.first.seniority %> year(s) of experience
             <!-- <strong>Experience:</strong>  -->
           </p>
           <p>
-            <i class="fas fa-envelope p-2"></i><%= member.user.email %>
+            <i class="fas fa-envelope mr-2"></i><%= member.user.email %>
            <!--  <strong> Email:</strong>  -->
           </p>
         </div>
