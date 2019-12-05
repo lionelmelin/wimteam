@@ -13,6 +13,14 @@
   background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), asset-url('banner.jpg');
   height: 30vh;
   margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-weight: 200;
+    color: white;
+    font-size: 50px;
+  }
 }
 
 .banner h1 {

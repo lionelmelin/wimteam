@@ -43,6 +43,10 @@ class User < ApplicationRecord
     return (Date.today - start_dates.min).fdiv(365).truncate
   end
 
+  def experience
+    return (Date.today - graduation_date).fdiv(365).truncate
+  end
+
   def top_skill_sets
     return skill_sets.select { |skill_set| skill_set.level > 2 }
   end
