@@ -111,7 +111,7 @@
           <!-- ------------------------ -->
           <!-- Skills I'm interested in -->
           <!-- ------------------------ -->
-          <div class="card w-70 skills-card accordion mb-5" id="accordionExample3">
+          <div class="card w-70 skills-card accordion" id="accordionExample3">
             <div class="d-flex justify-content-between collapse-header" id="headingThree"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
               <h2 class="m-0"><i class="fas fa-search-plus mr-3"></i>Skills I'm interested in</h2>
               <div class="expand-notice"><i class="fas fa-chevron-down"></i></div>
@@ -152,15 +152,22 @@
               <!-- Add new skill -->
               <div class="skill-new-container">
                 <div class="skill-new"><i class="fas fa-plus"></i> Add new skill</div>
-                <div class="skill-new-form-container">
-                  <div id="user-skill-form">
-                    <%= render 'skill_sets/form', skill_set: @skill_set, skillable_type: "User" %>
-                  </div>
+                  <div class="skill-new-form-container">
+                    <div id="user-skill-form">
+                      <%= render 'skill_sets/form', skill_set: @skill_set, skillable_type: "User" %>
+                    </div>
                   <div class="skill-new-cancel"><div class="close-cross"><i class="fas fa-times"></i></div> <div class="close-text">Close</div></div>
                 </div>
-            </div>
-
+              </div>
           </div>
+        </div>
+
+        <div class="container w-70">
+          <%= link_to walks_path, style: "color: white;" do %>
+            <div class="container d-flex justify-content-around mt-3 mb-5 button btn-letswalk">
+              Let's walk!
+            </div>
+          <% end %>
         </div>
 
           <!-- </div> -->

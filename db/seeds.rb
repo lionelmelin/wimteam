@@ -245,7 +245,6 @@ def seed_skillable_skill_sets_by_hand(skillable, skill_names)
   end
 end
 
-
 seed_skills(sales_rep)
 seed_skills(marketer)
 seed_skills(marketing_manager)
@@ -268,11 +267,11 @@ seed_skillable_skill_sets(accounting_walk, accountant)
 seed_skillable_skill_sets(support_walk, supporter1)
 seed_skillable_skill_sets(hr_walk, hrbp)
 
-seed_skillable_skill_sets(laura, data_analyst1)
-seed_skillable_skill_sets(pierre, supporter1)
-seed_skillable_skill_sets(laetitia, supporter1)
-seed_skillable_skill_sets(john, marketer)
-seed_skillable_skill_sets(jenny, data_analyst1)
+# seed_skillable_skill_sets(laura, data_analyst1)
+# seed_skillable_skill_sets(pierre, supporter1)
+# seed_skillable_skill_sets(laetitia, supporter1)
+# seed_skillable_skill_sets(john, marketer)
+# seed_skillable_skill_sets(jenny, data_analyst1)
 
 # seed_skillable_skill_sets_by_hand(lionel,["management", "design", "accounting and economics"])
 
