@@ -62,7 +62,7 @@
             <%= user_walk.walk.team.location %>
           </h6>
           <p class="ml-0">My review:
-            <% unless user_walk.review.empty? %>
+            <% unless user_walk.review.nil? %>
                 <em>"<%= user_walk.review.truncate(67) %>"</em>
             <% end %>
             <span class="review-edit">
