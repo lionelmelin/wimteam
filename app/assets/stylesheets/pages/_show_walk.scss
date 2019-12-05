@@ -16,17 +16,18 @@
     }
 }
 
-#user_walk_review {
-  height: 160px;
-}
-
-.modal-review-submit {
-  display: block;
-  margin: 0 auto;
-}
-
 .modal-manager {
   color: $medium-gray;
+}
+
+#user_walk_motivation {
+  height: 160px;
+  border-color: $medium-gray;
+}
+
+.modal-apply-submit {
+  display: block;
+  margin: 0 auto;
 }
 
 

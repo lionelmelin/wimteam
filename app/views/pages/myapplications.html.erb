@@ -9,7 +9,7 @@
       <div class="card-application" data-user-walk-id="<%= user_walk.id %>">
         <%= link_to "", walk_path(user_walk.walk) %>
         <div class="card-application-image">
-          <%= cl_image_tag user_walk.walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :face if user_walk.walk.team.photo.attached? %>
+          <%= cl_image_tag user_walk.walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :faces if user_walk.walk.team.photo.attached? %>
         </div>
         <div class="card-application-infos">
           <h2><%= user_walk.walk.title %></h2>
@@ -43,7 +43,7 @@
       <% @past_user_walks.each do |user_walk| %>
         <div class="card-application past-application">
           <div class="card-application-image">
-            <%= cl_image_tag user_walk.walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :face if user_walk.walk.team.photo.attached? %>
+            <%= cl_image_tag user_walk.walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :faces if user_walk.walk.team.photo.attached? %>
           </div>
         <div class="card-application-infos past-application">
           <h2><%= user_walk.walk.title %></h2>
