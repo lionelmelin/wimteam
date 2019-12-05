@@ -25,10 +25,10 @@ pierre_pic = URI.open("https://lh3.googleusercontent.com/1isXGKAlIeZULddq6oJN3xl
 pierre.photo.attach(io: pierre_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 laura = User.create!(purpose: "Discovery", email: "laura@giggle.com", password: "password", first_name: "Laura",
-  last_name: "Carrere", gender: "female", birth_date: "30/07/1990", graduation_date: "30/06/2014",
-  description: "I have a master in Computer Science from the MIT. I graduated in 2014 and \
+  last_name: "Carrere", gender: "female", birth_date: "30/07/1985", graduation_date: "30/06/2010",
+  description: "I have a master in Computer Science from the MIT. I graduated in 2010 and \
 started in Facebook's data science department. I joined Giggle's Data team in \
-2018 as a head of the Data team.")
+2018 as head of the team.")
 laura_pic = URI.open("https://lh3.googleusercontent.com/7IlSPaHM1Cwr-8PM42ylJUAr0IUNlcHM-cCebDGqSIsiMFcBt8ceut_dnD7KbaUcOLzdOiCzUWkuN8SsOjV87ikl_Iq86b0sfVPMpJBhUPBvU4c5vm3WYfySqRXJE227mlL3uetQVpVO-fdHmxnctVn7aIz2XQTXTOMNE4D0x_895kCTsp5lUEbaZTJ_Yqa-6I6J9FmPI9w8u0wt9E7Z8G8MZl3_XYW0KijhPaUcjNMNtWRFoZJovVTjer_taQHf4s-YF-SqIWJAfKAUPimVuyaCLB2OZ4X8r2awbXr7ycPhIlPWb0421ENy1AoCp5Gi4VKEFxyUz96wlexES_rPG3nC3G49rtK4N4MYeYgiy5r9UK-J-yG_TiC8Tm8K1fZufh8-IwL1AXX0JMZZuCYSGILHC7U7VXvOiubNdTO-I6ccr90lgWKwgJd5FVJVsp2coi26qi08i6XUjynVm1o5USRbYXYhHIiLqIrUW9t4in6tPZrmDMzAh1J5FTRXE_e-nN1JZOaV7oJ6EayxeNzLv-FLsGk5mWCFeJ7EbyDa5ouV7_NloTJOpqzlv4TqXTciNvv6U2yTIJnTpU1siXA4xJ_EJG-hwyyWdfSDLvtRPf1L97k6T03SxSWR3PnsqyyZ2MpryQHx34yFrp5iBxyhPN-kmJjTJkMXQWsuhL8bbzKafh8I6X9UQpbjhGmozzoMZ15sbZ7IdliPtdTY5IrVbwgKn8WWMXEZfydX8_MAhq4=w962-h640-no")
 laura.photo.attach(io: laura_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
@@ -37,11 +37,11 @@ david = User.create!(purpose: "Recruitment", email: "david@giggle.com", password
 david_pic = URI.open("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
 david.photo.attach(io: david_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
-lionel = User.create!(purpose: "Discovery", email: "lionel@giggle.com", password: "password", first_name: "Lionel",
+lionel = User.create!(purpose: "Recruitment", email: "lionel@giggle.com", password: "password", first_name: "Lionel",
   last_name: "Melin", gender: "male", birth_date: "01/02/1990", graduation_date: "30/06/2013",
   description: "I have a master in Business Administration from Stanford. I graduated in 2013 and \
-started in Amazon's Sales & Marketing department. I joined Giggle's Marketing team in \
-2018.")
+started in Amazon's Sales & Marketing department. I joined Giggle's Sales team in \
+2016 and I moved to the Marketing team in 2019.")
 lionel_pic = URI.open("https://lh3.googleusercontent.com/mKyFk21H4vqbjG-MOZ-hrJ43DbRe6c0oFfdkSG3nFbnsi-ocQYJr6kNq3AjHyg7Gb4vnSZXhFL5ZV3cwLsii0-WPgTsnBTEHCVATZYpT4mWNNzgUn0X9-qRowvEbqjCiv8m98-_DzpPewgKyy8mcLrtWmxS2GW1mp72rMbIJO6genH63sLx44MnElCgbK2La4vAeDh62Oqv5-v254rqM5TuMEOlMHplD1c2lbx03FL56xRritOUU57sqYBs6yZ2QXZqQ7nFbKcw17QqAdFVRvVbATPR7JfxhokrRicY___5p6r-Zl1L40XwCImu71nVBFkyUUSDv_EVLM9E5OXk0tEUZvhhTZhoLeAw-teGZEsMR6W-Zbzzhy9xsd4EoHY5-vLeHEnRvB7iKGLshcg-aM7rchXqQWxzJrF8vueeiDg7EqpMc1l9TCvJv9zf5hqV5Z1NGCQTCWIAIgnXMYomkrk7vtTdfTqMAa9JthT-Zm8glAZkjrUxZ6NeVQJdOVKehc9v-P1dAWH19Q9JbY5cEdxl9p_4Ma6GA0OslXs_x0HKIEsn_zr6MNRuN3g9yQfRtJ0e-K9K0O5f4e2_4xYmb1v3u1KXlM9EfsicY5OitbLJ_AFI4VeaNaKCreNtk8LzkAjy2Lfwf_-Yw83pX28alDdsrKVDUoSkj6_vr_AkgmZR3RQn_EsfNNi3Zw2-0fub-4ouOKAou8--dSGxSlv_enP4K_Vd99Uhrt7E0hosmgmk=w962-h640-no")
 lionel.photo.attach(io: lionel_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
@@ -103,9 +103,9 @@ marketing = Team.create!(name: "Marketing", location: "Paris", department: "Sale
 marketing_pic = URI.open("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
 marketing.photo.attach(io: marketing_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
-data = Team.create!(name: "Data", location: "New York", department: "IT",
+data = Team.create!(name: "Data", location: "Paris", department: "IT",
   description: "Within the IT department, the Data team is in charge of gathering, \
-  cleaning, modelling and analysing all the data produced by the Company's activities.")
+  cleaning, analysing and modelling all the data produced by the Company's activities.")
 data_pic = URI.open("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
 data.photo.attach(io: data_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
@@ -138,7 +138,7 @@ hr.photo.attach(io: hr_pic, filename: 'some-image.jpg', content_type: 'image/jpg
 puts "Seeding positions..."
 sales_rep = Position.create!(user: laura, team: sales, role: "member", start_date: "02/06/2016", end_date: "04/06/2018",
   job_code: "41-4012.00", job: "Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products")
-marketer = Position.create!(user: lionel, team: marketing, role: "member", start_date: "02/06/2018",
+marketer = Position.create!(user: lionel, team: marketing, role: "member", start_date: "02/02/2019",
   job_code: "13-1161.00", job: "Market Research Analysts and Marketing Specialists")
 marketing_manager = Position.create!(user: david, team: marketing, role: "manager", start_date: "02/04/2015",
   job_code: "11-2021.00", job: "Marketing Managers")
@@ -180,11 +180,11 @@ marketing_walk = Walk.create!(title: "Become a marketer", team: marketing,
   duration: "2 weeks", purpose: "Recruitment")
 
 data_walk = Walk.create!(title: "Discover Data science", team: data,
-  description: "Learn the basics of data in 1 week! The walker will spend\
-  the week learning the key concepts underlying data science.\
+  description: "Learn the basics of Data in one week! The walker will spend\
+  the week learning the key concepts underlying Data science.\
   In the current environment, it is key to have a good understanding of the technologies\
-  underlying the AI. The walker will be shown the database lake and the key softwares\
-  used to process the data.",
+  used in AI. The walker will be shown the datalake and the key software\
+  used to process data.",
   duration: "1 week", purpose: "Discovery")
 
 accounting_walk = Walk.create!(title: "Accounting team is recruiting", team: accounting, description: "Try the accounting team.\
@@ -274,12 +274,12 @@ seed_skillable_skill_sets(laetitia, supporter1)
 seed_skillable_skill_sets(john, marketer)
 seed_skillable_skill_sets(jenny, data_analyst1)
 
-seed_skillable_skill_sets_by_hand(lionel,["management", "design", "computers and electronics"])
+seed_skillable_skill_sets_by_hand(lionel,["management", "design", "accounting and economics"])
 
 puts "Seeding user_walks..."
 
-lionel_marketing_walk = UserWalk.create!(walk: marketing_walk, user: lionel, start_date: "01/01/2018", end_date: "15/01/2018",
-  status: "past", review: "My walk within the marketing department enabled my to validate\
+lionel_marketing_walk = UserWalk.create!(walk: marketing_walk, user: lionel, start_date: "01/01/2019", end_date: "15/01/2019",
+  status: "past", review: "My walk within the marketing department enabled me to validate\
   that the job was really made for me. One month later I was part of this fantastic team!")
 # laura_data_walk = UserWalk.create!(walk: data_walk, user: laura, start_date: "01/01/2020", status: "pending",
 #   motivation: "I am part of the marketing team and I would love to discover your team")
