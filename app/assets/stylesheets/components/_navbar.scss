@@ -86,8 +86,20 @@
       position: absolute;
       width: 90%;
       height: 3px;
-      bottom: -8px;
+      bottom: -9px;
       left: 5%;
+    }
+    &:hover {
+      color: $my-orange !important;
+      &::after {
+        content: '';
+        background-color: $my-orange;
+        position: absolute;
+        width: 90%;
+        height: 3px;
+        bottom: -9px;
+        left: 5%;
+    }
     }
 }
 
@@ -101,7 +113,7 @@
       position: absolute;
       width: 90%;
       height: 3px;
-      bottom: -8px;
+      bottom: -9px;
       left: 5%;
     }
   }

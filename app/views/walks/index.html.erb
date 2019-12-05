@@ -1,6 +1,6 @@
   <!-- Searchbar -->
 <div class="searchcontainer container-fluid p-0", id="searchbar-container">
-  <div class="d-flex justify-content-around py-3", id="searchbar">
+  <div class="d-flex justify-content-around", id="searchbar">
   <%= form_tag( walks_path, {method: :get, class: 'form-inline'}) do %>
     <%= text_field_tag :query,
       params[:query],
