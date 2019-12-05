@@ -41,7 +41,7 @@
         <%= link_to walk_path(walk) do %>
           <div class="card-dashboard">
             <div class="card-dashboard-image">
-              <%= cl_image_tag walk.team.photo.key, width: 140, height: 140, crop: :fill, gravity: :face if walk.team.photo.attached? %>
+              <%= cl_image_tag walk.team.photo.key, width: 140, height: 140, crop: :fill, gravity: :faces if walk.team.photo.attached? %>
             </div>
             <div class="card-dashboard-infos">
               <h2><%= walk.title %></h2>
