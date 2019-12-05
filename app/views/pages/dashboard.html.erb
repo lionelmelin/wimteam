@@ -16,30 +16,35 @@
 
         <!-- Profile -->
         <div class="card w-70">
-          <div class="profile-card">
+          <div class="profile-card" data-user-id="<%= current_user.id %>">
             <div class="profile-picture">
               <%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill, gravity: :face %>
             </div>
             <div class="profile-info">
               <div><h1><%= current_user.first_name %> <%= current_user.last_name %></h1></div>
               <div class="d-flex">
-                  <p><strong>Team:</strong> <%= current_user.current_teams.first.name %></p><p> - </p>
-                  <p><strong>Department:</strong> <%= current_user.current_teams.first.department %></p><p> - </p>
-                  <p><strong>Seniority:</strong> <%= current_user.current_positions.first.seniority %> year(s)</p>
+                  <p><i class="fas fa-envelope mr-1"></i> <%= current_user.email %></p>
+                  <p><i class="fas fa-users mr-1"></i> <%= current_user.current_teams.first.name %></p>
+                  <p><i class="fas fa-graduation-cap mr-1"></i> <%= current_user.current_positions.first.seniority %> year(s)</p>
               </div>
-            <div class="search-toggle mb-2">
-              <!-- <div class="mr-2"><strong><p>I am looking for a:<p></strong></div> -->
-              <div class="toggle-color d-flex">
-                <span class="mr-1 rocket checked"><i class="fas fa-rocket mr-1"></i></span>
-                <ul class="tg-list">
-                  <li class="tg-list-item">
-                  <input class="tgl tgl-flat" id="cb4" type="checkbox" />
-                    <label class="tgl-btn" for="cb4"></label>
-                  </li>
-                </ul>
-                <span class="ml-1 handshake"><i class="fas far fa-handshake ml-1"></i></span>
-              </div>
-            </div>
+
+                <div class="search-toggle mb-2">
+                  <span class="walk-popover" data-container="body" data-toggle="popover" data-trigger="hover"
+                  data-placement="top" data-content="Type of walk you are looking for">
+                  <div class="toggle-color d-flex">
+                    <span class="mr-1 rocket <%= current_user.purpose == "Discovery" ? 'checked' : '' %>"><i class="fas fa-rocket mr-1"></i></span>
+                    <ul class="tg-list">
+                      <li class="tg-list-item">
+                      <input class="tgl tgl-flat" id="cb4" type="checkbox" />
+                      <label class="tgl-btn" for="cb4"></label>
+                      <input id="toggle-authenticity-token" value="<%= form_authenticity_token %>" type="hidden" />
+                      </li>
+                    </ul>
+                    <span class="ml-1 handshake <%= current_user.purpose == "Recruitment" ? 'checked' : '' %>"><i class="fas far fa-handshake ml-1"></i></span>
+                  </div>
+                  </span>
+                </div>
+
               <div class="profile-description">
                 <em><%= current_user.description %></em>
             </div>
@@ -53,7 +58,7 @@
           <div class="card w-70 skills-card accordion mt-2" id="accordionExample2">
 
             <div class="d-flex justify-content-between collapse-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-              <h2 class="m-0"><i class="fa fa-check-circle mr-3"></i>   Current skills</h2>
+              <h2 class="m-0"><i class="fa fa-check-circle mr-3"></i>Current skills</h2>
               <div class="expand-notice"><i class="fas fa-chevron-down"></i></div>
             </div>
 
@@ -62,7 +67,7 @@
               <!-- I perfectly master -->
               <div class="mb-2">
                 <h2 class="level-title">I perfectly master</h2>
-                <div id="position-skills-2-container">
+                <div id="position-skills-3-container">
                   <% current_user.current_positions.first.top_skill_sets.each do |skill_set| %>
                     <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
@@ -72,7 +77,7 @@
               <!-- I am comfortable with -->
               <div class="mb-2">
                 <h2 class="level-title">I am comfortable with</h2>
-                <div id="position-skills-1-container">
+                <div id="position-skills-2-container">
                   <% current_user.current_positions.first.medium_skill_sets.each do |skill_set| %>
                     <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
@@ -82,7 +87,7 @@
               <!-- I have notions -->
               <div class="mb-2">
                 <h2 class="level-title">I have notions</h2>
-                <div id="position-skills-0-container">
+                <div id="position-skills-1-container">
                   <% current_user.current_positions.first.low_skill_sets.each do |skill_set| %>
                     <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
@@ -117,7 +122,7 @@
               <!-- Must have skills -->
               <div class="mb-2">
                 <h2 class="level-title">Must have</h2>
-                <div id="user-skills-2-container">
+                <div id="user-skills-3-container">
                   <% current_user.top_skill_sets.each do |skill_set| %>
                     <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
@@ -127,7 +132,7 @@
               <!-- Interested in skills -->
               <div class="mb-2">
                 <h2 class="level-title">I am interested in</h2>
-                <div id="user-skills-1-container">
+                <div id="user-skills-2-container">
                   <% current_user.medium_skill_sets.each do |skill_set| %>
                     <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
@@ -137,7 +142,7 @@
               <!-- Why not skills -->
               <div class="mb-2">
                 <h2 class="level-title">Why not ?</h2>
-                <div id="user-skills-0-container">
+                <div id="user-skills-1-container">
                   <% current_user.low_skill_sets.each do |skill_set| %>
                     <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
