@@ -18,7 +18,7 @@
         <div class="card w-70">
           <div class="profile-card">
             <div class="profile-picture">
-              <%= cl_image_tag current_user.photo.key, height: 200, width: 150, crop: :fill, gravity: :face %>
+              <%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill, gravity: :face %>
             </div>
             <div class="profile-info">
               <div><h1><%= current_user.first_name %> <%= current_user.last_name %></h1></div>
@@ -54,10 +54,10 @@
 
             <div class="d-flex justify-content-between collapse-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
               <h2 class="m-0"><i class="fa fa-check-circle mr-3"></i>   Current skills</h2>
-              <div class="expand-notice">Click to expand</div>
+              <div class="expand-notice"><i class="fas fa-chevron-down"></i></div>
             </div>
 
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample2">
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample2">
 
               <!-- I perfectly master -->
               <div class="mb-2">
@@ -109,10 +109,10 @@
           <div class="card w-70 skills-card accordion" id="accordionExample3">
             <div class="d-flex justify-content-between collapse-header" id="headingThree"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
               <h2 class="m-0"><i class="fas fa-search-plus mr-3"></i>Skills I'm interested in</h2>
-              <div class="expand-notice">Click to expand</div>
+              <div class="expand-notice"><i class="fas fa-chevron-down"></i></div>
             </div>
 
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample3">
+            <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample3">
 
               <!-- Must have skills -->
               <div class="mb-2">

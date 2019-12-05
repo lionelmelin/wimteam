@@ -16,7 +16,7 @@
     text-decoration: none;
     color: $my-orange;
     font-weight: normal;
-    font-size: 25px;
+    font-size: 40px;
   }
   h2 {
     margin: 0 0 0 0;
@@ -25,6 +25,10 @@
   }
   .nav-link {
     color: white !important;
+  }
+  .shoes {
+    color: $my-orange;
+    transform: rotate(-30deg);
   }
 }
 
@@ -53,10 +57,12 @@
 
 .navbar-light .navbar-nav .nav-link {
   opacity: 1;
-  font-size: 17px;
-&:hover {
-    //transform: scale(1.030);
-    color: $my-orange !important;
+  font-size: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  &:hover {
+      //transform: scale(1.030);
+    color: $my-dark-blue !important;
     }
 }
 
@@ -76,11 +82,40 @@
     position: relative;
     &::after {
       content: '';
-      background-color: #f54829;
+      background-color: $my-orange;
       position: absolute;
-      width: 100%;
-      height: 2px;
+      width: 90%;
+      height: 3px;
       bottom: -9px;
-      left: 0;
+      left: 5%;
+    }
+    &:hover {
+      color: $my-orange !important;
+      &::after {
+        content: '';
+        background-color: $my-orange;
+        position: absolute;
+        width: 90%;
+        height: 3px;
+        bottom: -9px;
+        left: 5%;
+    }
     }
 }
+
+.nav-item .nav-link {
+    // border-bottom: 2px solid $my-orange;
+  position: relative;
+  &:hover {
+    &::after {
+      content: '';
+      background-color: $my-dark-blue;
+      position: absolute;
+      width: 90%;
+      height: 3px;
+      bottom: -9px;
+      left: 5%;
+    }
+  }
+}
+

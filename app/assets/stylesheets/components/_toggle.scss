@@ -15,6 +15,9 @@
   i {
     font-size: 20px;
   }
+  position: absolute;
+  top: 30px;
+  right: 30px;
 }
 
 
@@ -102,9 +105,9 @@
 }
 
 .checked {
-  color: $my-orange;
+  color: $my-dark-blue;
 }
 
 .toggle-color {
-  color: $my-dark-blue;
+  color: $gray;
 }
