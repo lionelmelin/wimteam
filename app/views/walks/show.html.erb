@@ -108,10 +108,10 @@
           <%= f.input :motivation, type: "text", label: "A few words about my motivation", class: "form-control", as: :text %>
           <div class="form-row p-3 booking-row">
           <div class="col">
-            <%= f.input :start_date, type: "text", label: "Start date I suggest", class: "form-control", as: :string, input_html: { id: "range_start" } %>
+            <%= f.input :start_date, type: "text", label: "Suggested start date", class: "form-control", as: :string, input_html: { id: "range_start" } %>
           </div>
           <div class="col">
-            <%= f.input :end_date, type: "text", label: "End date I suggest", class: "form-control", as: :string, input_html: { id: "range_end" } %>
+            <%= f.input :end_date, type: "text", label: "Suggested end date", class: "form-control", as: :string, input_html: { id: "range_end" } %>
           </div>
           </div>
             <%= f.submit 'Send', class: 'btn btn-apply w-100 mb-2' %>
