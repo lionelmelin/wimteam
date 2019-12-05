@@ -1,6 +1,6 @@
 
 <div class="navbar navbar-expand-sm navbar-light">
-  
+
     <div class="d-flex align-items-center">
       <div class="navbar-icon mr-2"></div>
       <h2><%= link_to "WalkInMy.Team", root_path %> </h2>
@@ -15,14 +15,14 @@
           </li> -->
         <%# end %>
         <li class="nav-item pt-3 walks_index">
-          <h5> <%= link_to walks_path, class: "nav-link active" do %> <i class="fas fa-rocket mr-2"></i>Find a walk<% end %></h5>
+          <h5> <%= link_to dashboard_path, class: "nav-link" do %> <i class="fas fa-rocket mr-2"></i>Find a walk<% end %></h5>
         </li>
         <li class="nav-item pt-3 pages_myapplications">
           <h5> <%= link_to myapplications_path, class: "nav-link" do %><i class="fab fa-wpforms mr-2"></i>My applications<% end %></h5>
         </li>
-        <li class="nav-item pt-3 pages_dashboard">
+        <!-- <li class="nav-item pt-3 pages_dashboard">
           <h5> <%= link_to dashboard_path, class: "nav-link" do %> <i class="fas fa-user mr-2"></i>My profile<% end %></h5>
-        </li>
+        </li> -->
         <li class="nav-item pt-3">
           <h5> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %> </h5>
         </li>
