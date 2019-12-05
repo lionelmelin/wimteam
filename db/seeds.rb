@@ -20,12 +20,12 @@ User.destroy_all
 
 puts "Seeding users..."
 pierre = User.create!(purpose: "Recruitment", email: "pierre@giggle.com", password: "password", first_name: "Pierre",
-  last_name: "Nevada", gender: "male", birth_date: "01/02/1990", graduation_date: "30/06/2013")
+  last_name: "Nicoletti", gender: "male", birth_date: "01/02/1990", graduation_date: "30/06/2013")
 pierre_pic = URI.open("https://lh3.googleusercontent.com/1isXGKAlIeZULddq6oJN3xlvCZOtJrTjhFJpf10pIOIaGq37DlqiDgB_W7oaoXISzykRz-Ls_NsN2-Iou3OXBE6l1ENB5OWcB9-A5OPQaHvQ95lJg4U4Tt9rDy3qL906MgcU2tIeP4AAEbFH3xpqjb9BgiZV-9sYPaUTW2czh_6x1PP7w1OTPNBBwPT2_znqnT2SqSYGBi2w9VYAIA8_kq3AC4VcDTfIL0Rui1JH9BB-J_TT_53e2yrFNgWu0Ro4HC_ODHSLspya4UDp9oW0O0Jr0DrW_1sOFvopmtH4vX_WlStMZrzD7JPuaT5ljmXmccxfQ0yLCySGSm8IUhixEwNlFFXoPHuphH888-vdVsP1nm2GNo1WGeDAYOc6oz5o5MeDT5V4h39E6kwahUF6m33xB02nnoRd4a2_4_QMN87kWbS08zTcB5a03BFjV_tEn-AXr5T3b-h7ecSL5Bm34YV8-vmi6s5wZtKkMH47b_GS3KBu9XKGWC5iisF5z5D1cj9Ps00Smb9X_ejIrbcYpzjsd3_7Den8w4KL_doCiIpxK87EmAw0v5ozFuj1UXbpoE55g9_xSaXL0mql7N2EC6NJVNQOYfdc-JrW4oxAA5uQq-wEqCqFLXhPWxsUMX-alpTKXVlUbFXxoAH3cCOy5iYt_U4DTixahgWyV1J75aOMCM_y2xZurceG6g6zN8bNDXM0ma_ZfLgGcjC02itN0-9Wq8YZQhETIVls4Pb9aE4=w962-h640-no")
 pierre.photo.attach(io: pierre_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 laura = User.create!(purpose: "Discovery", email: "laura@giggle.com", password: "password", first_name: "Laura",
-  last_name: "Jane", gender: "female", birth_date: "30/07/1990", graduation_date: "30/06/2014",
+  last_name: "Carrere", gender: "female", birth_date: "30/07/1990", graduation_date: "30/06/2014",
   description: "I have a master in Computer Science from the MIT. I graduated in 2014 and \
 started in Facebook's data science department. I joined Giggle's Data team in \
 2018 as a head of the Data team.")
@@ -38,12 +38,15 @@ david_pic = URI.open("https://images.unsplash.com/photo-1500648767791-00dcc994a4
 david.photo.attach(io: david_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 lionel = User.create!(purpose: "Discovery", email: "lionel@giggle.com", password: "password", first_name: "Lionel",
-  last_name: "Minton", gender: "male", birth_date: "01/02/1990", graduation_date: "30/06/2013")
+  last_name: "Melin", gender: "male", birth_date: "01/02/1990", graduation_date: "30/06/2013",
+  description: "I have a master in Business Administration from Stanford. I graduated in 2013 and \
+started in Amazon's Sales & Marketing department. I joined Giggle's Marketing team in \
+2018.")
 lionel_pic = URI.open("https://lh3.googleusercontent.com/mKyFk21H4vqbjG-MOZ-hrJ43DbRe6c0oFfdkSG3nFbnsi-ocQYJr6kNq3AjHyg7Gb4vnSZXhFL5ZV3cwLsii0-WPgTsnBTEHCVATZYpT4mWNNzgUn0X9-qRowvEbqjCiv8m98-_DzpPewgKyy8mcLrtWmxS2GW1mp72rMbIJO6genH63sLx44MnElCgbK2La4vAeDh62Oqv5-v254rqM5TuMEOlMHplD1c2lbx03FL56xRritOUU57sqYBs6yZ2QXZqQ7nFbKcw17QqAdFVRvVbATPR7JfxhokrRicY___5p6r-Zl1L40XwCImu71nVBFkyUUSDv_EVLM9E5OXk0tEUZvhhTZhoLeAw-teGZEsMR6W-Zbzzhy9xsd4EoHY5-vLeHEnRvB7iKGLshcg-aM7rchXqQWxzJrF8vueeiDg7EqpMc1l9TCvJv9zf5hqV5Z1NGCQTCWIAIgnXMYomkrk7vtTdfTqMAa9JthT-Zm8glAZkjrUxZ6NeVQJdOVKehc9v-P1dAWH19Q9JbY5cEdxl9p_4Ma6GA0OslXs_x0HKIEsn_zr6MNRuN3g9yQfRtJ0e-K9K0O5f4e2_4xYmb1v3u1KXlM9EfsicY5OitbLJ_AFI4VeaNaKCreNtk8LzkAjy2Lfwf_-Yw83pX28alDdsrKVDUoSkj6_vr_AkgmZR3RQn_EsfNNi3Zw2-0fub-4ouOKAou8--dSGxSlv_enP4K_Vd99Uhrt7E0hosmgmk=w962-h640-no")
 lionel.photo.attach(io: lionel_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 laetitia = User.create!(purpose: "Discovery", email: "laetitia@giggle.com", password: "password", first_name: "Laetitia",
-  last_name: "Delta", gender: "female", birth_date: "12/07/1992", graduation_date: "30/06/2016",
+  last_name: "Danton", gender: "female", birth_date: "12/07/1992", graduation_date: "30/06/2016",
   description: "I have a master in Computer Science from the MIT. I graduated in 2016 and \
 started with an internship in Facebook's data science department. I joined Giggle's Data team in \
 2017 as a Business intelligence Analyst.")
@@ -101,7 +104,7 @@ marketing_pic = URI.open("https://images.unsplash.com/photo-1557804506-669a67965
 marketing.photo.attach(io: marketing_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 data = Team.create!(name: "Data", location: "New York", department: "IT",
-  description: "With the IT department, the Data team is in charge of gathering, \
+  description: "Within the IT department, the Data team is in charge of gathering, \
   cleaning, modelling and analysing all the data produced by the Company's activities.")
 data_pic = URI.open("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
 data.photo.attach(io: data_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -178,7 +181,7 @@ marketing_walk = Walk.create!(title: "Become a marketer", team: marketing,
 
 data_walk = Walk.create!(title: "Discover Data science", team: data,
   description: "Learn the basics of data in 1 week! The walker will spend\
-  the week learning the the key concepts underlying data science.\
+  the week learning the key concepts underlying data science.\
   In the current environment, it is key to have a good understanding of the technologies\
   underlying the AI. The walker will be shown the database lake and the key softwares\
   used to process the data.",
@@ -230,6 +233,18 @@ def seed_skillable_skill_sets(skillable, position)
   end
 end
 
+def seed_skillable_skill_sets_by_hand(skillable, skill_names)
+  level_range = 3
+  pace = level_range / skill_names.size
+  i = 0
+  skill_names.each do|skill_name|
+    skill = Skill.find_by(name: skill_name)
+    level = level_range - i * pace
+    i +=1
+    new_skill_set = SkillSet.create!(skill: skill, active: true, skillable: skillable, level: level)
+  end
+end
+
 
 seed_skills(sales_rep)
 seed_skills(marketer)
@@ -254,17 +269,17 @@ seed_skillable_skill_sets(support_walk, supporter1)
 seed_skillable_skill_sets(hr_walk, hrbp)
 
 seed_skillable_skill_sets(laura, data_analyst1)
-seed_skillable_skill_sets(lionel, data_analyst1)
 seed_skillable_skill_sets(pierre, supporter1)
 seed_skillable_skill_sets(laetitia, supporter1)
 seed_skillable_skill_sets(john, marketer)
 seed_skillable_skill_sets(jenny, data_analyst1)
 
+seed_skillable_skill_sets_by_hand(lionel,["management", "design", "computers and electronics"])
 
 puts "Seeding user_walks..."
 
 lionel_marketing_walk = UserWalk.create!(walk: marketing_walk, user: lionel, start_date: "01/01/2018", end_date: "15/01/2018",
-  status: "accepted", review: "My walk within the marketing department enabled my to validate
+  status: "past", review: "My walk within the marketing department enabled my to validate\
   that the job was really made for me. One month later I was part of this fantastic team!")
 # laura_data_walk = UserWalk.create!(walk: data_walk, user: laura, start_date: "01/01/2020", status: "pending",
 #   motivation: "I am part of the marketing team and I would love to discover your team")
@@ -272,13 +287,13 @@ john_data_walk = UserWalk.create!(walk: data_walk, user: john, start_date: "15/0
   motivation:"I am part of the support team and I would love to discover your team")
 jenny_data_walk = UserWalk.create!(walk: data_walk, user: jenny, start_date: "15/01/2020", status: "rejected")
 laetitia_support_walk = UserWalk.create!(walk: support_walk, user: laetitia, start_date: "01/02/2019",end_date: "08/02/2019",
-  status: "accepted", review: "My walk within the support team allowed me to discover the key issues
+  status: "past", review: "My walk within the support team allowed me to discover the key issues\
   faced by the support operators, which have to deal everyday with clients requests and complaints.")
 john_hr_walk = UserWalk.create!(walk: hr_walk, user: john, start_date: "01/06/2019", end_date: "15/06/2019",
-  status: "accepted", review: "My walk within the HR department validated my motivation to join this
+  status: "past", review: "My walk within the HR department validated my motivation to join this\
   amazing team. The manager offered my a position immediately after my walk.")
 laura_marketing_walk = UserWalk.create!(walk: marketing_walk, user: laura, start_date: "01/06/2017", end_date: "08/06/2017",
-  status: "accepted", review: "My walk within the marketing department allowed me to discover the key issues
+  status: "past", review: "My walk within the marketing department allowed me to discover the key issues\
   faced by the marketing operators.")
 
 
