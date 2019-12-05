@@ -57,10 +57,9 @@ toggleButtonInit();
 import { initSweetalert } from '../plugins/init_sweetalert';
 initSweetalert('#sweet-alert-delete', {
   title: "Are you sure you want to cancel your application?",
-  text: "This action cannot be reversed",
-  icon: "warning"
+  text: "This action cannot be reversed.",
+  buttons: true,
   }, (value) => {
-  console.log(value);
   if (value) {
     const link = document.querySelector('#delete-link');
     link.click();
