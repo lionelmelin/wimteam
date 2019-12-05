@@ -20,6 +20,10 @@ function hideForm(form) {
 function addSkillSet(skillShowHTML) {
   const skillContainer = document.getElementById('<%=@skill_set.skillable_type.downcase%>-skills-<%=@skill_set.level%>-container');
   skillContainer.insertAdjacentHTML('beforeend', skillShowHTML);
+  const emptySkill = skillContainer.querySelector(".empty-skill");
+  if(emptySkill) {
+    emptySkill.style.display = "none";
+  }
 }
 
 function showNewButton(form) {

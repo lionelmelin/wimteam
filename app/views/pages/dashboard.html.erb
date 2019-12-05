@@ -32,15 +32,15 @@
                   <span class="walk-popover" data-container="body" data-toggle="popover" data-trigger="hover"
                   data-placement="top" data-content="Type of walk you are looking for">
                   <div class="toggle-color d-flex">
-                    <span class="mr-1 rocket <%= current_user.purpose == "Discovery" ? 'checked' : '' %>"><i class="fas fa-rocket mr-1"></i></span>
+                    <span class="mr-1 rocket <%= current_user.purpose == "Discovery" ? 'checked-icon' : '' %>"><i class="fas fa-rocket mr-1"></i></span>
                     <ul class="tg-list">
                       <li class="tg-list-item">
-                      <input class="tgl tgl-flat" id="cb4" type="checkbox" />
+                      <input class="tgl tgl-flat" id="cb4" type="checkbox" <%= current_user.purpose == "Recruitment" ? 'checked' : '' %>/>
                       <label class="tgl-btn" for="cb4"></label>
                       <input id="toggle-authenticity-token" value="<%= form_authenticity_token %>" type="hidden" />
                       </li>
                     </ul>
-                    <span class="ml-1 handshake <%= current_user.purpose == "Recruitment" ? 'checked' : '' %>"><i class="fas far fa-handshake ml-1"></i></span>
+                    <span class="ml-1 handshake <%= current_user.purpose == "Recruitment" ? 'checked-icon' : '' %>"><i class="fas far fa-handshake ml-1"></i></span>
                   </div>
                   </span>
                 </div>
@@ -68,6 +68,9 @@
               <div class="mb-2">
                 <h2 class="level-title">I perfectly master</h2>
                 <div id="position-skills-3-container">
+                  <% if current_user.current_positions.first.top_skill_sets.empty? %>
+                    <p class="empty-skill">You have not entered any skill yet !</p>
+                  <% end %>
                   <% current_user.current_positions.first.top_skill_sets.each do |skill_set| %>
                     <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
@@ -78,6 +81,9 @@
               <div class="mb-2">
                 <h2 class="level-title">I am comfortable with</h2>
                 <div id="position-skills-2-container">
+                  <% if current_user.current_positions.first.medium_skill_sets.empty? %>
+                    <p class="empty-skill">You have not entered any skill yet !</p>
+                  <% end %>
                   <% current_user.current_positions.first.medium_skill_sets.each do |skill_set| %>
                     <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
@@ -88,6 +94,9 @@
               <div class="mb-2">
                 <h2 class="level-title">I have notions</h2>
                 <div id="position-skills-1-container">
+                  <% if current_user.current_positions.first.low_skill_sets.empty? %>
+                    <p class="empty-skill">You have not entered any skill yet !</p>
+                  <% end %>
                   <% current_user.current_positions.first.low_skill_sets.each do |skill_set| %>
                     <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
@@ -120,30 +129,12 @@
             <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample3">
 
               <!-- Must have skills -->
-              <div class="mb-2">
-                <h2 class="level-title">Must have</h2>
+              <div class="mt-2 mb-2">
                 <div id="user-skills-3-container">
+                  <% if current_user.top_skill_sets.empty? %>
+                  <p class="empty-skill">You have not entered any skill yet !</p>
+                  <% end %>
                   <% current_user.top_skill_sets.each do |skill_set| %>
-                    <%= render 'skill_sets/show', skill_set: skill_set %>
-                  <% end %>
-                </div>
-              </div>
-
-              <!-- Interested in skills -->
-              <div class="mb-2">
-                <h2 class="level-title">I am interested in</h2>
-                <div id="user-skills-2-container">
-                  <% current_user.medium_skill_sets.each do |skill_set| %>
-                    <%= render 'skill_sets/show', skill_set: skill_set %>
-                  <% end %>
-                </div>
-              </div>
-
-              <!-- Why not skills -->
-              <div class="mb-2">
-                <h2 class="level-title">Why not ?</h2>
-                <div id="user-skills-1-container">
-                  <% current_user.low_skill_sets.each do |skill_set| %>
                     <%= render 'skill_sets/show', skill_set: skill_set %>
                   <% end %>
                 </div>
