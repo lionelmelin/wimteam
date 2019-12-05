@@ -23,3 +23,10 @@ a:hover {
   min-height: calc(100vh - 120px);
 }
 
+.modal{
+overflow-y: auto;
+}
+.modal-open{
+overflow:auto;
+overflow-x:hidden;
+}
