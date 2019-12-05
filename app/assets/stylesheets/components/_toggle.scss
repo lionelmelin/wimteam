@@ -16,8 +16,8 @@
     font-size: 20px;
   }
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 40px;
+  right: 35px;
 }
 
 
@@ -89,25 +89,25 @@
     border-radius: 0.5em;
     &:after {
       transition: all .2s ease;
-      background: $my-dark-blue;
+      background: $my-orange;
       content: "";
       border-radius: 0.25em;
     }
   }
 
   &:checked + .tgl-btn {
-    border: 2px solid $my-dark-blue;;
+    border: 2px solid $my-dark-blue;
     &:after {
       left: 50%;
-      background: $my-dark-blue;
+      background: $my-orange;
     }
   }
 }
 
 .checked {
-  color: $my-dark-blue;
+  color: $my-orange;
 }
 
 .toggle-color {
-  color: $gray;
+  color: $my-dark-blue;
 }
