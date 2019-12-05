@@ -4,7 +4,6 @@
 
   <!-- My applications---------------------------------------->
     <div class="cards-walks">
-    <h3>My applications</h3>
       <% @upcoming_user_walks.each do |user_walk| %>
       <div class="card-application" data-user-walk-id="<%= user_walk.id %>">
         <%= link_to "", walk_path(user_walk.walk) %>
