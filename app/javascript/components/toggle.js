@@ -18,6 +18,4 @@ const toggleButtonInit = () => {
     }
   }
 
-
-
 export { toggleButtonInit };
