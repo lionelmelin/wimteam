@@ -54,8 +54,8 @@ toggleButtonInit();
 // initializeToggle();
 
 //Sweetalert
-import { initSweetalert } from '../plugins/init_sweetalert';
-initSweetalert('#sweet-alert-delete', {
+import { applicationsSweetAlert } from '../plugins/init_sweetalert';
+applicationsSweetAlert('.card-application-active','#sweet-alert-delete', {
   title: "Are you sure you want to cancel your application?",
   text: "This action cannot be reversed.",
   buttons: true,
