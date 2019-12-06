@@ -38,7 +38,7 @@ david_pic = URI.open("https://images.unsplash.com/photo-1500648767791-00dcc994a4
 david.photo.attach(io: david_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 
 lionel = User.create!(purpose: "Recruitment", email: "lionel@giggle.com", password: "password", first_name: "Lionel",
-  last_name: "Melin", gender: "male", birth_date: "01/02/1990", graduation_date: "30/06/2013",
+  last_name: "March", gender: "male", birth_date: "01/02/1990", graduation_date: "30/06/2013",
   description: "I have a master in Business Administration from Stanford. I graduated in 2013 and \
 started in Amazon's Sales & Marketing department. I joined Giggle's Sales team in \
 2016 and I moved to the Marketing team in 2019.")
@@ -278,7 +278,7 @@ seed_skillable_skill_sets_by_hand(lionel,["management", "design", "accounting an
 
 puts "Seeding user_walks..."
 
-lionel_marketing_walk = UserWalk.create!(walk: marketing_walk, user: lionel, start_date: "01/01/2019", end_date: "15/01/2019",
+lionel_marketing_walk = UserWalk.create!(walk: marketing_walk, user: lionel, start_date: "07/01/2019", end_date: "18/01/2019",
   status: "past", review: "My walk within the marketing department enabled me to validate\
   that the job was really made for me. One month later I was part of this fantastic team!")
 # laura_data_walk = UserWalk.create!(walk: data_walk, user: laura, start_date: "01/01/2020", status: "pending",
