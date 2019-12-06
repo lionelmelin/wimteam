@@ -12,8 +12,8 @@ const toggleButtonInit = () => {
           method: 'PATCH',
           headers: { 'X-CSRF-Token': toggleAuthenticityToken},
         })
-        event.currentTarget.parentNode.parentNode.previousElementSibling.classList.toggle("checked-icon");
-        event.currentTarget.parentNode.parentNode.nextElementSibling.classList.toggle("checked-icon");
+        document.querySelector(".rocket").classList.toggle("checked-icon");
+        document.querySelector(".handshake").classList.toggle("checked-icon");
     });
     }
   }
