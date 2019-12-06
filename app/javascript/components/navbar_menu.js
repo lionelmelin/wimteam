@@ -7,6 +7,9 @@ const activeLinkNav = () => {
   if (bodyId === "walks_show") {
     menuLinkActive = document.querySelector(".nav-item.walks_index");
   }
+  if (bodyId === "pages_dashboard") {
+    menuLinkActive = document.querySelector(".nav-item.walks_index");
+  }
   if (menuLinkActive) {
     menuLinkActive.classList.add("active");
   }

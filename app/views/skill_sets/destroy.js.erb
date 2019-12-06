@@ -1,2 +1,16 @@
-console.log("<%= @skill_set %>")
-document.querySelector("[data-skill-set-id='<%= @skill_set.id %>']").remove();
+function destroySkillSet() {
+
+  document.querySelector("[data-skill-set-id='<%= @skill_set.id %>']").remove();
+  console.log("<%=@empty_skill_set%>");
+  <% if @empty_skill_set %>
+    console.log("hello");
+    const skillContainer = document.getElementById('<%=@skill_set.skillable_type.downcase%>-skills-<%=@skill_set.level%>-container');
+    const emptySkill = skillContainer.querySelector(".empty-skill");
+    if(emptySkill) {
+      emptySkill.style.display = "block";
+    }
+  <% end %>
+
+}
+
+destroySkillSet();

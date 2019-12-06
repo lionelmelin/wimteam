@@ -1,5 +1,5 @@
 <div class="banner-myapp">
-  <h1>My applications</h1>
+  <h1>My dashboard</h1>
 </div>
 <div class="container my-3">
 
@@ -62,7 +62,7 @@
             <%= user_walk.walk.team.location %>
           </h6>
           <p class="ml-0">My review:
-            <% unless user_walk.review.empty? %>
+            <% unless user_walk.review.nil? %>
                 <em>"<%= user_walk.review.truncate(67) %>"</em>
             <% end %>
             <span class="review-edit">
@@ -75,12 +75,9 @@
         <div class="mypastapp-status">
           <div class="badge badge-secondary badge-pill status"><%= user_walk.status %></div>
         </div>
-        <%= link_to "", walk_path(user_walk.walk) %>
       </div>
       <% end %>
   </div>
-
-
 </div>
 
 

@@ -25,6 +25,7 @@ class SkillSetsController < ApplicationController
 
   def destroy
     @skill_set.destroy
+    @empty_skill_set = current_user.skill_sets.where(level: @skill_set.level, skillable_type: @skill_set.skillable_type).empty?
   end
 
   private
