@@ -5,8 +5,9 @@
 
   <!-- My applications---------------------------------------->
     <div class="cards-walks">
+      <% i=0 %>
       <% @upcoming_user_walks.each do |user_walk| %>
-      <div class="card-application" data-user-walk-id="<%= user_walk.id %>">
+      <div class="card-application card-application-active" data-user-walk-id="<%= user_walk.id %>">
         <%= link_to "", walk_path(user_walk.walk) %>
         <div class="card-application-image">
           <%= cl_image_tag user_walk.walk.team.photo.key, width: 180, height: 180, crop: :fill, gravity: :faces if user_walk.walk.team.photo.attached? %>
@@ -32,7 +33,8 @@
         </div>
         <div class="myapp-btns">
           <div class="badge badge-primary badge-pill status"><%= user_walk.status %></div>
-          <div id="sweet-alert-delete" class="btn-details"><i class="fas fa-window-close"></i>  Cancel application</div>
+          <div id=<%= "sweet-alert-delete-#{i}"%> class="btn-details"><i class="fas fa-window-close"></i>  Cancel application</div>
+          <% i+=1 %>
           <%= link_to "", user_walk, method: :delete, id: "delete-link", class: "hidden", remote: true %>
         </div>
       </div>
